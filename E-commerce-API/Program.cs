@@ -33,6 +33,18 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(build
     .AddEntityFrameworkStores<DataContext>()
     .AddDefaultTokenProviders();
 
+
+builder.services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        builder =>
+        {
+            builder.WithOrigins("https://localhost:4200", "http://localhost:4200")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+        });
+});
+
 // Adding Authentication
 builder.Services.AddAuthentication(options =>
 {
