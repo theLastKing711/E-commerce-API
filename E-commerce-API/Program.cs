@@ -35,15 +35,14 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(build
 
 
 builder.Services.AddCors(options =>
-{
-    options.AddDefaultPolicy(
-        builder =>
-        {
-            builder.WithOrigins("https://localhost:4200", "http://localhost:4200")
-                                .AllowAnyHeader()
-                                .AllowAnyMethod();
-        });
-});
+            {
+                options.AddPolicy("CorsPolicy", policyBuilder => policyBuilder
+                        .WithOrigins("http://localhost:4200", "http://localhost:8080", "https://localhost:4200")
+                        .SetIsOriginAllowedToAllowWildcardSubdomains()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
 
 // services.AddCors(options =>
 //             options.AddPolicy("EnableCors", builder =>
@@ -90,7 +89,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+app.UseCors("CorsPolicy");
 
 app.UseStaticFiles();
 
