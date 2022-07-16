@@ -26,10 +26,11 @@ namespace ECommerce.API.Controllers
     {
         // var categories = await _categoryRepository.getCategoriesPaginated(pageNumber, pageSize);
 
-        var categories = await _categoryRepository.GetAll();
+        // var categories = await _categoryRepository.GetAll();
 
+        var x = "lskdjf";
 
-        return Ok(categories);
+        return Ok(x);
     }
 
     [HttpGet("{id}")]
