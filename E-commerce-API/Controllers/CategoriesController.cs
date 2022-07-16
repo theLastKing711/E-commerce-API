@@ -24,11 +24,7 @@ namespace ECommerce.API.Controllers
     [HttpGet]
     public async Task<IActionResult> GetAllCategories([FromQuery] int pageNumber ,[FromQuery] int pageSize )
     {
-        // var categories = await _categoryRepository.getCategoriesPaginated(pageNumber, pageSize);
-
-         var categories = await _categoryRepository.GetAll();
-
-        var x = "lskdjf";
+         var categories = await _categoryRepository.getCategoriesPaginated(pageNumber, pageSize);
 
         return Ok(categories);
     }
