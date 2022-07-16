@@ -63,7 +63,7 @@ builder.Services.AddScoped<IImagesUploader, ImagesUploader>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: MyAllowSpecificOrigins, 
+    options.AddPolicy(name: "test", 
                       policy  =>
                       {
                           policy.WithOrigins("http://localhost:4200");
@@ -88,7 +88,7 @@ app.UseStaticFiles();
 
 // app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
-app.UseCors(MyAllowSpecificOrigins);
+app.UseCors("test");
 
 app.UseCors("angular policy");
 
