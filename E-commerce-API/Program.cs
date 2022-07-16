@@ -61,6 +61,16 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IImagesUploader, ImagesUploader>();
 
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins, 
+                      policy  =>
+                      {
+                          policy.WithOrigins("http://localhost:4200");
+                      });
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -76,7 +86,9 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 
-app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+// app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseCors("angular policy");
 
