@@ -34,7 +34,7 @@ builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(build
     .AddDefaultTokenProviders();
 
 
-builder.services.AddCors(options =>
+builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(
         builder =>
@@ -44,6 +44,10 @@ builder.services.AddCors(options =>
                                 .AllowAnyMethod();
         });
 });
+
+// services.AddCors(options =>
+//             options.AddPolicy("EnableCors", builder =>
+//                 builder.SetIsOriginAllowed(origin => true).AllowAnyMethod().AllowAnyHeader().AllowCredentials()));
 
 // Adding Authentication
 builder.Services.AddAuthentication(options =>
