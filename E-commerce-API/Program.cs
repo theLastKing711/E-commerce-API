@@ -91,8 +91,6 @@ app.UseStaticFiles();
 app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 
-app.UseCors("angular policy");
-
 app.UseAuthentication();
 
 app.UseAuthorization();
