@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen();
 
 
 // For Entity Framework
-builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
     // For Identity
     builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>

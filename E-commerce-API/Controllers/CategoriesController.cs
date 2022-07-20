@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers
 {
-  //[Authorize]
+  [Authorize]
   [Route("api/[controller]")]
   [ApiController]
   public class CategoriesController : ControllerBase
@@ -22,7 +22,7 @@ namespace ECommerce.API.Controllers
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAllCategories([FromQuery] int pageNumber ,[FromQuery] int pageSize )
+    public async Task<IActionResult> GetAllCategories([FromQuery] int pageNumber ,[FromQuery] int pageSize)
     {
          var categories = await _categoryRepository.getCategoriesPaginated(pageNumber, pageSize);
 
