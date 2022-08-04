@@ -1,3 +1,5 @@
+using ECommerce.API.Models.Identity;
+
 namespace ECommerce.API.Models
 {
     public class Review : BaseEntity
@@ -5,9 +7,9 @@ namespace ECommerce.API.Models
         public Product Product { get; set; }
         public int ProductId { get; set; }
 
-        public Customer Customer { get; set; }
+        public AppUser AppUser{ get; set; }
 
-        public int CustomerId { get; set; }
+        public int AppUserId { get; set; }
 
         public decimal Rating { get; set; }
 

@@ -56,12 +56,12 @@ namespace ECommerce.API.Controllers
                 Reviews = x.Reviews.Select(y => new ReviewDto()
                 {
                     Id = y.Id,
-                    CustomerId = y.CustomerId,
+                    AppUserId = y.AppUserId,
                     Body = y.Body,
                     Rating = y.Rating,
                     ProductId = y.ProductId,
                     CreatedAt = y.CreatedAt,
-                    Customer = this._mapper.Map<CustomerDto>(y.Customer)
+                    AppUser = this._mapper.Map<AppUserDto>(y.AppUser)
                 }),
                 Discounts = x.Discounts.Select(y => new DiscountDto()
                 {
@@ -224,12 +224,12 @@ namespace ECommerce.API.Controllers
                 Reviews = reviewedPostModel.Reviews.Select(x => new ReviewDto()
                 {
                     Id = x.Id,
-                    CustomerId = x.CustomerId,
+                    AppUserId = x.AppUserId,
                     Body = x.Body,
                     Rating = x.Rating,
                     ProductId = x.ProductId,
                     CreatedAt = x.CreatedAt,
-                    Customer = this._mapper.Map<CustomerDto>(x.Customer)
+                    AppUser = this._mapper.Map<AppUserDto>(x.AppUser)
                 })
             };
 

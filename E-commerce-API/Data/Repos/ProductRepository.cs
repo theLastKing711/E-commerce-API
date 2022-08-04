@@ -63,7 +63,7 @@ namespace ECommerce.API.Data.Repos
             var productsModel = this._context.Products
                                     .Include(product => product.Category)
                                     .Include(Product => Product.Reviews)
-                                        .ThenInclude(review => review.Customer)
+                                        .ThenInclude(review => review.AppUser)
                                     .Include(Product => Product.Discounts)
                                     .OrderByDescending(x => x.CreatedAt);
 

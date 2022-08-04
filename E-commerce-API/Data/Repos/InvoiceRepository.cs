@@ -21,10 +21,10 @@ namespace ECommerce.API.Data.Repos
             {
                 Id = InvoiceModel.Id,
                 CreatedAt = InvoiceModel.CreatedAt,
+                AppUserId = x.AppUserId,
                 InvoicesDetails = InvoiceModel.InvoicesDetails.Select(x => new InvoiceDetails()
                 {
                     Id = x.Id,
-                    CustomerId = x.CustomerId,
                     InvoiceId = x.InvoiceId,
                     ProdcutQuantity = x.ProdcutQuantity,
                     ProductId = x.ProductId
@@ -66,7 +66,7 @@ namespace ECommerce.API.Data.Repos
                                                 {
                                                     Id = e.Id,
                                                     Customer = e.Customer,
-                                                    CustomerId = e.CustomerId,
+                                                    AppUserId = e.AppUserId,
                                                     InvoiceId = e.InvoiceId,
                                                     ProdcutQuantity = e.ProdcutQuantity,
                                                     Product = e.Product,
@@ -95,7 +95,7 @@ namespace ECommerce.API.Data.Repos
                                                     {
                                                         Id = x.Id,
                                                         Customer = x.Customer,
-                                                        CustomerId = x.CustomerId,
+                                                        AppUserId = x.AppUserId,
                                                         InvoiceId = x.InvoiceId,
                                                         ProdcutQuantity = x.ProdcutQuantity,
                                                         Product = x.Product,

@@ -2,6 +2,7 @@ using ECommerce.API;
 using ECommerce.API.Data.IRepos;
 using ECommerce.API.Data.Repos;
 using ECommerce.API.Helpers;
+using ECommerce.API.Models.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +23,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // For Identity
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
     options.Password.RequireDigit = false;
     options.Password.RequiredLength = 5;

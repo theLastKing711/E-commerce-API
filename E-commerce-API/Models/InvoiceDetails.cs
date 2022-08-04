@@ -13,10 +13,6 @@ namespace ECommerce.API.Models
 
         public int ProductId { get; set; }
 
-        public Customer Customer { get; set; }
-
-        public int CustomerId { get; set; }
-
         public int ProdcutQuantity { get; set; }
 
     }

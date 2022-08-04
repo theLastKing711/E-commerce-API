@@ -66,14 +66,14 @@ namespace ECommerce.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddInvoice([FromBody] IEnumerable<AddInvoiceDetailsDto> invoicesDetailsDto)
+        public async Task<IActionResult> AddInvoice([FromBody] InvoiceDto invoiceDto)
         {
             var InvoiceModel = new Invoice()
             {
+                AppUserId = invoiceDto.AppUserId,
                 CreatedAt = DateTime.Now,
-                InvoicesDetails = invoicesDetailsDto.Select(x => new InvoiceDetails()
+                InvoicesDetails = invoiceDto.InvoicesDetails.Select(x => new InvoiceDetails()
                 {
-                    CustomerId = x.CustomerId,
                     ProductId = x.ProductId,
                     ProdcutQuantity = x.ProdcutQuantity
                 }).ToList()

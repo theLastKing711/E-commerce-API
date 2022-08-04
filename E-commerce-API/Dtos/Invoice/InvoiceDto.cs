@@ -7,6 +7,8 @@ namespace ECommerce.API.Dtos.Invoice
     {
         public IEnumerable<InvoiceDetailsDto> InvoicesDetails { get; set; }
 
+        public int AppUserId { get; set; }
+
         public decimal Total { get; set; }
     }
 }
