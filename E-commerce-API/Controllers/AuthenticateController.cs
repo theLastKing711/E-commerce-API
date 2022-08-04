@@ -1,4 +1,5 @@
 ﻿using ECommerce.API.Dtos.Identity;
+using ECommerce.API.Models.Roles;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -32,7 +33,7 @@ namespace ECommerce.API.Controllers
         //public async Task<IActionResult> Login([FromBody] LoginDto model)
         //[Route("Verify")]
         //{
-            
+
         //}
 
         [HttpPost]
@@ -55,10 +56,11 @@ namespace ECommerce.API.Controllers
                     authClaims.Add(new Claim(ClaimTypes.Role, userRole));
                 }
 
-               var token = GetToken(authClaims);
+                var token = GetToken(authClaims);
 
                 return Ok(new
-                {   username = user.UserName,
+                {
+                    username = user.UserName,
                     token = new JwtSecurityTokenHandler().WriteToken(token),
                     expiration = token.ValidTo
                 });
@@ -81,8 +83,11 @@ namespace ECommerce.API.Controllers
                 UserName = model.Username
             };
             var result = await _userManager.CreateAsync(user, model.Password);
+
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+
+            await _userManager.AddToRoleAsync(userExists, "ADMIN");
 
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }

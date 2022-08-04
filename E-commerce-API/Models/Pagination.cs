@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ECommerce.API.Dtos;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.API.Models
 {
-    public class Pagination<T> where T : BaseEntity
+    public class Pagination<T>
     {
         public int PageNumber { get; set; } = 1;
 
@@ -11,16 +12,14 @@ namespace ECommerce.API.Models
         public int TotalCount { get; set; }
 
         public IEnumerable<T> Data { get; set; }
-        
 
-        public Pagination(IEnumerable<T> data, int pageNumber, int pageSize,int totalCount)
+        public Pagination(IEnumerable<T> data, int pageNumber, int pageSize, int totalCount)
         {
             this.Data = data;
             this.PageNumber = pageNumber;
             this.PageSize = pageSize;
             this.TotalCount = totalCount;
         }
-
 
         public async static Task<Pagination<T>> GetPaginatedData(IQueryable<T> data, int pageNumber, int pageSize)
         {

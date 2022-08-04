@@ -21,23 +21,23 @@ builder.Services.AddSwaggerGen();
 // For Entity Framework
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-    // For Identity
-    builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
-    {
-        options.Password.RequireDigit = false;
-        options.Password.RequiredLength = 5;
-        options.Password.RequireNonAlphanumeric = false;
-        options.Password.RequireLowercase = true;
-        options.Password.RequireUppercase = false;
-    })
-    .AddEntityFrameworkStores<DataContext>()
-    .AddDefaultTokenProviders();
+// For Identity
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequiredLength = 5;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireUppercase = false;
+})
+.AddEntityFrameworkStores<DataContext>()
+.AddDefaultTokenProviders();
 
 
 builder.Services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", policyBuilder => policyBuilder
-                        .WithOrigins("http://localhost:4200", "http://localhost:8080", "https://localhost:4200")
+                        .WithOrigins("http://localhost:4200", "http://localhost:3000", "https://localhost:4200")
                         .SetIsOriginAllowedToAllowWildcardSubdomains()
                         .AllowAnyMethod()
                         .AllowAnyHeader()
@@ -55,7 +55,6 @@ builder.Services.AddAuthentication(options =>
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
 })
-
 // Adding Jwt Bearer
 .AddJwtBearer(options =>
 {
@@ -70,11 +69,16 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
     };
 });
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddMvc().AddNewtonsoftJson();
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
+builder.Services.AddScoped<IStatsRepository, StatsRepository>();
 builder.Services.AddScoped<IImagesUploader, ImagesUploader>();
-
 
 var app = builder.Build();
 
