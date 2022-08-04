@@ -239,6 +239,22 @@ namespace ECommerce.API.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "515be11d-6910-4e87-a6cf-a2cc85814a9e",
+                            ConcurrencyStamp = "634c2081-6072-4286-b88d-cd2817390556",
+                            Name = "Customer",
+                            NormalizedName = "CUSTOMER"
+                        },
+                        new
+                        {
+                            Id = "a8af65bf-1b37-45dd-ba80-1fd7f3152ac5",
+                            ConcurrencyStamp = "3cc63c0a-efcb-49c2-9073-d216f2fc633f",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -18,7 +18,21 @@ namespace ECommerce.API
         {
             base.OnModelCreating(builder);
 
-            builder.ApplyConfiguration(new RoleConfiguration());
+            //builder.ApplyConfiguration(new RoleConfiguration());
+
+
+            builder.Entity<IdentityRole>().HasData(
+                new IdentityRole
+                {
+                    Name = "Customer",
+                    NormalizedName = "CUSTOMER"
+                },
+                new IdentityRole
+                {
+                    Name = "Admin",
+                    NormalizedName = "ADMIN"
+                }
+            );
 
         }
 

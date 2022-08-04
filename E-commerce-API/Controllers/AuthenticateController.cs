@@ -87,7 +87,7 @@ namespace ECommerce.API.Controllers
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
-            await _userManager.AddToRoleAsync(userExists, "ADMIN");
+            await _userManager.AddToRoleAsync(user, "ADMIN");
 
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
