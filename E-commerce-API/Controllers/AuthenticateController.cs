@@ -16,12 +16,12 @@ namespace ECommerce.API.Controllers
     public class AuthenticateController : ControllerBase
     {
         private readonly UserManager<AppUser> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly RoleManager<AppRole> _roleManager;
         private readonly IConfiguration _configuration;
 
         public AuthenticateController(
             UserManager<AppUser> userManager,
-            RoleManager<IdentityRole> roleManager,
+            RoleManager<AppRole> roleManager,
             IConfiguration configuration)
         {
             _userManager = userManager;
@@ -88,7 +88,7 @@ namespace ECommerce.API.Controllers
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
-            await _userManager.AddToRoleAsync(user, "ADMIN");
+            await _userManager.AddToRoleAsync(user, UserRoles.Admin);
 
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
@@ -111,10 +111,10 @@ namespace ECommerce.API.Controllers
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
 
-            if (!await _roleManager.RoleExistsAsync(UserRoles.Admin))
-                await _roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
-            if (!await _roleManager.RoleExistsAsync(UserRoles.User))
-                await _roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+            // if (!await _roleManager.RoleExistsAsync(UserRoles.Admin))
+            //     await _roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+            // if (!await _roleManager.RoleExistsAsync(UserRoles.User))
+            //     await _roleManager.CreateAsync(new IdentityRole(UserRoles.User));
 
             if (await _roleManager.RoleExistsAsync(UserRoles.Admin))
             {

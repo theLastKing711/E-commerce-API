@@ -1,14 +1,12 @@
 using AutoMapper;
 using ECommerce.API.Data.IRepos;
-using ECommerce.API.Dtos;
 using ECommerce.API.Dtos.Category;
 using ECommerce.API.Dtos.Discount;
+using ECommerce.API.Dtos.Identity.AppUser;
 using ECommerce.API.Dtos.Product;
 using ECommerce.API.Dtos.Review;
 using ECommerce.API.Helpers;
 using ECommerce.API.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers

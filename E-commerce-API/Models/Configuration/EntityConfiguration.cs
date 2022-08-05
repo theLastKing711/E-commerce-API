@@ -1,21 +1,25 @@
+using ECommerce.API.Dtos.Identity;
+using ECommerce.API.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class RoleConfiguration : IEntityTypeConfiguration<IdentityRole>
+public class RoleConfiguration : IEntityTypeConfiguration<AppRole>
 {
-    public void Configure(EntityTypeBuilder<IdentityRole> builder)
+    public void Configure(EntityTypeBuilder<AppRole> builder)
     {
 
         builder.HasData(
-            new IdentityRole
+            new AppRole
             {
-                Name = "Customer",
-                NormalizedName = "CUSTOMER"
+                Id = 1,
+                Name = UserRoles.User,
+                NormalizedName = "USER"
             },
-            new IdentityRole
+            new AppRole
             {
-                Name = "Admin",
+                Id = 2,
+                Name = UserRoles.Admin,
                 NormalizedName = "ADMIN"
             }
         );

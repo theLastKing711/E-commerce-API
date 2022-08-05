@@ -7,33 +7,34 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.API
 {
-    public class DataContext : IdentityDbContext<AppUser>
+    public class DataContext : IdentityDbContext<AppUser, AppRole, int>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
         }
 
 
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            //builder.ApplyConfiguration(new RoleConfiguration());
+            builder.ApplyConfiguration(new RoleConfiguration());
 
 
-            builder.Entity<IdentityRole>().HasData(
-                new IdentityRole
-                {
-                    Name = "Customer",
-                    NormalizedName = "CUSTOMER"
-                },
-                new IdentityRole
-                {
-                    Name = "Admin",
-                    NormalizedName = "ADMIN"
-                }
-            );
+            // builder.Entity<AppRole>().HasData(
+            //     new AppRole
+            //     {
+            //         Id = 1,
+            //         Name = "Admin",
+            //         NormalizedName = "ADMIN"
+            //     },
+            //     new AppRole
+            //     {
+            //         Id = 2,
+            //         Name = "User",
+            //         NormalizedName = "User"
+            //     }
+            // );
 
         }
 

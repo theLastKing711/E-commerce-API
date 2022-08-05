@@ -110,7 +110,7 @@ namespace ECommerce.API.Data.Repos
 
             var customerReviewModel = await this._context.Reviews
                                                     .AsNoTracking()
-                                                    .Where(e => e.ProductId == id && e.CustomerId == review.CustomerId)
+                                                    .Where(e => e.ProductId == id && e.AppUserId == review.AppUserId)
                                                     .FirstOrDefaultAsync();
 
             if (customerReviewModel != null)
@@ -127,7 +127,7 @@ namespace ECommerce.API.Data.Repos
             var ProductModel = await this._context.Products
                                                  .Where(x => x.Id == id)
                                                  .Include(x => x.Reviews)
-                                                    .ThenInclude(x => x.Customer)
+                                                    .ThenInclude(x => x.AppUser)
                                                  .Include(x => x.Discounts)
                                                  .Include(x => x.InvoicesDetails)
                                                  .FirstOrDefaultAsync();

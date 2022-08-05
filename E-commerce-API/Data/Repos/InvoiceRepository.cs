@@ -21,7 +21,7 @@ namespace ECommerce.API.Data.Repos
             {
                 Id = InvoiceModel.Id,
                 CreatedAt = InvoiceModel.CreatedAt,
-                AppUserId = x.AppUserId,
+                AppUserId = InvoiceModel.AppUserId,
                 InvoicesDetails = InvoiceModel.InvoicesDetails.Select(x => new InvoiceDetails()
                 {
                     Id = x.Id,
@@ -55,18 +55,18 @@ namespace ECommerce.API.Data.Repos
         {
             var InvoicesModel = this._context.Invoices
                                             .AsNoTracking()
+                                            .Include(e => e.AppUser)
                                             .Include(e => e.InvoicesDetails)
-                                                .ThenInclude(e => e.Customer)
                                             .Include(e => e.InvoicesDetails)
                                                 .ThenInclude(e => e.Product)
                                             .Select(x => new Invoice()
                                             {
                                                 Id = x.Id,
+                                                AppUserId = x.AppUserId,
+                                                AppUser = x.AppUser,
                                                 InvoicesDetails = x.InvoicesDetails.Select(e => new InvoiceDetails()
                                                 {
                                                     Id = e.Id,
-                                                    Customer = e.Customer,
-                                                    AppUserId = e.AppUserId,
                                                     InvoiceId = e.InvoiceId,
                                                     ProdcutQuantity = e.ProdcutQuantity,
                                                     Product = e.Product,
@@ -91,11 +91,11 @@ namespace ECommerce.API.Data.Repos
                                                 .Select(e => new Invoice()
                                                 {
                                                     Id = e.Id,
+                                                    AppUserId = e.AppUserId,
+                                                    AppUser = e.AppUser,
                                                     InvoicesDetails = e.InvoicesDetails.Select(x => new InvoiceDetails()
                                                     {
                                                         Id = x.Id,
-                                                        Customer = x.Customer,
-                                                        AppUserId = x.AppUserId,
                                                         InvoiceId = x.InvoiceId,
                                                         ProdcutQuantity = x.ProdcutQuantity,
                                                         Product = x.Product,
