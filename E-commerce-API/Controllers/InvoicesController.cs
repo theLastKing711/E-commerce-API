@@ -66,8 +66,9 @@ namespace ECommerce.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddInvoice([FromBody] InvoiceDto invoiceDto)
+        public async Task<IActionResult> AddInvoice([FromBody] AddInvoiceDto invoiceDto)
         {
+
             var InvoiceModel = new Invoice()
             {
                 AppUserId = invoiceDto.AppUserId,
@@ -81,9 +82,9 @@ namespace ECommerce.API.Controllers
 
             var newInvoiceModel = await _InvoicesRepository.Add(InvoiceModel);
 
-            var result = _mapper.Map<InvoiceDto>(newInvoiceModel);
+            var newInvoiceDto = _mapper.Map<InvoiceDto>(newInvoiceModel);
 
-            return Ok(newInvoiceModel);
+            return Ok(newInvoiceDto);
 
         }
 

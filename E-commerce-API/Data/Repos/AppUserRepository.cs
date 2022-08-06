@@ -51,8 +51,8 @@ namespace ECommerce.API.Data.Repos
 
             if (password != null)
             {
-                var token = await this._userManager.GeneratePasswordResetTokenAsync(user);
-                var passwordUpdateResult = await this._userManager.ResetPasswordAsync(user, token, password);
+                var token = await this._userManager.GeneratePasswordResetTokenAsync(OldAppUser);
+                var passwordUpdateResult = await this._userManager.ResetPasswordAsync(OldAppUser, token, password);
             }
 
             var result = await this._userManager.UpdateAsync(OldAppUser);

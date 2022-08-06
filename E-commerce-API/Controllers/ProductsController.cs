@@ -7,11 +7,12 @@ using ECommerce.API.Dtos.Product;
 using ECommerce.API.Dtos.Review;
 using ECommerce.API.Helpers;
 using ECommerce.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers
 {
-    // [Authorize]
+    [Authorize(Roles="Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase

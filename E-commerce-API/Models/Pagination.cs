@@ -23,7 +23,17 @@ namespace ECommerce.API.Models
 
         public async static Task<Pagination<T>> GetPaginatedData(IQueryable<T> data, int pageNumber, int pageSize)
         {
-            var paginatedList = await data.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            List<T> paginatedList = null;
+
+            if (pageNumber != 0 && pageSize != 0)
+            {
+                paginatedList = await data.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
+            }
+            else
+            {
+                paginatedList = await data.ToListAsync();
+            }
 
             var totalCount = await data.CountAsync();
 

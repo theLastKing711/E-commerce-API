@@ -6,6 +6,6 @@ namespace ECommerce.API.Dtos.Identity.AppUser
     {
         public string? Password { get; set; }
 
-        public IFormFile Image { get; set; }
+        public IFormFile? Image { get; set; }
     }
 }

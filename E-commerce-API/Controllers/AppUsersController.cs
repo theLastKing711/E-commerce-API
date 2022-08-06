@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers
 {
-    // [Authorize]
+    //[Authorize(Roles ="Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class AppUsersController : ControllerBase
@@ -61,7 +61,11 @@ namespace ECommerce.API.Controllers
         {
             var AppUserModel = _mapper.Map<AppUser>(AppUserDto);
 
+
+
             var AppUserImagePath = imagesUploader.UploadImage(AppUserDto.Image);
+
+            AppUserModel.ImagePath = AppUserImagePath;
 
             var newAppUserModel = await _AppUsersRepository.AddAppUser(AppUserModel, AppUserDto.Password);
 
@@ -85,6 +89,8 @@ namespace ECommerce.API.Controllers
                 AppUserImagePath = imagesUploader.UploadImage(AppUserDto.Image);
             }
 
+
+            AppUserModel.ImagePath = AppUserImagePath;
 
             var updatedAppUser = await _AppUsersRepository.UpdateAppUser(AppUserModel, AppUserDto.Password);
 
