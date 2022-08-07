@@ -13,7 +13,7 @@ namespace ECommerce.API.Models
 
         public int ProductId { get; set; }
 
-        public int ProdcutQuantity { get; set; }
+        public int ProductQuantity { get; set; }
 
     }
 }

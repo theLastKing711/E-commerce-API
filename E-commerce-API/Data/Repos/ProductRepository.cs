@@ -239,7 +239,7 @@ namespace ECommerce.API.Data.Repos
                                             {
                                                 Id = x.Key.ProductId,
                                                 Name = x.Select(x => x.Product.Name).FirstOrDefault(),
-                                                Total = x.Sum(y => (y.Product.Price * y.ProdcutQuantity))
+                                                Total = x.Sum(y => (y.Product.Price * y.ProductQuantity))
                                             })
                                             .OrderByDescending(x => x.Total)
                                             .Take(3)

@@ -12,10 +12,6 @@ namespace ECommerce.API.Dtos.InvoiceDetails
 
         public int ProductId { get; set; }
 
-        public CustomerDto Customer { get; set; }
-
-        public int CustomerId { get; set; }
-
-        public int ProdcutQuantity { get; set; }
+        public int ProductQuantity { get; set; }
     }
 }

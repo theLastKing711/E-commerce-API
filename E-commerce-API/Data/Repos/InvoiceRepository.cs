@@ -26,7 +26,7 @@ namespace ECommerce.API.Data.Repos
                 {
                     Id = x.Id,
                     InvoiceId = x.InvoiceId,
-                    ProdcutQuantity = x.ProdcutQuantity,
+                    ProductQuantity = x.ProductQuantity,
                     ProductId = x.ProductId
                 })
             };
@@ -68,9 +68,9 @@ namespace ECommerce.API.Data.Repos
                                                 {
                                                     Id = e.Id,
                                                     InvoiceId = e.InvoiceId,
-                                                    ProdcutQuantity = e.ProdcutQuantity,
+                                                    ProductQuantity = e.ProductQuantity,
                                                     Product = e.Product,
-                                                    ProductId = e.ProductId
+                                                    ProductId = e.ProductId,
                                                 })
                                             });
             // .OrderByDescending(y => y.CreatedAt);
@@ -97,7 +97,7 @@ namespace ECommerce.API.Data.Repos
                                                     {
                                                         Id = x.Id,
                                                         InvoiceId = x.InvoiceId,
-                                                        ProdcutQuantity = x.ProdcutQuantity,
+                                                        ProductQuantity = x.ProductQuantity,
                                                         Product = x.Product,
                                                         ProductId = x.ProductId
                                                     })
