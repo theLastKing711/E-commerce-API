@@ -82,7 +82,7 @@ namespace ECommerce.API.Data.Repos
                     (month, salesGroup) => new YearlySalesDto
                     {
                         Month = month,
-                        TotalSales = salesGroup.Sum(x => x.ProdcutQuantity * x.Product.Price)
+                        TotalSales = salesGroup.Sum(x => x.ProductQuantity * x.Product.Price)
                     }
                     )
                     .ToList();
@@ -94,7 +94,7 @@ namespace ECommerce.API.Data.Repos
         public async Task<IEnumerable<TopSellerProductDto>> GetTopSellingProducts()
         {
 
-            int currentMonth = DateTime.Now.Month - 1;
+            int currentMonth = DateTime.Now.Month;
 
             var CurrentMonthSalesDto = await this._context.InvoicesDetails
                                                     .Include(x => x.Product)
@@ -108,7 +108,7 @@ namespace ECommerce.API.Data.Repos
                         {
                             Id = x.Key,
                             Name = x.Select(x => x.Product.Name).FirstOrDefault(),
-                            Total = x.Sum(y => (int)y.ProdcutQuantity)
+                            Total = x.Sum(y => (int)y.ProductQuantity)
                         })
                         .OrderByDescending(x => x.Total)
                         .Take(3)
@@ -122,7 +122,7 @@ namespace ECommerce.API.Data.Repos
         public async Task<IEnumerable<TopSellerCategoryDto>> GetTopSellingCategories()
         {
 
-            int currentMonth = DateTime.Now.Month - 1;
+            int currentMonth = DateTime.Now.Month;
 
             var CurrentMonthSalesDto = await this._context.InvoicesDetails
                                                     .Include(x => x.Product)
@@ -137,7 +137,7 @@ namespace ECommerce.API.Data.Repos
                         {
                             Id = x.Key.Id,
                             Name = x.Select(x => x.Product.Category.Name).FirstOrDefault(),
-                            Total = x.Sum(y => (int)y.ProdcutQuantity)
+                            Total = x.Sum(y => (int)y.ProductQuantity)
                         })
                         .OrderByDescending(x => x.Total)
                         .Take(3)

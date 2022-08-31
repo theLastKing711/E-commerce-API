@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers
 {
-    // [Authorize]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class InvoicesController : ControllerBase
@@ -39,8 +39,9 @@ namespace ECommerce.API.Controllers
                                                  {
                                                      Id = x.Id,
                                                      CreatedAt = x.CreatedAt,
+                                                     AppUser = x.AppUser,
                                                      InvoicesDetails = x.InvoicesDetails,
-                                                     Total = x.InvoicesDetails.Sum(x => x.Product.Price * x.ProdcutQuantity)
+                                                     Total = x.InvoicesDetails.Sum(x => x.Product.Price * x.ProductQuantity)
                                                  });
 
 
@@ -76,11 +77,11 @@ namespace ECommerce.API.Controllers
                 InvoicesDetails = invoiceDto.InvoicesDetails.Select(x => new InvoiceDetails()
                 {
                     ProductId = x.ProductId,
-                    ProdcutQuantity = x.ProdcutQuantity
+                    ProductQuantity = x.ProductQuantity
                 }).ToList()
             };
 
-            var newInvoiceModel = await _InvoicesRepository.Add(InvoiceModel);
+            var newInvoiceModel = await _InvoicesRepository.AddInvoice(InvoiceModel);
 
             var newInvoiceDto = _mapper.Map<InvoiceDto>(newInvoiceModel);
 

@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 
 namespace ECommerce.API.Dtos.Identity.AppUser
 {
