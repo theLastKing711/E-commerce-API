@@ -62,8 +62,12 @@ namespace ECommerce.API.Controllers
             var AppUserModel = _mapper.Map<AppUser>(AppUserDto);
 
 
+            string AppUserImagePath = null;
 
-            var AppUserImagePath = imagesUploader.UploadImage(AppUserDto.Image);
+            if (AppUserDto.Image != null)
+            {
+                AppUserImagePath  = imagesUploader.UploadImage(AppUserDto.Image);
+            }
 
             AppUserModel.ImagePath = AppUserImagePath;
 
