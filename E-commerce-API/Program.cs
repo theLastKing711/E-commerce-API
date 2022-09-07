@@ -38,7 +38,6 @@ builder.Services.AddIdentity<AppUser, AppRole>(options =>
 builder.Services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", policyBuilder => policyBuilder
-                        .WithOrigins("http://localhost:4200", "http://localhost:3000", "https://localhost:4200")
                         .SetIsOriginAllowed(origin => true)
                         .SetIsOriginAllowedToAllowWildcardSubdomains()
                         .AllowAnyMethod()
