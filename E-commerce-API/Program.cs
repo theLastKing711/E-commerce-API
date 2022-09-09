@@ -3,6 +3,7 @@ using ECommerce.API.Data.IRepos;
 using ECommerce.API.Data.Repos;
 using ECommerce.API.Helpers;
 using ECommerce.API.Models.Identity;
+using ECommerce.API.Server.Database;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,8 @@ builder.Services.AddSwaggerGen();
 
 // For Entity Framework
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
 
 // For Identity
 builder.Services.AddIdentity<AppUser, AppRole>(options =>
@@ -82,6 +85,9 @@ builder.Services.AddScoped<IStatsRepository, StatsRepository>();
 builder.Services.AddScoped<IImagesUploader, ImagesUploader>();
 
 var app = builder.Build();
+
+
+app.Migrate();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
