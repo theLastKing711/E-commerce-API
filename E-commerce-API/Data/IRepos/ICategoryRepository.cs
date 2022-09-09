@@ -1,4 +1,5 @@
 using ECommerce.API.Dtos.Category;
+using ECommerce.API.Dtos.Shared;
 using ECommerce.API.Models;
 
 namespace ECommerce.API.Data.IRepos
@@ -10,6 +11,8 @@ namespace ECommerce.API.Data.IRepos
         Task<Pagination<Category>> getCategoriesPaginated(int pageNumber, int pageSize);
 
         Task<Pagination<Product>> getCategoryProductsPaginated(int id, int pageNumber, int pageSize);
+
+        Task<IEnumerable<Product>> GetAppUserCategoryProducts(int id);
 
     }
 }

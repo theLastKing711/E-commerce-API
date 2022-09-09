@@ -1,6 +1,8 @@
 using ECommerce.API.Data.IRepos;
+using ECommerce.API.Dtos.AppUserDtos.Product;
 using ECommerce.API.Dtos.Category;
 using ECommerce.API.Dtos.Product;
+using ECommerce.API.Dtos.Shared;
 using ECommerce.API.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -74,5 +76,22 @@ namespace ECommerce.API.Data.Repos
 
             return categoryWithProductsDto;
         }
+
+
+
+        #region appUser
+
+        public async Task<IEnumerable<Product>> GetAppUserCategoryProducts(int id)
+        {
+            var productsModel = await this._context.Products
+                                             .Where(x => x.CategoryId == id)
+                                             .ToListAsync();
+
+            return productsModel;
+        }
+
+        #endregion appUser
     }
 }
+
+
