@@ -5,6 +5,7 @@ using ECommerce.API.Helpers;
 using ECommerce.API.Models.Identity;
 using ECommerce.API.Server.Database;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -86,6 +87,11 @@ builder.Services.AddScoped<IImagesUploader, ImagesUploader>();
 
 var app = builder.Build();
 
+
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedProto
+});
 
 app.Migrate();
 
