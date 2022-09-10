@@ -28,7 +28,7 @@ namespace ECommerce.API.Controllers.AppUserControllers
 
 
         [HttpGet("{id}/products")]
-        public async Task<IActionResult> CategoryProducts(int id, [FromQuery] ProductPagination pagination, Filter filter)
+        public async Task<IActionResult> CategoryProducts(int id, [FromQuery] ProductPagination pagination,[FromQuery] Filter filter)
         {
             IEnumerable<Product> categoryProductsModel = await _categoryRepository.GetAppUserCategoryProducts(id);
 
