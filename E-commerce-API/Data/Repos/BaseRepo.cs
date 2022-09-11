@@ -64,5 +64,10 @@ namespace ECommerce.API.Data.Repos
 
         }
 
+        public async Task SaveAsync()
+        {
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

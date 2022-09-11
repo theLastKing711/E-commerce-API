@@ -6,6 +6,7 @@ using ECommerce.API.Helpers.PriceFilterStrategy;
 using ECommerce.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.API.Controllers.AppUserControllers
 {
@@ -15,14 +16,14 @@ namespace ECommerce.API.Controllers.AppUserControllers
     {
 
         IMapper _mapper;
-        IPriceFilterStrategy _priceFilterStrategy;
 
         ICategoryRepository _categoryRepository;
 
-        public AppUserCategoriesController(ICategoryRepository categoryRepository, IPriceFilterStrategy priceFilterStrategy, IMapper mapper)
+        IProductFilterContext _productPriceFilterContext;
+
+        public AppUserCategoriesController(ICategoryRepository categoryRepository, IMapper mapper)
         {
             _categoryRepository = categoryRepository;
-            _priceFilterStrategy = priceFilterStrategy;
             _mapper = mapper;
         }
 
@@ -30,11 +31,25 @@ namespace ECommerce.API.Controllers.AppUserControllers
         [HttpGet("{id}/products")]
         public async Task<IActionResult> CategoryProducts(int id, [FromQuery] ProductPagination pagination,[FromQuery] Filter filter)
         {
-            IEnumerable<Product> categoryProductsModel = await _categoryRepository.GetAppUserCategoryProducts(id);
+            var categoryProductsModel = await _categoryRepository.GetAppUserCategoryProducts(id, filter, pagination);
 
-            IEnumerable<AppUserProductDto> categoryProductsDto = _mapper.Map<IEnumerable<AppUserProductDto>>(categoryProductsModel);
 
-            return Ok("laksjdl");
+            //if(categoryProductsModel.Any() && filter.Price.SortType != SortType.All)
+            //{
+            //    categoryProductsModel = _productPriceFilterContext.FilterProductByPrice(categoryProductsModel, filter.Price);
+            //}
+
+            //if (categoryProductsModel.Any() && filter.Stars > 0)
+            //{
+            //    categoryProductsModel = _productPriceFilterContext.FilterProductByStars(categoryProductsModel, filter.Stars);
+            //}
+
+            //var paginatedAndFilterdProducts = await Pagination<Product>.GetPaginatedData(filterdProductsByStars, pagination.PageNumber, pagination.PageSize);
+
+            //IEnumerable<AppUserProductDto> categoryProductsDto = _mapper.Map<IEnumerable<AppUserProductDto>>(categoryProductsModel);
+
+
+            return Ok(categoryProductsModel);
 
         }
 

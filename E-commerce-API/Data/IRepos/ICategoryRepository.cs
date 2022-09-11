@@ -12,7 +12,7 @@ namespace ECommerce.API.Data.IRepos
 
         Task<Pagination<Product>> getCategoryProductsPaginated(int id, int pageNumber, int pageSize);
 
-        Task<IEnumerable<Product>> GetAppUserCategoryProducts(int id);
+        Task<Pagination<Product>> GetAppUserCategoryProducts(int id, Filter filter, ProductPagination pagination);
 
     }
 }

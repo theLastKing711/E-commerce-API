@@ -3,6 +3,7 @@ using ECommerce.API.Dtos.AppUserDtos.Product;
 using ECommerce.API.Dtos.Category;
 using ECommerce.API.Dtos.Product;
 using ECommerce.API.Dtos.Shared;
+using ECommerce.API.Helpers.PriceFilterStrategy;
 using ECommerce.API.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,8 +11,12 @@ namespace ECommerce.API.Data.Repos
 {
     public class CategoryRepository : BaseRepo<Category>, ICategoryRepository
     {
-        public CategoryRepository(DataContext context) : base(context)
+
+        IProductFilterContext productPriceFilterContext;
+
+        public CategoryRepository(DataContext context, IProductFilterContext productPriceFilterContext) : base(context)
         {
+            this.productPriceFilterContext = productPriceFilterContext;
         }
 
 
@@ -81,13 +86,38 @@ namespace ECommerce.API.Data.Repos
 
         #region appUser
 
-        public async Task<IEnumerable<Product>> GetAppUserCategoryProducts(int id)
+        private IEnumerable<Product> FilterProductsByStars(IEnumerable<Product> products ,int? stars)
+        {
+            return products
+                .Where(x => x.Reviews.Any())
+                .Where(x => x.Reviews.Average(x => x.Rating) > stars);
+        }
+
+        public async Task<Pagination<Product>> GetAppUserCategoryProducts(int id, Filter filter, ProductPagination pagination)
         {
             var productsModel = await this._context.Products
+                                             .Include(x => x.Reviews)
+                                             .AsNoTracking()
                                              .Where(x => x.CategoryId == id)
                                              .ToListAsync();
 
-            return productsModel;
+            IEnumerable<Product> productsModelFilterd = productsModel;
+
+            if (filter.Stars != null)
+            {
+                productsModelFilterd = this.FilterProductsByStars(productsModel, filter.Stars);
+            }
+
+            if (productsModelFilterd.Any() && filter.Price.SortType != SortType.All)
+            {
+                productsModelFilterd = productPriceFilterContext.FilterProductByPrice(productsModelFilterd, filter.Price);
+            }
+
+
+
+            Pagination<Product> paginatedCategoryProducts = new Pagination<Product>(productsModelFilterd, pagination.PageNumber, pagination.PageSize, productsModelFilterd.Count());
+
+            return paginatedCategoryProducts;
         }
 
         #endregion appUser

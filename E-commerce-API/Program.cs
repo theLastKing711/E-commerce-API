@@ -1,7 +1,9 @@
 using ECommerce.API;
 using ECommerce.API.Data.IRepos;
 using ECommerce.API.Data.Repos;
+using ECommerce.API.Dtos.Shared;
 using ECommerce.API.Helpers;
+using ECommerce.API.Helpers.PriceFilterStrategy;
 using ECommerce.API.Models.Identity;
 using ECommerce.API.Server.Database;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -86,6 +88,28 @@ builder.Services.AddScoped<IAppUserRepository, AppUserRepository>();
 builder.Services.AddScoped<IInvoiceRepository, InvoiceRepository>();
 builder.Services.AddScoped<IStatsRepository, StatsRepository>();
 builder.Services.AddScoped<IImagesUploader, ImagesUploader>();
+
+builder.Services.AddScoped<IProductFilterContext, ProductFilterContext>();
+builder.Services.AddScoped<IPriceFilterStrategy, LessThanPriceFilter>();
+builder.Services.AddScoped<IPriceFilterStrategy, RangePriceFilter>();
+builder.Services.AddScoped<IPriceFilterStrategy, GreaterThanPriceFilter>();
+
+
+
+//builder.Services.AddTransient<PriceFilterServiceResolver>(serviceProvider => key =>
+//{
+//    switch (key)
+//    {
+//        case SortType.LessThan:
+//            return serviceProvider.GetService<LessThanPriceFilter>();
+//        case SortType.Range:
+//            return serviceProvider.GetService<LessThanPriceFilter>();
+//        case SortType.EqualOrGreaterThan:
+//            return serviceProvider.GetService<LessThanPriceFilter>();
+//        default:
+//            return serviceProvider.GetService<GreaterThanPriceFilter>();
+//    }
+//});
 
 var app = builder.Build();
 

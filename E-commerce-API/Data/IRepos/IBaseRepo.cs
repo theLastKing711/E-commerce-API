@@ -16,5 +16,7 @@ namespace ECommerce.API.Data.IRepos
 
     Task<Boolean> Remove(int id);
 
+    Task SaveAsync();
+
   }
 }

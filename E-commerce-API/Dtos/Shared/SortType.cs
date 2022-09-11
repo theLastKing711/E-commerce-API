@@ -2,5 +2,9 @@
 {
     public enum SortType
     {
+        All,
+        LessThan,
+        Range,
+        EqualOrGreaterThan,
     }
 }
