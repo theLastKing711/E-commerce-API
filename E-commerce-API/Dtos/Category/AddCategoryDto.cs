@@ -2,10 +2,8 @@
 
 namespace ECommerce.API.Dtos.Category
 {
-    public class AddCategoryDto : BaseDto
+    public class AddCategoryDto : CategoryBase
     {
-        public string Name { get; set; }
-
         public IFormFile Image { get; set; }
     }
 }

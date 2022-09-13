@@ -69,7 +69,7 @@ namespace ECommerce.API.Controllers
 
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCategory([FromForm] AddCategoryDto categoryDto, int id)
+        public async Task<IActionResult> UpdateCategory([FromForm] UpdateCategoryDto categoryDto, int id)
         {
 
             string categoryImagePath = null;
@@ -81,7 +81,6 @@ namespace ECommerce.API.Controllers
 
             var categoryModel = new Category()
             {
-                Id = categoryDto.Id,
                 Name = categoryDto.Name,
             };
 
