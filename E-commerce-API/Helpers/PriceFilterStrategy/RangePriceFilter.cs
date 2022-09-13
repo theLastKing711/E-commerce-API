@@ -8,7 +8,7 @@ namespace ECommerce.API.Helpers.PriceFilterStrategy
     {
         public IEnumerable<Product> filter(IEnumerable<Product> products, ProductFilter filter)
         {
-            return products.Where(product => this.IsGreaterThanOrEqual(filter.EndValue, product.Price) && this.IsLessThanOrEqual(product.Price, filter.EndValue));
+            return products.Where(product => this.IsGreaterThanOrEqual(product.Price, filter.StartValue) && this.IsLessThanOrEqual(product.Price, filter.EndValue));
         }
 
         private bool IsLessThanOrEqual(decimal firstValue, decimal secondValue)

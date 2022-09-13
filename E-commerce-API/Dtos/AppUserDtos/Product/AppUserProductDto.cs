@@ -1,11 +1,11 @@
-﻿namespace ECommerce.API.Dtos.AppUserDtos.Product
+﻿using ECommerce.API.Dtos.Product;
+
+namespace ECommerce.API.Dtos.AppUserDtos.Product
 {
-    public class AppUserProductDto
+    public class AppUserProductDto : ProductBase
     {
-        public int Id { get; set; }
+        public decimal Rating { get; set; }
 
-        public decimal Price { get; set; }
-
-
+        public string Path { get; set; }
     }
 }

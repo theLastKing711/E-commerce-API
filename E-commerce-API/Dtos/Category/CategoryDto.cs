@@ -7,6 +7,8 @@ namespace ECommerce.API.Dtos.Category
     {
         public string Name { get; set; }
 
+        public string Path { get; set; }
+
         public IEnumerable<ProductDto> ProductsDto { get; set; }
     }
 }

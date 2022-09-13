@@ -1,6 +1,7 @@
 using ECommerce.API.Data.IRepos;
 using ECommerce.API.Dtos.Category;
 using ECommerce.API.Dtos.Product;
+using ECommerce.API.Helpers;
 using ECommerce.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,10 +15,13 @@ namespace ECommerce.API.Controllers
     {
 
         ICategoryRepository _categoryRepository;
+        private readonly IImagesUploader _imagesUploader;
 
-        public CategoriesController(ICategoryRepository categoryRepository)
+        public CategoriesController(ICategoryRepository categoryRepository, IImagesUploader imageUploader)
         {
             _categoryRepository = categoryRepository;
+            _imagesUploader = imageUploader;
+
         }
 
         [HttpGet]
@@ -45,12 +49,16 @@ namespace ECommerce.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCategory(AddCategoryDto categoryDto)
+        public async Task<IActionResult> AddCategory([FromForm] AddCategoryDto categoryDto)
         {
+
+            var categoryImageUrl = this._imagesUploader.UploadImage(categoryDto.Image);
+
             var categoryModel = new Category
             {
                 Id = 0,
-                Name = categoryDto.Name
+                Name = categoryDto.Name,
+                Path = categoryImageUrl
             };
 
             var newCategoryDto = await _categoryRepository.Add(categoryModel);
@@ -61,8 +69,15 @@ namespace ECommerce.API.Controllers
 
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCategory(AddCategoryDto categoryDto, int id)
+        public async Task<IActionResult> UpdateCategory([FromForm] AddCategoryDto categoryDto, int id)
         {
+
+            string categoryImagePath = null;
+
+            if (categoryDto.Image != null)
+            {
+                categoryImagePath = _imagesUploader.UploadImage(categoryDto.Image);
+            }
 
             var categoryModel = new Category()
             {

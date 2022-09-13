@@ -1,5 +1,4 @@
-﻿using ECommerce.API.Dtos.AppUserDtos.Product;
-using ECommerce.API.Dtos.Shared;
+﻿using ECommerce.API.Dtos.Shared;
 using ECommerce.API.Models;
 
 namespace ECommerce.API.Helpers.PriceFilterStrategy
@@ -31,7 +30,7 @@ namespace ECommerce.API.Helpers.PriceFilterStrategy
                     priceFilterStrategy = priceFilterServices.FirstOrDefault(x => x.GetType() == typeof(RangePriceFilter))!;
                     break;
                 case (SortType.EqualOrGreaterThan):
-                    priceFilterStrategy = priceFilterServices.FirstOrDefault(x => x.GetType() == typeof(GreaterThanPriceFilter))!;
+                    priceFilterStrategy = priceFilterServices.FirstOrDefault(x => x.GetType() == typeof(GreaterThanOrEqualPriceFilter))!;
                     break;
                 default:
                     priceFilterStrategy = null;
@@ -46,7 +45,7 @@ namespace ECommerce.API.Helpers.PriceFilterStrategy
 
             IPriceFilterStrategy priceFilterStrategy = this.GetPriceFilterStrategy(filter.SortType);
 
-            if(priceFilterStrategy == null)
+            if (priceFilterStrategy == null)
             {
                 return products;
             }
@@ -55,15 +54,15 @@ namespace ECommerce.API.Helpers.PriceFilterStrategy
 
         }
 
-        public  IEnumerable<Product> FilterProductByStars(IEnumerable<Product> products, int? stars)
+        public IEnumerable<Product> FilterProductByStars(IEnumerable<Product> products, int? stars)
         {
 
-            if(stars == null)
+            if (stars == null)
             {
                 return products;
             }
 
-            var filterdProductsByStars =  products
+            var filterdProductsByStars = products
                                                   .Where(x => x.Reviews.Average(x => x.Rating) > stars);
 
 

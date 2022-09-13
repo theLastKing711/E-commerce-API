@@ -2,9 +2,9 @@
 {
     public class Filter
     {
-        public int? Stars { get; set;  }
+        public int? Stars { get; set; } = null;
 
-        public ProductFilter Price { get; set; }
+        public ProductFilter? Price { get; set; }
 
     }
 }

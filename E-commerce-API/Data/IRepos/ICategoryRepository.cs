@@ -8,6 +8,8 @@ namespace ECommerce.API.Data.IRepos
     {
         Task<CategoryWithProductsDto> CategoryProducts(int id);
 
+        Task<Category> UpdateCategory(Category category);
+
         Task<Pagination<Category>> getCategoriesPaginated(int pageNumber, int pageSize);
 
         Task<Pagination<Product>> getCategoryProductsPaginated(int id, int pageNumber, int pageSize);

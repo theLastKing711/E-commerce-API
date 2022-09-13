@@ -1,7 +1,6 @@
 using ECommerce.API;
 using ECommerce.API.Data.IRepos;
 using ECommerce.API.Data.Repos;
-using ECommerce.API.Dtos.Shared;
 using ECommerce.API.Helpers;
 using ECommerce.API.Helpers.PriceFilterStrategy;
 using ECommerce.API.Models.Identity;
@@ -92,7 +91,7 @@ builder.Services.AddScoped<IImagesUploader, ImagesUploader>();
 builder.Services.AddScoped<IProductFilterContext, ProductFilterContext>();
 builder.Services.AddScoped<IPriceFilterStrategy, LessThanPriceFilter>();
 builder.Services.AddScoped<IPriceFilterStrategy, RangePriceFilter>();
-builder.Services.AddScoped<IPriceFilterStrategy, GreaterThanPriceFilter>();
+builder.Services.AddScoped<IPriceFilterStrategy, GreaterThanOrEqualPriceFilter>();
 
 
 

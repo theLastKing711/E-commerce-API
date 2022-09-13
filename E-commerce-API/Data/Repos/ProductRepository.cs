@@ -33,7 +33,7 @@ namespace ECommerce.API.Data.Repos
                                                     // {
                                                     //     Id = x.Id,
                                                     //     Name = product.Name,
-                                                    //     IsPopular = product.IsPopular,
+                                                    //     IsBestSeller = product.IsBestSeller,
                                                     //     Price = product.Price,
                                                     //     CategoryId = product.CategoryId,
                                                     //     Path = product.Path ?? x.Path,
@@ -43,7 +43,7 @@ namespace ECommerce.API.Data.Repos
             productModel.Name = product.Name;
             productModel.Price = product.Price;
             productModel.Path = product.Path ?? productModel.Path;
-            productModel.IsPopular = product.IsPopular;
+            productModel.IsBestSeller = product.IsBestSeller;
             productModel.Reviews = product.Reviews;
 
 
@@ -94,7 +94,7 @@ namespace ECommerce.API.Data.Repos
                                                                    Name = x.Category.Name,
                                                                    CreatedAt = x.Category.CreatedAt,
                                                                },
-                                                               IsPopular = x.IsPopular
+                                                               IsBestSeller = x.IsBestSeller
                                                            })
                                                            .FirstOrDefaultAsync();
 

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ECommerce.API.Data.IRepos;
 using ECommerce.API.Dtos.AppUserDtos.Product;
+using ECommerce.API.Dtos.Category;
 using ECommerce.API.Dtos.Shared;
 using ECommerce.API.Helpers.PriceFilterStrategy;
 using ECommerce.API.Models;
@@ -21,35 +22,54 @@ namespace ECommerce.API.Controllers.AppUserControllers
 
         IProductFilterContext _productPriceFilterContext;
 
-        public AppUserCategoriesController(ICategoryRepository categoryRepository, IMapper mapper)
+        readonly ILogger _logger;
+
+        public AppUserCategoriesController(ICategoryRepository categoryRepository,
+                                             IMapper mapper,
+                                             ILoggerFactory logFactory)
         {
             _categoryRepository = categoryRepository;
             _mapper = mapper;
+            _logger = logFactory.CreateLogger<AppUserCategoriesController>();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllCategories([FromQuery] int pageNumber, [FromQuery] int pageSize)
+        {
+            var categories = await _categoryRepository.getCategoriesPaginated(0, 0);
+
+            var categoriesDto = _mapper.Map<IEnumerable<CategoryDto>>(categories.Data);
+
+            return Ok(categoriesDto);
+        }
 
         [HttpGet("{id}/products")]
-        public async Task<IActionResult> CategoryProducts(int id, [FromQuery] ProductPagination pagination,[FromQuery] Filter filter)
+        public async Task<IActionResult> CategoryProducts(int id, [FromQuery] ProductPagination pagination, [FromQuery] Filter filter)
         {
-            var categoryProductsModel = await _categoryRepository.GetAppUserCategoryProducts(id, filter, pagination);
+
+            _logger.LogInformation(pagination.PageNumber.ToString());
+            _logger.LogInformation(pagination.PageSize.ToString());
+            _logger.LogInformation(filter.Stars.ToString());
 
 
-            //if(categoryProductsModel.Any() && filter.Price.SortType != SortType.All)
-            //{
-            //    categoryProductsModel = _productPriceFilterContext.FilterProductByPrice(categoryProductsModel, filter.Price);
-            //}
+            var paginatedProductsModel = await _categoryRepository.GetAppUserCategoryProducts(id, filter, pagination);
 
-            //if (categoryProductsModel.Any() && filter.Stars > 0)
-            //{
-            //    categoryProductsModel = _productPriceFilterContext.FilterProductByStars(categoryProductsModel, filter.Stars);
-            //}
+            var categoryProductsDto = _mapper.Map<IEnumerable<AppUserProductDto>>(paginatedProductsModel.Data);
 
-            //var paginatedAndFilterdProducts = await Pagination<Product>.GetPaginatedData(filterdProductsByStars, pagination.PageNumber, pagination.PageSize);
-
-            //IEnumerable<AppUserProductDto> categoryProductsDto = _mapper.Map<IEnumerable<AppUserProductDto>>(categoryProductsModel);
+            _logger.LogError(categoryProductsDto.ToString());
 
 
-            return Ok(categoryProductsModel);
+            var paginatedProductsDto = new Pagination<AppUserProductDto>(
+                                                                            categoryProductsDto,
+                                                                            pagination.PageNumber,
+                                                                            pagination.PageSize,
+                                                                            categoryProductsDto.Count()
+                                                                        );
+
+
+            _logger.LogError(paginatedProductsDto.Data.Count().ToString());
+
+            return Ok(paginatedProductsDto);
 
         }
 

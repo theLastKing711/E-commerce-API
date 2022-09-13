@@ -11,7 +11,7 @@ namespace ECommerce.API.Dtos.Product
 
         public decimal Price { get; set; }
 
-        public bool IsPopular { get; set; } = false;
+        public bool IsBestSeller { get; set; } = false;
 
     }
 }

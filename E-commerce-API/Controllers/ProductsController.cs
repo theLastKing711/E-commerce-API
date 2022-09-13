@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers
 {
-    [Authorize(Roles="Admin")]
+    // [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
@@ -48,7 +48,7 @@ namespace ECommerce.API.Controllers
             {
                 Id = x.Id,
                 CategoryId = x.CategoryId,
-                IsPopular = x.IsPopular,
+                IsBestSeller = x.IsBestSeller,
                 Path = x.Path,
                 Price = x.Price,
                 Name = x.Name,
@@ -144,7 +144,7 @@ namespace ECommerce.API.Controllers
             //     Path = productImagePath,
             //     CategoryId = productDto.CategoryId,
             //     Price = productDto.Price,
-            //     IsPopular = productDto.IsPopular
+            //     IsBestSeller = productDto.IsBestSeller
             // };
 
 
@@ -216,7 +216,7 @@ namespace ECommerce.API.Controllers
             {
                 Id = reviewedPostModel.Id,
                 CategoryId = reviewedPostModel.CategoryId,
-                IsPopular = reviewedPostModel.IsPopular,
+                IsBestSeller = reviewedPostModel.IsBestSeller,
                 Path = reviewedPostModel.Path,
                 Price = reviewedPostModel.Price,
                 Name = reviewedPostModel.Name,

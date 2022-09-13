@@ -16,9 +16,17 @@ public class ProductProfile : Profile
                 dest => dest.Path,
                 opt => opt.MapFrom(src => $"{src.Image.FileName}")
             );
-
         CreateMap<Product, ProductItemDto>();
-        CreateMap<Product, AppUserProductDto>();
+
+        CreateMap<Product, AppUserProductDto>()
+            .ForMember(
+                dest => dest.Rating,
+                opt => opt.MapFrom(x => x.Reviews.Any() ? x.Reviews.Average(x => x.Rating) : 0)
+            )
+            .ForMember(
+                dest => dest.Path,
+                opt => opt.MapFrom(x => $"https://localhost:7267/images/{x.Path}")
+            );
 
     }
 

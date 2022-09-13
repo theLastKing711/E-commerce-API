@@ -9,10 +9,17 @@ namespace ECommerce.API.Profiles
         public CategoryProfile()
         {
             CreateMap<CategoryDto, Category>();
-            CreateMap<Category, CategoryDto>();
+            CreateMap<Category, CategoryDto>()
+            .ForMember(
+                dest => dest.Path,
+                opt => opt.MapFrom(x => $"https://localhost:7267/images/{x.Path}")
+            );
+
             CreateMap<Category, AddCategoryDto>();
             CreateMap<AddCategoryDto, Category>();
             CreateMap<Category, CategoryItemDto>();
+
+
         }
     }
 }
