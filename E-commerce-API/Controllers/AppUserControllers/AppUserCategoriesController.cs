@@ -73,5 +73,17 @@ namespace ECommerce.API.Controllers.AppUserControllers
 
         }
 
+
+        [HttpGet("{id}/products/bestSeller")]
+        public async Task<IActionResult> getTopSellersInCategory(int id)
+        {
+            var topSellersProductsModel = await _categoryRepository.GetCategoryBestSellers(id);
+
+            var topSellersProductDto = _mapper.Map<IEnumerable<AppUserProductDto>>(topSellersProductsModel);
+
+            return Ok(topSellersProductDto);
+
+        }
+
     }
 }

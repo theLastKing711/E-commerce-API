@@ -16,5 +16,7 @@ namespace ECommerce.API.Data.IRepos
 
         Task<Pagination<Product>> GetAppUserCategoryProducts(int id, Filter filter, ProductPagination pagination);
 
+        Task<IEnumerable<Product>> GetCategoryBestSellers(int id);
+
     }
 }

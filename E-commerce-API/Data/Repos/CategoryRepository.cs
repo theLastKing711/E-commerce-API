@@ -151,6 +151,37 @@ namespace ECommerce.API.Data.Repos
             return paginatedCategoryProducts;
         }
 
+        public async Task<IEnumerable<Product>> GetCategoryBestSellers(int id)
+        {
+            var productsModel = await this._context.Products
+                                             .Include(x => x.Reviews)
+                                             .AsNoTracking()
+                                             .Where(x => x.CategoryId == id)
+                                             .Where(x => x.IsBestSeller == true)
+                                             .Select(x => new Product
+                                             {
+                                                 Id = x.Id,
+                                                 CategoryId = x.CategoryId,
+                                                 Name = x.Name,
+                                                 Price = x.Price,
+                                                 Path = x.Path,
+                                                 IsBestSeller = x.IsBestSeller,
+                                                 Reviews = x.Reviews.Select(x => new Review
+                                                 {
+                                                     Id = x.Id,
+                                                     Body = x.Body,
+                                                     Rating = x.Rating,
+                                                     ProductId = x.ProductId,
+                                                     CreatedAt = x.CreatedAt,
+                                                     AppUserId = x.AppUserId,
+
+                                                 })
+                                             })
+                                             .ToListAsync();
+
+            return productsModel;
+        }
+
 
         #endregion appUser
     }
