@@ -20,21 +20,9 @@ namespace ECommerce.API
 
             builder.ApplyConfiguration(new RoleConfiguration());
 
+            builder.ApplyConfiguration(new CategoryConfiguration());
 
-            // builder.Entity<AppRole>().HasData(
-            //     new AppRole
-            //     {
-            //         Id = 1,
-            //         Name = "Admin",
-            //         NormalizedName = "ADMIN"
-            //     },
-            //     new AppRole
-            //     {
-            //         Id = 2,
-            //         Name = "User",
-            //         NormalizedName = "User"
-            //     }
-            // );
+            builder.ApplyConfiguration(new ProductConfiguration());
 
         }
 

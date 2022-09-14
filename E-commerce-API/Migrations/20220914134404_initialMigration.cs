@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ECommerce.API.Migrations
 {
-    public partial class initalMigration : Migration
+    public partial class initialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -332,12 +332,92 @@ namespace ECommerce.API.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { 1, "8ba180c0-9244-4b1c-ad81-b8b3c5ec03f5", "User", "USER" });
+                values: new object[] { 1, "b90b7e77-2ea1-4273-b25e-f5c7a6f7e66b", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { 2, "314082af-8d5d-4851-aba2-67e0214c840d", "Admin", "ADMIN" });
+                values: new object[] { 2, "50c1f43d-7650-42a8-866c-f082f06b8434", "Admin", "ADMIN" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "CreatedAt", "Name", "Path" },
+                values: new object[] { 1, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8419), "Electronices", "category_Fuji_Dash_Electronics_1x._SY304_CB432774322_.jpg" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "CreatedAt", "Name", "Path" },
+                values: new object[] { 2, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8456), "Computers", "category-Fuji_Dash_PC_1x._SY304_CB431800965_.jpg" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "CreatedAt", "Name", "Path" },
+                values: new object[] { 3, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8459), "Games", "category-games_Fuji_Desktop_Dash_Kindle_1x._SY304_CB639752818_.jpg" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "CreatedAt", "Name", "Path" },
+                values: new object[] { 4, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8462), "Pets", "category-pets_Fuji_Dash_Pets_1X._SY304_CB639746743_.jpg" });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 1, 1, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8585), true, "Laptop", "electronics-laptop_71rXSVqET9L._AC_UL320_.jpg", 200m });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 2, 1, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8592), true, "Mobile", "electronics-mobile_81AeiqxHkwL._AC_UL320_.jpg", 100m });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 3, 1, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8596), false, "Printer", "electronics-printer_61UdeL7aO-L._AC_UL320_.jpg", 400m });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 4, 1, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8599), true, "EarPods", "electronices-headphones_7120GgUKj3L._AC_UL320_.jpg", 15m });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 5, 1, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8601), false, "Batteries", "electronics-batteries_81ZnAYiX5sL._AC_UL320_.jpg", 5m });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 6, 1, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8604), false, "Pen", "electronics-pen_21SPDoiRuGL._AC_UL320_.jpg", 250m });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 7, 1, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8607), false, "Usb", "electronics-usb_71wrIZujPIL._AC_UL320_.jpg", 25m });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 8, 2, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8610), true, "Player", "computers-player_71E4InwfcPL._AC_UL320_.jpg", 350m });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 9, 3, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8612), true, "Computer", "games-controller_61X3uV04ztL._AC_UL320_.jpg", 25m });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 10, 3, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8615), false, "Computer", "games-vr_61tE7IcuLmL._AC_UL320_.jpg", 90m });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 11, 3, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8618), true, "Computer", "games-xbox_61JGKhqxHxL._AC_UL320_.jpg", 150m });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
+                values: new object[] { 12, 4, new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8620), false, "Cat", "pets-cat_61ng2AAFZRL._AC_UL320_.jpg", 400m });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

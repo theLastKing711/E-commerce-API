@@ -107,6 +107,36 @@ namespace ECommerce.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8419),
+                            Name = "Electronices",
+                            Path = "category_Fuji_Dash_Electronics_1x._SY304_CB432774322_.jpg"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8456),
+                            Name = "Computers",
+                            Path = "category-Fuji_Dash_PC_1x._SY304_CB431800965_.jpg"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8459),
+                            Name = "Games",
+                            Path = "category-games_Fuji_Desktop_Dash_Kindle_1x._SY304_CB639752818_.jpg"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8462),
+                            Name = "Pets",
+                            Path = "category-pets_Fuji_Dash_Pets_1X._SY304_CB639746743_.jpg"
+                        });
                 });
 
             modelBuilder.Entity("ECommerce.API.Models.Identity.AppRole", b =>
@@ -139,14 +169,14 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "8ba180c0-9244-4b1c-ad81-b8b3c5ec03f5",
+                            ConcurrencyStamp = "b90b7e77-2ea1-4273-b25e-f5c7a6f7e66b",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "314082af-8d5d-4851-aba2-67e0214c840d",
+                            ConcurrencyStamp = "50c1f43d-7650-42a8-866c-f082f06b8434",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -305,6 +335,128 @@ namespace ECommerce.API.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8585),
+                            IsBestSeller = true,
+                            Name = "Laptop",
+                            Path = "electronics-laptop_71rXSVqET9L._AC_UL320_.jpg",
+                            Price = 200m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8592),
+                            IsBestSeller = true,
+                            Name = "Mobile",
+                            Path = "electronics-mobile_81AeiqxHkwL._AC_UL320_.jpg",
+                            Price = 100m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8596),
+                            IsBestSeller = false,
+                            Name = "Printer",
+                            Path = "electronics-printer_61UdeL7aO-L._AC_UL320_.jpg",
+                            Price = 400m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8599),
+                            IsBestSeller = true,
+                            Name = "EarPods",
+                            Path = "electronices-headphones_7120GgUKj3L._AC_UL320_.jpg",
+                            Price = 15m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8601),
+                            IsBestSeller = false,
+                            Name = "Batteries",
+                            Path = "electronics-batteries_81ZnAYiX5sL._AC_UL320_.jpg",
+                            Price = 5m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8604),
+                            IsBestSeller = false,
+                            Name = "Pen",
+                            Path = "electronics-pen_21SPDoiRuGL._AC_UL320_.jpg",
+                            Price = 250m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8607),
+                            IsBestSeller = false,
+                            Name = "Usb",
+                            Path = "electronics-usb_71wrIZujPIL._AC_UL320_.jpg",
+                            Price = 25m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CategoryId = 2,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8610),
+                            IsBestSeller = true,
+                            Name = "Player",
+                            Path = "computers-player_71E4InwfcPL._AC_UL320_.jpg",
+                            Price = 350m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CategoryId = 3,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8612),
+                            IsBestSeller = true,
+                            Name = "Computer",
+                            Path = "games-controller_61X3uV04ztL._AC_UL320_.jpg",
+                            Price = 25m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CategoryId = 3,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8615),
+                            IsBestSeller = false,
+                            Name = "Computer",
+                            Path = "games-vr_61tE7IcuLmL._AC_UL320_.jpg",
+                            Price = 90m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CategoryId = 3,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8618),
+                            IsBestSeller = true,
+                            Name = "Computer",
+                            Path = "games-xbox_61JGKhqxHxL._AC_UL320_.jpg",
+                            Price = 150m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CategoryId = 4,
+                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8620),
+                            IsBestSeller = false,
+                            Name = "Cat",
+                            Path = "pets-cat_61ng2AAFZRL._AC_UL320_.jpg",
+                            Price = 400m
+                        });
                 });
 
             modelBuilder.Entity("ECommerce.API.Models.Review", b =>
