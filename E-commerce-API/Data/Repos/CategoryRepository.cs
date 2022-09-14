@@ -119,7 +119,7 @@ namespace ECommerce.API.Data.Repos
         {
             return products
                 .Where(x => x.Reviews.Any())
-                .Where(x => x.Reviews.Average(x => x.Rating) > stars);
+                .Where(x => x.Reviews.Average(x => x.Rating) >= stars);
         }
 
         public async Task<Pagination<Product>> GetAppUserCategoryProducts(int id, Filter filter, ProductPagination pagination)

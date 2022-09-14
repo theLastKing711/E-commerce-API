@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECommerce.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220914134404_initialMigration")]
+    [Migration("20220914171932_initialMigration")]
     partial class initialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -114,28 +114,28 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8419),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(3806),
                             Name = "Electronices",
                             Path = "category_Fuji_Dash_Electronics_1x._SY304_CB432774322_.jpg"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8456),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(3839),
                             Name = "Computers",
                             Path = "category-Fuji_Dash_PC_1x._SY304_CB431800965_.jpg"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8459),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(3843),
                             Name = "Games",
                             Path = "category-games_Fuji_Desktop_Dash_Kindle_1x._SY304_CB639752818_.jpg"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8462),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(3847),
                             Name = "Pets",
                             Path = "category-pets_Fuji_Dash_Pets_1X._SY304_CB639746743_.jpg"
                         });
@@ -171,14 +171,14 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "b90b7e77-2ea1-4273-b25e-f5c7a6f7e66b",
+                            ConcurrencyStamp = "7e1ab904-bdb4-44d4-aad6-f9a3f0bfb9e1",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "50c1f43d-7650-42a8-866c-f082f06b8434",
+                            ConcurrencyStamp = "300bdbca-91cc-4145-bafe-077062109362",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -253,6 +253,78 @@ namespace ECommerce.API.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 100,
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "1c132a2e-7e88-446b-9038-1dac317ed603",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4246),
+                            Email = "appuser@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "laksjdflaksj",
+                            PhoneNumberConfirmed = false,
+                            TwoFactorEnabled = false,
+                            UserName = "appuser@gmail.com"
+                        },
+                        new
+                        {
+                            Id = 101,
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "9f3a508a-29c0-43b4-afc5-48abd6ff4c49",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4282),
+                            Email = "appuser2@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "laksjdflaksj",
+                            PhoneNumberConfirmed = false,
+                            TwoFactorEnabled = false,
+                            UserName = "appuser2@gmail.com"
+                        },
+                        new
+                        {
+                            Id = 102,
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "53035cf0-6e8d-4779-b811-8a8ac109ea01",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4304),
+                            Email = "appuser3@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "laksjdflaksj",
+                            PhoneNumberConfirmed = false,
+                            TwoFactorEnabled = false,
+                            UserName = "appuser3@gmail.com"
+                        },
+                        new
+                        {
+                            Id = 103,
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "7802be88-25e8-45a0-ab54-831e3d75d59f",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4327),
+                            Email = "appuser4@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "laksjdflaksj",
+                            PhoneNumberConfirmed = false,
+                            TwoFactorEnabled = false,
+                            UserName = "appuser4@gmail.com"
+                        },
+                        new
+                        {
+                            Id = 104,
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "9af06102-e08d-4843-82ec-cb21e6a4d9d6",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4348),
+                            Email = "appuser5@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "laksjdflaksj",
+                            PhoneNumberConfirmed = false,
+                            TwoFactorEnabled = false,
+                            UserName = "appuse54@gmail.com"
+                        });
                 });
 
             modelBuilder.Entity("ECommerce.API.Models.Invoice", b =>
@@ -343,7 +415,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8585),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(3998),
                             IsBestSeller = true,
                             Name = "Laptop",
                             Path = "electronics-laptop_71rXSVqET9L._AC_UL320_.jpg",
@@ -353,7 +425,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 2,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8592),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4008),
                             IsBestSeller = true,
                             Name = "Mobile",
                             Path = "electronics-mobile_81AeiqxHkwL._AC_UL320_.jpg",
@@ -363,7 +435,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 3,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8596),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4012),
                             IsBestSeller = false,
                             Name = "Printer",
                             Path = "electronics-printer_61UdeL7aO-L._AC_UL320_.jpg",
@@ -373,7 +445,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 4,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8599),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4016),
                             IsBestSeller = true,
                             Name = "EarPods",
                             Path = "electronices-headphones_7120GgUKj3L._AC_UL320_.jpg",
@@ -383,7 +455,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 5,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8601),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4019),
                             IsBestSeller = false,
                             Name = "Batteries",
                             Path = "electronics-batteries_81ZnAYiX5sL._AC_UL320_.jpg",
@@ -393,7 +465,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 6,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8604),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4023),
                             IsBestSeller = false,
                             Name = "Pen",
                             Path = "electronics-pen_21SPDoiRuGL._AC_UL320_.jpg",
@@ -403,7 +475,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 7,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8607),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4026),
                             IsBestSeller = false,
                             Name = "Usb",
                             Path = "electronics-usb_71wrIZujPIL._AC_UL320_.jpg",
@@ -413,7 +485,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 8,
                             CategoryId = 2,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8610),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4030),
                             IsBestSeller = true,
                             Name = "Player",
                             Path = "computers-player_71E4InwfcPL._AC_UL320_.jpg",
@@ -423,7 +495,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 9,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8612),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4033),
                             IsBestSeller = true,
                             Name = "Computer",
                             Path = "games-controller_61X3uV04ztL._AC_UL320_.jpg",
@@ -433,7 +505,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 10,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8615),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4038),
                             IsBestSeller = false,
                             Name = "Computer",
                             Path = "games-vr_61tE7IcuLmL._AC_UL320_.jpg",
@@ -443,7 +515,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 11,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8618),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4043),
                             IsBestSeller = true,
                             Name = "Computer",
                             Path = "games-xbox_61JGKhqxHxL._AC_UL320_.jpg",
@@ -453,7 +525,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 12,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 9, 14, 16, 44, 4, 221, DateTimeKind.Local).AddTicks(8620),
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4048),
                             IsBestSeller = false,
                             Name = "Cat",
                             Path = "pets-cat_61ng2AAFZRL._AC_UL320_.jpg",
@@ -495,6 +567,116 @@ namespace ECommerce.API.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("Reviews");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AppUserId = 100,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4695),
+                            ProductId = 1,
+                            Rating = 4m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AppUserId = 101,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4703),
+                            ProductId = 1,
+                            Rating = 5m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AppUserId = 102,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4708),
+                            ProductId = 1,
+                            Rating = 1m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AppUserId = 104,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4713),
+                            ProductId = 1,
+                            Rating = 5m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AppUserId = 104,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4718),
+                            ProductId = 2,
+                            Rating = 2m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AppUserId = 103,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4721),
+                            ProductId = 2,
+                            Rating = 3m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AppUserId = 104,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4724),
+                            ProductId = 2,
+                            Rating = 5m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AppUserId = 104,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4728),
+                            ProductId = 3,
+                            Rating = 1m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AppUserId = 102,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4732),
+                            ProductId = 4,
+                            Rating = 4m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            AppUserId = 102,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4735),
+                            ProductId = 4,
+                            Rating = 3m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            AppUserId = 104,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4739),
+                            ProductId = 5,
+                            Rating = 5m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            AppUserId = 104,
+                            Body = "Well Done!",
+                            CreatedAt = new DateTime(2022, 9, 14, 20, 19, 31, 936, DateTimeKind.Local).AddTicks(4743),
+                            ProductId = 6,
+                            Rating = 5m
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
