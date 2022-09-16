@@ -20,8 +20,6 @@ namespace ECommerce.API.Controllers.AppUserControllers
 
         ICategoryRepository _categoryRepository;
 
-        IProductFilterContext _productPriceFilterContext;
-
         readonly ILogger _logger;
 
         public AppUserCategoriesController(ICategoryRepository categoryRepository,
@@ -63,7 +61,7 @@ namespace ECommerce.API.Controllers.AppUserControllers
                                                                             categoryProductsDto,
                                                                             pagination.PageNumber,
                                                                             pagination.PageSize,
-                                                                            categoryProductsDto.Count()
+                                                                            paginatedProductsModel.TotalCount
                                                                         );
 
 

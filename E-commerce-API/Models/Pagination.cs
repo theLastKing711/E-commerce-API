@@ -21,10 +21,18 @@ namespace ECommerce.API.Models
             this.TotalCount = totalCount;
         }
 
+        public static IEnumerable<T> Paginate(IEnumerable<T> data, int pageNumber, int pageSize)
+        {
+            return data.Skip((pageNumber - 1) * pageSize).Take(pageSize);
+        }
+
         public async static Task<Pagination<T>> GetPaginatedData(IQueryable<T> data, int pageNumber, int pageSize)
         {
 
             List<T> paginatedList = null;
+
+            var totalCount = await data.CountAsync();
+
 
             if (pageNumber != 0 && pageSize != 0)
             {
@@ -35,10 +43,8 @@ namespace ECommerce.API.Models
                 paginatedList = await data.ToListAsync();
             }
 
-            var totalCount = await data.CountAsync();
 
             var paginatedData = new Pagination<T>(paginatedList, pageNumber, pageSize, totalCount);
-
 
             return paginatedData;
 

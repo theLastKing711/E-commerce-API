@@ -31,7 +31,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
                 Id = 3,
                 Name = "Printer",
                 CategoryId = 1,
-                IsBestSeller = false,
+                IsBestSeller = true,
                 Price = 400,
                 Path = "electronics-printer_61UdeL7aO-L._AC_UL320_.jpg"
             },
@@ -49,7 +49,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
                  Id = 5,
                  Name = "Batteries",
                  CategoryId = 1,
-                 IsBestSeller = false,
+                 IsBestSeller = true,
                  Price = 5,
                  Path = "electronics-batteries_81ZnAYiX5sL._AC_UL320_.jpg"
              },
@@ -58,7 +58,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
                  Id = 6,
                  Name = "Pen",
                  CategoryId = 1,
-                 IsBestSeller = false,
+                 IsBestSeller = true,
                  Price = 250,
                  Path = "electronics-pen_21SPDoiRuGL._AC_UL320_.jpg"
              },

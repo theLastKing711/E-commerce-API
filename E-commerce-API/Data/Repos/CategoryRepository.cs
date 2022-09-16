@@ -14,10 +14,15 @@ namespace ECommerce.API.Data.Repos
 
         IProductFilterContext productPriceFilterContext;
 
-        public CategoryRepository(DataContext context, IProductFilterContext productPriceFilterContext) : base(context)
+        ILogger logger;
+
+        public CategoryRepository(DataContext context, IProductFilterContext productPriceFilterContext, ILoggerFactory logFactory) : base(context)
         {
             this.productPriceFilterContext = productPriceFilterContext;
+            logger = logFactory.CreateLogger<CategoryRepository>();
         }
+
+
 
 
         public async Task<Category> UpdateCategory(Category category)
@@ -124,29 +129,44 @@ namespace ECommerce.API.Data.Repos
 
         public async Task<Pagination<Product>> GetAppUserCategoryProducts(int id, Filter filter, ProductPagination pagination)
         {
-            var productsModel = await this._context.Products
+            IEnumerable<Product> productsModel = await this._context.Products
                                              .Include(x => x.Reviews)
                                              .AsNoTracking()
                                              .Where(x => x.CategoryId == id)
                                              .ToListAsync();
 
-            IEnumerable<Product> productsModelFilterd = productsModel;
+
+            IEnumerable<Product> BaseProductsModel = productsModel;
+
+            var areProductsFiltered = false;
 
             if (filter.Stars != -1)
             {
-                productsModelFilterd = this.FilterProductsByStars(productsModel, filter.Stars);
+                productsModel = this.FilterProductsByStars(productsModel, filter.Stars);
+
+                areProductsFiltered = true;
             }
 
-            if (productsModelFilterd.Any() && filter.Price.SortType != SortType.All)
+            if (productsModel.Any() && filter.Price.SortType != SortType.All)
             {
-                productsModelFilterd = productPriceFilterContext.FilterProductByPrice(productsModelFilterd, filter.Price);
+                productsModel = productPriceFilterContext.FilterProductByPrice(productsModel, filter.Price);
+
+                areProductsFiltered = true;
             }
 
-            Pagination<Product> paginatedCategoryProducts = new Pagination<Product>(productsModelFilterd,
-                                                                                     pagination.PageNumber,
-                                                                                      pagination.PageSize,
-                                                                                     productsModelFilterd.Count()
-                                                                                    );
+            if (pagination.PageNumber != 0 && pagination.PageSize != 0)
+            {
+
+                productsModel = productsModel.Skip((pagination.PageNumber - 1) * pagination.PageSize).Take(pagination.PageSize);
+            }
+
+            var totalProductsCount = areProductsFiltered ? productsModel.Count() : BaseProductsModel.Count();
+
+            Pagination<Product> paginatedCategoryProducts = new Pagination<Product>(productsModel.ToList(), pagination.PageNumber, pagination.PageSize, totalProductsCount);
+
+            logger.LogCritical(totalProductsCount.ToString());
+
+            // logger.LogCritical(users.Count().ToString());
 
             return paginatedCategoryProducts;
         }
