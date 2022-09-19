@@ -21,17 +21,17 @@ namespace ECommerce.API.Data.Repos
         public async Task<Tuple<List<Product>, List<Category>>> getSearchedProductsAndCategories(string query)
         {
 
-            bool isQueryEmpty = query == "";
+            bool isQueryEmpty = query == null;
 
             var productsList = await this._context.Products
                                              .AsNoTracking()
-                                             .Where(x => isQueryEmpty ? true : x.Name.Contains(query))
+                                             .Where(x => isQueryEmpty ? false : x.Name.ToLower().Contains(query.ToLower()))
                                              .ToListAsync();
 
 
             var categoriesList = await this._context.Categories
                                             .AsNoTracking()
-                                            .Where(x => isQueryEmpty ? true : x.Name.Contains(query))
+                                            .Where(x => isQueryEmpty ? false : x.Name.ToLower().Contains(query.ToLower()))
                                             .ToListAsync();
 
 

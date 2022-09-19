@@ -11,7 +11,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
             new Product
             {
                 Id = 1,
-                Name = "Laptop",
+                Name = "Sceptre 24 Professional Thin 75Hz 1080p LED Monitor 2x HDMI VGA Build-in Speakers, Machine Black (E248W-19203R Series)",
                 CategoryId = 1,
                 IsBestSeller = true,
                 Price = 200,

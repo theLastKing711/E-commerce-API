@@ -295,6 +295,27 @@ namespace ECommerce.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ProductDetails",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ProductId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Text = table.Column<string>(type: "TEXT", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductDetails", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductDetails_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Reviews",
                 columns: table => new
                 {
@@ -332,177 +353,197 @@ namespace ECommerce.API.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { 1, "953b557b-b64b-454a-85fe-08a6c1604843", "User", "USER" });
+                values: new object[] { 1, "a34ed361-5e5c-4183-ad29-cc2b3d628757", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { 2, "13f25408-2e3f-41db-9bbe-d8cae07da66c", "Admin", "ADMIN" });
+                values: new object[] { 2, "d7f19512-c8fa-4c32-8059-4c4d8f9af28d", "Admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedAt", "Email", "EmailConfirmed", "ImagePath", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 100, 0, "c086036e-ad2d-496c-bc3f-e38e82cd4693", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5489), "appuser@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser@gmail.com" });
+                values: new object[] { 100, 0, "fb370491-b4bb-4236-9afc-6881a782515f", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(610), "appuser@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedAt", "Email", "EmailConfirmed", "ImagePath", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 101, 0, "ae7e331b-e1bc-4813-9c56-17e8f0db8fb0", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5527), "appuser2@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser2@gmail.com" });
+                values: new object[] { 101, 0, "2da40b52-b150-41f3-94a2-3344fe06b15a", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(654), "appuser2@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser2@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedAt", "Email", "EmailConfirmed", "ImagePath", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 102, 0, "5aa58857-53f3-44c6-89c8-d2c1d17c420b", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5548), "appuser3@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser3@gmail.com" });
+                values: new object[] { 102, 0, "b3600ccc-0f63-4b12-8996-7d51644ea573", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(683), "appuser3@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser3@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedAt", "Email", "EmailConfirmed", "ImagePath", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 103, 0, "62bab313-5534-423d-b7f9-700cc3343d17", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5739), "appuser4@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser4@gmail.com" });
+                values: new object[] { 103, 0, "8918c073-7845-4e99-88f5-c47e47c27568", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(706), "appuser4@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser4@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedAt", "Email", "EmailConfirmed", "ImagePath", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 104, 0, "dc22b189-e37e-4de2-bfd9-ce70566e4f0e", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5763), "appuser5@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuse54@gmail.com" });
+                values: new object[] { 104, 0, "741a677c-4f3a-467c-aaa2-27ec16ad0586", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(727), "appuser5@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuse54@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "CreatedAt", "Name", "Path" },
-                values: new object[] { 1, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5134), "Electronices", "category_Fuji_Dash_Electronics_1x._SY304_CB432774322_.jpg" });
+                values: new object[] { 1, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(31), "Electronices", "category_Fuji_Dash_Electronics_1x._SY304_CB432774322_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "CreatedAt", "Name", "Path" },
-                values: new object[] { 2, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5177), "Computers", "category-Fuji_Dash_PC_1x._SY304_CB431800965_.jpg" });
+                values: new object[] { 2, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(64), "Computers", "category-Fuji_Dash_PC_1x._SY304_CB431800965_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "CreatedAt", "Name", "Path" },
-                values: new object[] { 3, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5181), "Games", "category-games_Fuji_Desktop_Dash_Kindle_1x._SY304_CB639752818_.jpg" });
+                values: new object[] { 3, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(68), "Games", "category-games_Fuji_Desktop_Dash_Kindle_1x._SY304_CB639752818_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "CreatedAt", "Name", "Path" },
-                values: new object[] { 4, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5184), "Pets", "category-pets_Fuji_Dash_Pets_1X._SY304_CB639746743_.jpg" });
+                values: new object[] { 4, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(71), "Pets", "category-pets_Fuji_Dash_Pets_1X._SY304_CB639746743_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 1, 1, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5312), true, "Laptop", "electronics-laptop_71rXSVqET9L._AC_UL320_.jpg", 200m });
+                values: new object[] { 1, 1, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(218), true, "Sceptre 24 Professional Thin 75Hz 1080p LED Monitor 2x HDMI VGA Build-in Speakers, Machine Black (E248W-19203R Series)", "electronics-laptop_71rXSVqET9L._AC_UL320_.jpg", 200m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 2, 1, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5321), true, "Mobile", "electronics-mobile_81AeiqxHkwL._AC_UL320_.jpg", 100m });
+                values: new object[] { 2, 1, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(229), true, "Mobile", "electronics-mobile_81AeiqxHkwL._AC_UL320_.jpg", 100m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 3, 1, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5325), true, "Printer", "electronics-printer_61UdeL7aO-L._AC_UL320_.jpg", 400m });
+                values: new object[] { 3, 1, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(234), true, "Printer", "electronics-printer_61UdeL7aO-L._AC_UL320_.jpg", 400m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 4, 1, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5328), true, "EarPods", "electronices-headphones_7120GgUKj3L._AC_UL320_.jpg", 15m });
+                values: new object[] { 4, 1, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(240), true, "EarPods", "electronices-headphones_7120GgUKj3L._AC_UL320_.jpg", 15m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 5, 1, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5332), true, "Batteries", "electronics-batteries_81ZnAYiX5sL._AC_UL320_.jpg", 5m });
+                values: new object[] { 5, 1, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(246), true, "Batteries", "electronics-batteries_81ZnAYiX5sL._AC_UL320_.jpg", 5m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 6, 1, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5335), true, "Pen", "electronics-pen_21SPDoiRuGL._AC_UL320_.jpg", 250m });
+                values: new object[] { 6, 1, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(255), true, "Pen", "electronics-pen_21SPDoiRuGL._AC_UL320_.jpg", 250m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 7, 1, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5339), false, "Usb", "electronics-usb_71wrIZujPIL._AC_UL320_.jpg", 25m });
+                values: new object[] { 7, 1, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(259), false, "Usb", "electronics-usb_71wrIZujPIL._AC_UL320_.jpg", 25m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 8, 2, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5342), true, "Player", "computers-player_71E4InwfcPL._AC_UL320_.jpg", 350m });
+                values: new object[] { 8, 2, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(263), true, "Player", "computers-player_71E4InwfcPL._AC_UL320_.jpg", 350m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 9, 3, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5345), true, "Computer", "games-controller_61X3uV04ztL._AC_UL320_.jpg", 25m });
+                values: new object[] { 9, 3, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(267), true, "Computer", "games-controller_61X3uV04ztL._AC_UL320_.jpg", 25m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 10, 3, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5349), false, "Computer", "games-vr_61tE7IcuLmL._AC_UL320_.jpg", 90m });
+                values: new object[] { 10, 3, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(270), false, "Computer", "games-vr_61tE7IcuLmL._AC_UL320_.jpg", 90m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 11, 3, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5352), true, "Computer", "games-xbox_61JGKhqxHxL._AC_UL320_.jpg", 150m });
+                values: new object[] { 11, 3, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(274), true, "Computer", "games-xbox_61JGKhqxHxL._AC_UL320_.jpg", 150m });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "IsBestSeller", "Name", "Path", "Price" },
-                values: new object[] { 12, 4, new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5356), false, "Cat", "pets-cat_61ng2AAFZRL._AC_UL320_.jpg", 400m });
+                values: new object[] { 12, 4, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(278), false, "Cat", "pets-cat_61ng2AAFZRL._AC_UL320_.jpg", 400m });
+
+            migrationBuilder.InsertData(
+                table: "ProductDetails",
+                columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
+                values: new object[] { 1, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1223), 1, "24 Ultra slim profile " });
+
+            migrationBuilder.InsertData(
+                table: "ProductDetails",
+                columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
+                values: new object[] { 2, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1228), 1, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+
+            migrationBuilder.InsertData(
+                table: "ProductDetails",
+                columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
+                values: new object[] { 3, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1231), 1, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+
+            migrationBuilder.InsertData(
+                table: "ProductDetails",
+                columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
+                values: new object[] { 4, new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1234), 1, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 1, 100, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5997), null, 1, 4m });
+                values: new object[] { 1, 100, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1040), null, 1, 4m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 2, 101, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6004), null, 1, 5m });
+                values: new object[] { 2, 101, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1048), null, 1, 5m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 3, 102, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6008), null, 1, 1m });
+                values: new object[] { 3, 102, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1051), null, 1, 1m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 4, 104, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6013), null, 1, 5m });
+                values: new object[] { 4, 104, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1058), null, 1, 5m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 5, 104, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6016), null, 2, 2m });
+                values: new object[] { 5, 104, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1061), null, 2, 2m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 6, 103, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6020), null, 2, 3m });
+                values: new object[] { 6, 103, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1064), null, 2, 3m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 7, 104, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6023), null, 2, 5m });
+                values: new object[] { 7, 104, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1067), null, 2, 5m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 8, 104, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6027), null, 3, 1m });
+                values: new object[] { 8, 104, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1070), null, 3, 1m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 9, 102, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6030), null, 4, 4m });
+                values: new object[] { 9, 102, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1073), null, 4, 4m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 10, 102, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6033), null, 4, 3m });
+                values: new object[] { 10, 102, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1077), null, 4, 3m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 11, 104, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6036), null, 5, 5m });
+                values: new object[] { 11, 104, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1080), null, 5, 5m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 12, 104, "Well Done!", new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6040), null, 6, 5m });
+                values: new object[] { 12, 104, "Well Done!", new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1083), null, 6, 5m });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -567,6 +608,11 @@ namespace ECommerce.API.Migrations
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ProductDetails_ProductId",
+                table: "ProductDetails",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",
                 table: "Products",
                 column: "CategoryId");
@@ -609,6 +655,9 @@ namespace ECommerce.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "InvoicesDetails");
+
+            migrationBuilder.DropTable(
+                name: "ProductDetails");
 
             migrationBuilder.DropTable(
                 name: "Reviews");

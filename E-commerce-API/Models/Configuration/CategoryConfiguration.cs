@@ -1,4 +1,3 @@
-using ECommerce.API.Dtos.Identity;
 using ECommerce.API.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

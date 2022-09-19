@@ -112,28 +112,28 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5134),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(31),
                             Name = "Electronices",
                             Path = "category_Fuji_Dash_Electronics_1x._SY304_CB432774322_.jpg"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5177),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(64),
                             Name = "Computers",
                             Path = "category-Fuji_Dash_PC_1x._SY304_CB431800965_.jpg"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5181),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(68),
                             Name = "Games",
                             Path = "category-games_Fuji_Desktop_Dash_Kindle_1x._SY304_CB639752818_.jpg"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5184),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(71),
                             Name = "Pets",
                             Path = "category-pets_Fuji_Dash_Pets_1X._SY304_CB639746743_.jpg"
                         });
@@ -169,14 +169,14 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "953b557b-b64b-454a-85fe-08a6c1604843",
+                            ConcurrencyStamp = "a34ed361-5e5c-4183-ad29-cc2b3d628757",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "13f25408-2e3f-41db-9bbe-d8cae07da66c",
+                            ConcurrencyStamp = "d7f19512-c8fa-4c32-8059-4c4d8f9af28d",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -257,8 +257,8 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 100,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c086036e-ad2d-496c-bc3f-e38e82cd4693",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5489),
+                            ConcurrencyStamp = "fb370491-b4bb-4236-9afc-6881a782515f",
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(610),
                             Email = "appuser@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -271,8 +271,8 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 101,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ae7e331b-e1bc-4813-9c56-17e8f0db8fb0",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5527),
+                            ConcurrencyStamp = "2da40b52-b150-41f3-94a2-3344fe06b15a",
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(654),
                             Email = "appuser2@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -285,8 +285,8 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 102,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5aa58857-53f3-44c6-89c8-d2c1d17c420b",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5548),
+                            ConcurrencyStamp = "b3600ccc-0f63-4b12-8996-7d51644ea573",
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(683),
                             Email = "appuser3@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -299,8 +299,8 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 103,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "62bab313-5534-423d-b7f9-700cc3343d17",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5739),
+                            ConcurrencyStamp = "8918c073-7845-4e99-88f5-c47e47c27568",
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(706),
                             Email = "appuser4@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -313,8 +313,8 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 104,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dc22b189-e37e-4de2-bfd9-ce70566e4f0e",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5763),
+                            ConcurrencyStamp = "741a677c-4f3a-467c-aaa2-27ec16ad0586",
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(727),
                             Email = "appuser5@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -413,9 +413,9 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5312),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(218),
                             IsBestSeller = true,
-                            Name = "Laptop",
+                            Name = "Sceptre 24 Professional Thin 75Hz 1080p LED Monitor 2x HDMI VGA Build-in Speakers, Machine Black (E248W-19203R Series)",
                             Path = "electronics-laptop_71rXSVqET9L._AC_UL320_.jpg",
                             Price = 200m
                         },
@@ -423,7 +423,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 2,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5321),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(229),
                             IsBestSeller = true,
                             Name = "Mobile",
                             Path = "electronics-mobile_81AeiqxHkwL._AC_UL320_.jpg",
@@ -433,7 +433,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 3,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5325),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(234),
                             IsBestSeller = true,
                             Name = "Printer",
                             Path = "electronics-printer_61UdeL7aO-L._AC_UL320_.jpg",
@@ -443,7 +443,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 4,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5328),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(240),
                             IsBestSeller = true,
                             Name = "EarPods",
                             Path = "electronices-headphones_7120GgUKj3L._AC_UL320_.jpg",
@@ -453,7 +453,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 5,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5332),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(246),
                             IsBestSeller = true,
                             Name = "Batteries",
                             Path = "electronics-batteries_81ZnAYiX5sL._AC_UL320_.jpg",
@@ -463,7 +463,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 6,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5335),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(255),
                             IsBestSeller = true,
                             Name = "Pen",
                             Path = "electronics-pen_21SPDoiRuGL._AC_UL320_.jpg",
@@ -473,7 +473,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 7,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5339),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(259),
                             IsBestSeller = false,
                             Name = "Usb",
                             Path = "electronics-usb_71wrIZujPIL._AC_UL320_.jpg",
@@ -483,7 +483,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 8,
                             CategoryId = 2,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5342),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(263),
                             IsBestSeller = true,
                             Name = "Player",
                             Path = "computers-player_71E4InwfcPL._AC_UL320_.jpg",
@@ -493,7 +493,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 9,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5345),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(267),
                             IsBestSeller = true,
                             Name = "Computer",
                             Path = "games-controller_61X3uV04ztL._AC_UL320_.jpg",
@@ -503,7 +503,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 10,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5349),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(270),
                             IsBestSeller = false,
                             Name = "Computer",
                             Path = "games-vr_61tE7IcuLmL._AC_UL320_.jpg",
@@ -513,7 +513,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 11,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5352),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(274),
                             IsBestSeller = true,
                             Name = "Computer",
                             Path = "games-xbox_61JGKhqxHxL._AC_UL320_.jpg",
@@ -523,11 +523,64 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 12,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5356),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(278),
                             IsBestSeller = false,
                             Name = "Cat",
                             Path = "pets-cat_61ng2AAFZRL._AC_UL320_.jpg",
                             Price = 400m
+                        });
+                });
+
+            modelBuilder.Entity("ECommerce.API.Models.ProductDetails", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1223),
+                            ProductId = 1,
+                            Text = "24 Ultra slim profile "
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1228),
+                            ProductId = 1,
+                            Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1231),
+                            ProductId = 1,
+                            Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1234),
+                            ProductId = 1,
+                            Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         });
                 });
 
@@ -572,7 +625,7 @@ namespace ECommerce.API.Migrations
                             Id = 1,
                             AppUserId = 100,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(5997),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1040),
                             ProductId = 1,
                             Rating = 4m
                         },
@@ -581,7 +634,7 @@ namespace ECommerce.API.Migrations
                             Id = 2,
                             AppUserId = 101,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6004),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1048),
                             ProductId = 1,
                             Rating = 5m
                         },
@@ -590,7 +643,7 @@ namespace ECommerce.API.Migrations
                             Id = 3,
                             AppUserId = 102,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6008),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1051),
                             ProductId = 1,
                             Rating = 1m
                         },
@@ -599,7 +652,7 @@ namespace ECommerce.API.Migrations
                             Id = 4,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6013),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1058),
                             ProductId = 1,
                             Rating = 5m
                         },
@@ -608,7 +661,7 @@ namespace ECommerce.API.Migrations
                             Id = 5,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6016),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1061),
                             ProductId = 2,
                             Rating = 2m
                         },
@@ -617,7 +670,7 @@ namespace ECommerce.API.Migrations
                             Id = 6,
                             AppUserId = 103,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6020),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1064),
                             ProductId = 2,
                             Rating = 3m
                         },
@@ -626,7 +679,7 @@ namespace ECommerce.API.Migrations
                             Id = 7,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6023),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1067),
                             ProductId = 2,
                             Rating = 5m
                         },
@@ -635,7 +688,7 @@ namespace ECommerce.API.Migrations
                             Id = 8,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6027),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1070),
                             ProductId = 3,
                             Rating = 1m
                         },
@@ -644,7 +697,7 @@ namespace ECommerce.API.Migrations
                             Id = 9,
                             AppUserId = 102,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6030),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1073),
                             ProductId = 4,
                             Rating = 4m
                         },
@@ -653,7 +706,7 @@ namespace ECommerce.API.Migrations
                             Id = 10,
                             AppUserId = 102,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6033),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1077),
                             ProductId = 4,
                             Rating = 3m
                         },
@@ -662,7 +715,7 @@ namespace ECommerce.API.Migrations
                             Id = 11,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6036),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1080),
                             ProductId = 5,
                             Rating = 5m
                         },
@@ -671,7 +724,7 @@ namespace ECommerce.API.Migrations
                             Id = 12,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 9, 15, 10, 9, 54, 928, DateTimeKind.Local).AddTicks(6040),
+                            CreatedAt = new DateTime(2022, 9, 17, 22, 42, 32, 7, DateTimeKind.Local).AddTicks(1083),
                             ProductId = 6,
                             Rating = 5m
                         });
@@ -830,6 +883,17 @@ namespace ECommerce.API.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("ECommerce.API.Models.ProductDetails", b =>
+                {
+                    b.HasOne("ECommerce.API.Models.Product", "Product")
+                        .WithMany("Details")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("ECommerce.API.Models.Review", b =>
                 {
                     b.HasOne("ECommerce.API.Models.Identity.AppUser", "AppUser")
@@ -930,6 +994,8 @@ namespace ECommerce.API.Migrations
 
             modelBuilder.Entity("ECommerce.API.Models.Product", b =>
                 {
+                    b.Navigation("Details");
+
                     b.Navigation("Discounts");
 
                     b.Navigation("InvoicesDetails");

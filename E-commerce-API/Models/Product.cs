@@ -23,5 +23,8 @@ namespace ECommerce.API.Models
         public IEnumerable<Discount> Discounts { get; set; }
 
 
+        public IEnumerable<ProductDetails> Details { get; set; }
+
+
     }
 }

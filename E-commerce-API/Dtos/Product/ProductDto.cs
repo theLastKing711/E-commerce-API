@@ -12,6 +12,8 @@ namespace ECommerce.API.Dtos.Product
 
         public string Path { get; set; }
 
+        public string ThumbPath { get; set; }
+
         public IEnumerable<ReviewDto> Reviews { get; set; }
 
         public IEnumerable<DiscountDto> Discounts { get; set; }

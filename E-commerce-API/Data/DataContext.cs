@@ -28,6 +28,8 @@ namespace ECommerce.API
 
             builder.ApplyConfiguration(new ReviewConfiguration());
 
+            builder.ApplyConfiguration(new ProductDetailsConfiguration());
+
         }
 
         public DbSet<Category> Categories { get; set; }

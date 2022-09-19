@@ -8,6 +8,8 @@ namespace ECommerce.API.Data.Repos
     public class ProductRepository : BaseRepo<Product>, IProductRepository
     {
 
+        #region Admin
+
         public ProductRepository(DataContext context) : base(context)
         {
         }
@@ -251,8 +253,29 @@ namespace ECommerce.API.Data.Repos
 
         }
 
+        #endregion Admin
 
+        #region AppUser
+
+        public async Task<Product> getAppUserProductById(int id)
+        {
+            var product = await this._context.Products
+                                             .Include(x => x.Reviews)
+                                             .Include(x => x.Discounts)
+                                             .Include(x => x.Details)
+                                             .Where(x => x.Id == id)
+                                             .FirstOrDefaultAsync();
+
+
+            return product;
+
+        }
+
+        #endregion AppUser
 
     }
+
+
+
 
 }

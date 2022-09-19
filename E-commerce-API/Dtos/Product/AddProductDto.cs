@@ -12,5 +12,8 @@
         public bool IsBestSeller { get; set; } = false;
 
         public IFormFile? Image { get; set; }
+
+        public IFormFile? ThumbImage { get; set; }
+
     }
 }

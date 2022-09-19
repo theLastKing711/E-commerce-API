@@ -3,11 +3,8 @@ using ECommerce.API.Data.IRepos;
 using ECommerce.API.Dtos.AppUserDtos.Product;
 using ECommerce.API.Dtos.Category;
 using ECommerce.API.Dtos.Shared;
-using ECommerce.API.Helpers.PriceFilterStrategy;
 using ECommerce.API.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.API.Controllers.AppUserControllers
 {

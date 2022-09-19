@@ -1,5 +1,4 @@
 using AutoMapper;
-using ECommerce.API.Dtos;
 using ECommerce.API.Dtos.AppUserDtos.Product;
 using ECommerce.API.Dtos.Product;
 using ECommerce.API.Models;
@@ -22,6 +21,10 @@ public class ProductProfile : Profile
             .ForMember(
                 dest => dest.Rating,
                 opt => opt.MapFrom(x => x.Reviews.Any() ? x.Reviews.Average(x => x.Rating) : 0)
+            )
+            .ForMember(
+                dest => dest.TotalReviews,
+                opt => opt.MapFrom(x => x.Reviews.Any() ? x.Reviews.Count() : 0)
             )
             .ForMember(
                 dest => dest.Path,

@@ -26,5 +26,12 @@ namespace ECommerce.API.Data.IRepos
         Task<IEnumerable<TopSellerProductDto>> GetTopSellers();
 
 
+        #region appUser
+
+        Task<Product> getAppUserProductById(int id);
+
+        #endregion appUser
+
+
     }
 }

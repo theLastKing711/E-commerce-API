@@ -18,16 +18,22 @@ namespace ECommerce.API.Controllers
         private IStatsRepository _StatsRepository;
         private readonly IImagesUploader imagesUploader;
 
-        public StatsController(IStatsRepository StatsRepository, IMapper mapper)
+        private ILogger logger;
+
+        public StatsController(IStatsRepository StatsRepository, IMapper mapper, ILoggerFactory logFactory)
         {
             _StatsRepository = StatsRepository;
             _mapper = mapper;
+            logger = logFactory.CreateLogger<StatsController>();
         }
 
-
+        [AllowAnonymous]
         [HttpGet("SearchItems")]
         public async Task<IActionResult> SearchItems([FromQuery] string? query = "")
         {
+
+            logger.LogCritical(query);
+
             var (ProductsList, CategoriesList) = await this._StatsRepository.getSearchedProductsAndCategories(query);
 
             var ProductListDto = this._mapper.Map<IEnumerable<ProductItemDto>>(ProductsList);
