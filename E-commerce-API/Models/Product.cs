@@ -12,9 +12,11 @@ namespace ECommerce.API.Models
 
         public string Path { get; set; }
 
+        public string? ThumbImagePath { get; set; }
+
+        public string? FullImagePath { get; set; }
+
         public bool IsBestSeller { get; set; } = false;
-
-
 
         public IEnumerable<InvoiceDetails> InvoicesDetails { get; set; }
 

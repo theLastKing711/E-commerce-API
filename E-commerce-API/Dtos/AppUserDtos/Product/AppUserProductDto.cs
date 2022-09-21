@@ -10,6 +10,11 @@ namespace ECommerce.API.Dtos.AppUserDtos.Product
 
         public string Path { get; set; }
 
+        public string? ThumbImagePath { get; set; }
+
+        public string? FullImagePath { get; set; }
+
+
         public IEnumerable<AppUserProductDetails> Details { get; set; }
 
     }

@@ -12,7 +12,9 @@ namespace ECommerce.API.Dtos.Product
 
         public string Path { get; set; }
 
-        public string ThumbPath { get; set; }
+        public string? ThumbImagePath { get; set; }
+
+        public string? FullImagePath { get; set; }
 
         public IEnumerable<ReviewDto> Reviews { get; set; }
 
