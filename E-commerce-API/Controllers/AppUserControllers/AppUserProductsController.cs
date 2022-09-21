@@ -37,6 +37,20 @@ namespace ECommerce.API.Controllers.AppUserControllers
 
         }
 
+        [HttpPost("getUsingIds")]
+        public async Task<IActionResult> getProductsUsingIds(List<int> ids)
+        {
+            var productsModel = await _productRepository.getProductsUsingIds(ids);
+
+            _logger.LogCritical(productsModel.Count().ToString());
+
+            var productsDto = _mapper.Map<IEnumerable<AppUserProductDto>>(productsModel);
+
+            return Ok(productsDto);
+
+
+        }
+
 
     }
 }

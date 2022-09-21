@@ -271,6 +271,16 @@ namespace ECommerce.API.Data.Repos
 
         }
 
+        public async Task<IEnumerable<Product>> getProductsUsingIds(List<int> ids)
+        {
+            var productsModel = await this._context.Products
+                                                   .Where(x => ids.Contains(x.Id))
+                                                   .ToListAsync();
+
+            return productsModel;
+
+        }
+
         #endregion AppUser
 
     }

@@ -30,6 +30,8 @@ namespace ECommerce.API.Data.IRepos
 
         Task<Product> getAppUserProductById(int id);
 
+        Task<IEnumerable<Product>> getProductsUsingIds(List<int> ids);
+
         #endregion appUser
 
 
