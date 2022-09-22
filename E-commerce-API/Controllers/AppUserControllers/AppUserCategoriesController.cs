@@ -42,11 +42,6 @@ namespace ECommerce.API.Controllers.AppUserControllers
         public async Task<IActionResult> CategoryProducts(int id, [FromQuery] ProductPagination pagination, [FromQuery] Filter filter)
         {
 
-            _logger.LogInformation(pagination.PageNumber.ToString());
-            _logger.LogInformation(pagination.PageSize.ToString());
-            _logger.LogInformation(filter.Stars.ToString());
-
-
             var paginatedProductsModel = await _categoryRepository.GetAppUserCategoryProducts(id, filter, pagination);
 
             var categoryProductsDto = _mapper.Map<IEnumerable<AppUserProductDto>>(paginatedProductsModel.Data);
@@ -60,9 +55,6 @@ namespace ECommerce.API.Controllers.AppUserControllers
                                                                             pagination.PageSize,
                                                                             paginatedProductsModel.TotalCount
                                                                         );
-
-
-            _logger.LogError(paginatedProductsDto.Data.Count().ToString());
 
             return Ok(paginatedProductsDto);
 

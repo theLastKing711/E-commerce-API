@@ -120,29 +120,44 @@ namespace ECommerce.API.Data.Repos
 
         #region appUser
 
-        private IEnumerable<Product> FilterProductsByStars(IEnumerable<Product> products, int? stars)
-        {
-            return products
-                .Where(x => x.Reviews.Any())
-                .Where(x => x.Reviews.Average(x => x.Rating) >= stars);
-        }
 
         public async Task<Pagination<Product>> GetAppUserCategoryProducts(int id, Filter filter, ProductPagination pagination)
         {
-            IEnumerable<Product> productsModel = await this._context.Products
-                                             .Include(x => x.Reviews)
-                                             .AsNoTracking()
-                                             .Where(x => x.CategoryId == id)
-                                             .ToListAsync();
 
+            IEnumerable<Product> productsModel;
+
+            if (isIdAvailable(id))
+            {
+                productsModel = await this._context.Products
+                                            .Include(x => x.Reviews)
+                                            .AsNoTracking()
+                                            .Where(x => x.CategoryId == id)
+                                            .ToListAsync();
+
+            }
+            else
+            {
+                productsModel = await this._context.Products
+                                            .Include(x => x.Reviews)
+                                            .AsNoTracking()
+                                            .ToListAsync();
+            }
 
             IEnumerable<Product> BaseProductsModel = productsModel;
 
             var areProductsFiltered = false;
 
+
             if (filter.Stars != -1)
             {
                 productsModel = this.FilterProductsByStars(productsModel, filter.Stars);
+
+                areProductsFiltered = true;
+            }
+
+            if (filter.query != null)
+            {
+                productsModel = this.FilterProductsByQuery(productsModel, filter.query);
 
                 areProductsFiltered = true;
             }
@@ -170,6 +185,26 @@ namespace ECommerce.API.Data.Repos
 
             return paginatedCategoryProducts;
         }
+
+
+        private Boolean isIdAvailable(int Id)
+        {
+            return Id != -1;
+        }
+
+
+        private IEnumerable<Product> FilterProductsByStars(IEnumerable<Product> products, int? stars)
+        {
+            return products
+                .Where(x => x.Reviews.Any())
+                .Where(x => x.Reviews.Average(x => x.Rating) >= stars);
+        }
+
+        private IEnumerable<Product> FilterProductsByQuery(IEnumerable<Product> products, string? query)
+        {
+            return products.Where(x => x.Name.ToLower().Contains(query.ToLower()));
+        }
+
 
         public async Task<IEnumerable<Product>> GetCategoryBestSellers(int id)
         {

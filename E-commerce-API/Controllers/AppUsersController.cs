@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    // [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class AppUsersController : ControllerBase
@@ -56,6 +56,7 @@ namespace ECommerce.API.Controllers
 
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> AddAppUser([FromForm] AddAppUserDto AppUserDto)
         {
@@ -66,7 +67,7 @@ namespace ECommerce.API.Controllers
 
             if (AppUserDto.Image != null)
             {
-                AppUserImagePath  = imagesUploader.UploadImage(AppUserDto.Image);
+                AppUserImagePath = imagesUploader.UploadImage(AppUserDto.Image);
             }
 
             AppUserModel.ImagePath = AppUserImagePath;

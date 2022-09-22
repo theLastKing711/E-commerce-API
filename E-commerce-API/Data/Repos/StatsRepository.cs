@@ -24,15 +24,15 @@ namespace ECommerce.API.Data.Repos
             bool isQueryEmpty = query == null;
 
             var productsList = await this._context.Products
-                                             .AsNoTracking()
-                                             .Where(x => isQueryEmpty ? false : x.Name.ToLower().Contains(query.ToLower()))
-                                             .ToListAsync();
+                                                  .AsNoTracking()
+                                                  .Where(x => isQueryEmpty ? false : x.Name.ToLower().Contains(query.ToLower()))
+                                                  .ToListAsync();
 
 
             var categoriesList = await this._context.Categories
-                                            .AsNoTracking()
-                                            .Where(x => isQueryEmpty ? false : x.Name.ToLower().Contains(query.ToLower()))
-                                            .ToListAsync();
+                                                    .AsNoTracking()
+                                                    .Where(x => isQueryEmpty ? false : x.Name.ToLower().Contains(query.ToLower()))
+                                                    .ToListAsync();
 
 
             return Tuple.Create(productsList, categoriesList);

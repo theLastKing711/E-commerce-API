@@ -100,7 +100,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
             {
                 Id = 9,
                 CategoryId = 3,
-                Name = "Computer",
+                Name = "Controller",
                 IsBestSeller = true,
                 Price = 25,
                 Path = "games-controller_61X3uV04ztL._AC_UL320_.jpg",
@@ -111,7 +111,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
             {
                 Id = 10,
                 CategoryId = 3,
-                Name = "Computer",
+                Name = "Vr-Set",
                 IsBestSeller = false,
                 Price = 90,
                 Path = "games-vr_61tE7IcuLmL._AC_UL320_.jpg",
@@ -122,7 +122,7 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
             {
                 Id = 11,
                 CategoryId = 3,
-                Name = "Computer",
+                Name = "Xbox",
                 IsBestSeller = true,
                 Price = 150,
                 Path = "games-xbox_61JGKhqxHxL._AC_UL320_.jpg",
