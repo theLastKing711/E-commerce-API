@@ -7,7 +7,7 @@ namespace ECommerce.API.Dtos.AppUserDtos.Product
 
         public int DiscountValue { get; set; }
 
-        public decimal? PriceAfterDiscount { get; set; }
+        public decimal PriceAfterDiscount { get; set; }
 
         public decimal Rating { get; set; }
 
