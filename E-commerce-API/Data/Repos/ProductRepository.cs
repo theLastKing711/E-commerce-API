@@ -1,4 +1,5 @@
 using ECommerce.API.Data.IRepos;
+using ECommerce.API.Dtos.AppUserDtos.Review;
 using ECommerce.API.Dtos.Product;
 using ECommerce.API.Models;
 using Microsoft.EntityFrameworkCore;
@@ -281,11 +282,49 @@ namespace ECommerce.API.Data.Repos
 
         }
 
+        public async Task<AppUserReviewStatsDto> getProductReviewsDetails(int id)
+        {
+            var productReviewsModel = await this._context.Reviews
+                                                .Where(x => x.ProductId == id)
+                                                .Where(x => x.Rating > 0)
+                                                .ToListAsync();
+
+            var starsOptions = new List<int> { 1, 2, 3, 4, 5 };
+
+            var totalReviews = (decimal)productReviewsModel.Count();
+
+            var Rating = productReviewsModel.Average(x => x.Rating);
+
+            var productReviewStatsDetails = starsOptions.GroupJoin(
+                                                                productReviewsModel,
+                                                                x => x,
+                                                                x => Math.Round(x.Rating),
+                                                                (starNumber, reviews) => new AppUserReviewStatsDetailsDto()
+                                                                {
+
+                                                                    Stars = starNumber,
+                                                                    TotalReviews = (((decimal)reviews.Count() / totalReviews) * 100)
+                                                                }
+
+                                                            )
+                                                            .ToList();
+
+
+            var productReviewStats = new AppUserReviewStatsDto()
+            {
+                TotalRating = Rating,
+                StarStats = productReviewStatsDetails
+            };
+
+
+            return productReviewStats;
+
+        }
+
+
+
         #endregion AppUser
 
     }
-
-
-
 
 }

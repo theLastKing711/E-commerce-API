@@ -1,3 +1,4 @@
+using ECommerce.API.Dtos.AppUserDtos.Review;
 using ECommerce.API.Dtos.Product;
 using ECommerce.API.Models;
 
@@ -31,6 +32,8 @@ namespace ECommerce.API.Data.IRepos
         Task<Product> getAppUserProductById(int id);
 
         Task<IEnumerable<Product>> getProductsUsingIds(List<int> ids);
+
+        Task<AppUserReviewStatsDto> getProductReviewsDetails(int id);
 
         #endregion appUser
 

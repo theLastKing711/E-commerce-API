@@ -38,7 +38,39 @@ public class ProductProfile : Profile
                 dest => dest.FullImagePath,
                 opt => opt.MapFrom(x => $"https://localhost:7267/images/{x.FullImagePath}")
             )
-            ;
+            .ForMember(
+                dest => dest.DiscountValue,
+                opt => opt.MapFrom(x => x.Discounts.Where(x => x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now).Count() > 0 ?
+                                            x.Discounts
+                                              .Where(x => x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now)
+                                              .Select(x => x.Value)
+                                              .FirstOrDefault()
+                                            :
+                                            0
+                                )
+            )
+            .ForMember(
+                dest => dest.PriceAfterDiscount,
+                opt => opt.MapFrom(
+                                    x => x.Discounts
+                                          .Where(x => x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now)
+                                          .Count() > 0 ?
+                                                    x.Price
+                                                        -
+                                                    (
+                                                        x.Discounts
+                                                         .Where(x => x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now)
+                                                         .Select(x => x.Value)
+                                                         .FirstOrDefault() * (decimal)x.Price
+                                                            /
+                                                            100
+                                                    )
+                                                    :
+                                                    x.Price
+                                  )
+            );
+
+
 
     }
 

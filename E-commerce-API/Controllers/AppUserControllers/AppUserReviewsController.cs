@@ -8,7 +8,7 @@ namespace ECommerce.API.Controllers.AppUserControllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AppUserProductsController : ControllerBase
+    public class AppUserReviewsController : ControllerBase
     {
 
         IMapper _mapper;
@@ -17,7 +17,7 @@ namespace ECommerce.API.Controllers.AppUserControllers
 
         readonly ILogger _logger;
 
-        public AppUserProductsController(IProductRepository productRepository,
+        public AppUserReviewsController(IProductRepository productRepository,
                                              IMapper mapper,
                                              ILoggerFactory logFactory)
         {
@@ -34,29 +34,6 @@ namespace ECommerce.API.Controllers.AppUserControllers
             AppUserProductDto productDto = _mapper.Map<AppUserProductDto>(productModel);
 
             return Ok(productDto);
-
-        }
-
-        [HttpPost("getUsingIds")]
-        public async Task<IActionResult> getProductsUsingIds(List<int> ids)
-        {
-            var productsModel = await _productRepository.getProductsUsingIds(ids);
-
-            _logger.LogCritical(productsModel.Count().ToString());
-
-            var productsDto = _mapper.Map<IEnumerable<AppUserProductDto>>(productsModel);
-
-            return Ok(productsDto);
-
-
-        }
-
-        [HttpGet("{id}/reviewStats")]
-        public async Task<IActionResult> reviewStats(int id)
-        {
-            var productReviewStatsDto = await this._productRepository.getProductReviewsDetails(id);
-
-            return Ok(productReviewStatsDto);
 
         }
 

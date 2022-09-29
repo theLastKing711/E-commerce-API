@@ -30,6 +30,8 @@ namespace ECommerce.API
 
             builder.ApplyConfiguration(new ProductDetailsConfiguration());
 
+            builder.ApplyConfiguration(new DiscountConfiguration());
+
         }
 
         public DbSet<Category> Categories { get; set; }
