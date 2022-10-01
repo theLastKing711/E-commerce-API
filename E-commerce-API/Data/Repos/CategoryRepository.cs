@@ -131,6 +131,7 @@ namespace ECommerce.API.Data.Repos
                 productsModel = await this._context.Products
                                             .Include(x => x.Reviews)
                                             .Include(x => x.Discounts)
+                                            .Include(x => x.Inventories)
                                             .AsNoTracking()
                                             .Where(x => x.CategoryId == id)
                                             .ToListAsync();
@@ -141,6 +142,7 @@ namespace ECommerce.API.Data.Repos
                 productsModel = await this._context.Products
                                             .Include(x => x.Reviews)
                                             .Include(x => x.Discounts)
+                                            .Include(x => x.Inventories)
                                             .AsNoTracking()
                                             .ToListAsync();
             }

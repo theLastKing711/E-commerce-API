@@ -15,14 +15,14 @@ public class InventoryConfiguration : IEntityTypeConfiguration<Inventory>
                 Id = 1,
                 ProductId = 1,
                 Quantity = 40,
-                CurrentAmount = 25
+                CurrentAmount = 5
             },
             new Inventory
             {
                 Id = 2,
                 ProductId = 1,
                 Quantity = 40,
-                CurrentAmount = 40
+                CurrentAmount = 0
             },
             new Inventory
             {
