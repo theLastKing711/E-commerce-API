@@ -32,6 +32,9 @@ namespace ECommerce.API
 
             builder.ApplyConfiguration(new DiscountConfiguration());
 
+            builder.ApplyConfiguration(new InventoryConfiguration());
+
+
         }
 
         public DbSet<Category> Categories { get; set; }
@@ -47,6 +50,8 @@ namespace ECommerce.API
         public DbSet<Review> Reviews { get; set; }
 
         public DbSet<Discount> Discounts { get; set; }
+
+        public DbSet<Inventory> Inventory { get; set; }
 
     }
 }

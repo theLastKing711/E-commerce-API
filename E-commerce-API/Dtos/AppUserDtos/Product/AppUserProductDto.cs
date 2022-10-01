@@ -19,7 +19,7 @@ namespace ECommerce.API.Dtos.AppUserDtos.Product
 
         public string? FullImagePath { get; set; }
 
-
+        public int InventoryCurrentAmount { get; set; }
 
         public IEnumerable<AppUserProductDetails> Details { get; set; }
 

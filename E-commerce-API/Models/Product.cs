@@ -27,6 +27,7 @@ namespace ECommerce.API.Models
 
         public IEnumerable<ProductDetails> Details { get; set; }
 
+        public IEnumerable<Inventory> Inventories { get; set; }
 
     }
 }

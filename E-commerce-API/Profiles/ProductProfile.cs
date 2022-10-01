@@ -52,22 +52,28 @@ public class ProductProfile : Profile
             .ForMember(
                 dest => dest.PriceAfterDiscount,
                 opt => opt.MapFrom(
-                                    x => x.Discounts
-                                          .Where(x => x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now)
-                                          .Count() > 0 ?
-                                                    x.Price
-                                                        -
-                                                    (
-                                                        x.Discounts
-                                                         .Where(x => x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now)
-                                                         .Select(x => x.Value)
-                                                         .FirstOrDefault() * (decimal)x.Price
-                                                            /
-                                                            100
-                                                    )
-                                                    :
-                                                    x.Price
+                            x => x.Discounts
+                                .Where(x => x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now)
+                                .Count() > 0 ?
+                                            x.Price
+                                                -
+                                            (
+                                                x.Discounts
+                                                .Where(x => x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now)
+                                                .Select(x => x.Value)
+                                                .FirstOrDefault() * (decimal)x.Price
+                                                    /
+                                                    100
+                                            )
+                                            :
+                                            x.Price
                                   )
+            )
+            .ForMember(
+                dest => dest.InventoryCurrentAmount,
+                opt => opt.MapFrom(
+                            x => x.Inventories.Any() ? x.Inventories.Sum(x => x.CurrentAmount) : 0
+                )
             );
 
 

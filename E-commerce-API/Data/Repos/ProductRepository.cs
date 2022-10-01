@@ -80,8 +80,9 @@ namespace ECommerce.API.Data.Repos
         public async Task<Product> GetProductById(int id)
         {
             var productModel = await this._context.Products.AsNoTracking()
-                                                            .Include(product => product.Category)
-                                                            .Include(product => product.Reviews)
+                                                           .Include(product => product.Category)
+                                                           .Include(product => product.Reviews)
+                                                           .Include(product => product.Inventories)
                                                            .Where(e => e.Id == id)
                                                            .Select(x => new Product()
                                                            {
@@ -264,6 +265,7 @@ namespace ECommerce.API.Data.Repos
                                              .Include(x => x.Reviews)
                                              .Include(x => x.Discounts)
                                              .Include(x => x.Details)
+                                             .Include(x => x.Inventories)
                                              .Where(x => x.Id == id)
                                              .FirstOrDefaultAsync();
 
@@ -275,6 +277,7 @@ namespace ECommerce.API.Data.Repos
         public async Task<IEnumerable<Product>> getProductsUsingIds(List<int> ids)
         {
             var productsModel = await this._context.Products
+                                                   .Include(product => product.Inventories)
                                                    .Where(x => ids.Contains(x.Id))
                                                    .ToListAsync();
 
@@ -285,9 +288,9 @@ namespace ECommerce.API.Data.Repos
         public async Task<AppUserReviewStatsDto> getProductReviewsDetails(int id)
         {
             var productReviewsModel = await this._context.Reviews
-                                                .Where(x => x.ProductId == id)
-                                                .Where(x => x.Rating > 0)
-                                                .ToListAsync();
+                                                         .Where(x => x.ProductId == id)
+                                                         .Where(x => x.Rating > 0)
+                                                         .ToListAsync();
 
             var starsOptions = new List<int> { 1, 2, 3, 4, 5 };
 
