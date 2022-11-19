@@ -28,15 +28,21 @@ public class ProductProfile : Profile
             )
             .ForMember(
                 dest => dest.Path,
-                opt => opt.MapFrom(x => $"https://localhost:7267/images/{x.Path}")
+                // opt => opt.MapFrom(x => $"https://localhost:7267/images/{x.Path}")
+                opt => opt.MapFrom(x => $"https://e-commerce-api1.herokuapp.com/images/{x.Path}")
+
             )
             .ForMember(
                 dest => dest.ThumbImagePath,
-                opt => opt.MapFrom(x => $"https://localhost:7267/images/{x.ThumbImagePath}")
+                // opt => opt.MapFrom(x => $"https://localhost:7267/images/{x.ThumbImagePath}")
+                opt => opt.MapFrom(x => $"https://e-commerce-api1.herokuapp.com/images/{x.Path}")
+
             )
             .ForMember(
                 dest => dest.FullImagePath,
-                opt => opt.MapFrom(x => $"https://localhost:7267/images/{x.FullImagePath}")
+                // opt => opt.MapFrom(x => $"https://localhost:7267/images/{x.FullImagePath}")
+                opt => opt.MapFrom(x => $"https://e-commerce-api1.herokuapp.com/images/{x.Path}")
+
             )
             .ForMember(
                 dest => dest.DiscountValue,
