@@ -1,4 +1,5 @@
-﻿using ECommerce.API.Dtos.Identity;
+﻿using ECommerce.API.Data.IRepos;
+using ECommerce.API.Dtos.Identity;
 using ECommerce.API.Models.Identity;
 using ECommerce.API.Models.Roles;
 using Microsoft.AspNetCore.Authorization;
@@ -19,14 +20,19 @@ namespace ECommerce.API.Controllers
         private readonly RoleManager<AppRole> _roleManager;
         private readonly IConfiguration _configuration;
 
+        private readonly IAppUserRepository _appUserRepository;
+
         public AuthenticateController(
             UserManager<AppUser> userManager,
             RoleManager<AppRole> roleManager,
-            IConfiguration configuration)
+            IConfiguration configuration,
+            IAppUserRepository appUserRepository
+            )
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
+            _appUserRepository = appUserRepository;
         }
 
         //[Authorize]
@@ -36,6 +42,38 @@ namespace ECommerce.API.Controllers
         //{
 
         //}
+
+        [HttpGet("check-username/{username}")]
+        public async Task<IActionResult> CheckUsername(string username)
+        {
+            var IsUserNameDuplicated = await this._appUserRepository.IsUserNameDuplicated(username);
+
+            if (IsUserNameDuplicated)
+            {
+                return Ok(false);
+            }
+
+            return Ok(true);
+
+
+        }
+
+
+        [HttpGet("check-email/{email}")]
+        public async Task<IActionResult> CheckEmail(string email)
+        {
+            var IsEmailDuplicated = await this._appUserRepository.IsEmailDuplicated(email);
+
+            if (IsEmailDuplicated)
+            {
+                return Ok(false);
+            }
+
+            return Ok(true);
+
+
+        }
+
 
         [HttpPost]
         [Route("login")]

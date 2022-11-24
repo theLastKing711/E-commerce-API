@@ -26,6 +26,25 @@ namespace ECommerce.API.Data.Repos
             this._roleManager = roleManager;
         }
 
+        public async Task<bool> IsUserNameDuplicated(string username)
+        {
+
+            var IsUserNameDuplicated = await this._userManager.FindByNameAsync(username);
+
+            return IsUserNameDuplicated != null ? true : false;
+
+        }
+
+        public async Task<bool> IsEmailDuplicated(string email)
+        {
+
+            var IsEmailDuplicated = await this._userManager.FindByEmailAsync(email);
+
+
+            return IsEmailDuplicated != null ? true : false;
+
+        }
+
         public async Task<AppUser> AddAppUser(AppUser user, string password)
         {
 
