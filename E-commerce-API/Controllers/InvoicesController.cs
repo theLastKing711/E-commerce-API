@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using AutoMapper;
 using ECommerce.API.Data.IRepos;
 using ECommerce.API.Dtos;
@@ -70,9 +71,16 @@ namespace ECommerce.API.Controllers
         public async Task<IActionResult> AddInvoice([FromBody] AddInvoiceDto invoiceDto)
         {
 
+            var currentUser = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (currentUser == null)
+            {
+                return NotFound();
+            }
+
             var InvoiceModel = new Invoice()
             {
-                AppUserId = invoiceDto.AppUserId,
+                AppUserId = int.Parse(currentUser),
                 CreatedAt = DateTime.Now,
                 InvoicesDetails = invoiceDto.InvoicesDetails.Select(x => new InvoiceDetails()
                 {
