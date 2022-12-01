@@ -112,10 +112,10 @@ namespace ECommerce.API.Controllers
 
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAppUsers(int id)
+        [HttpPost]
+        public async Task<IActionResult> DeleteAppUsers(List<int> ids)
         {
-            await _AppUsersRepository.DeleteAppUser(id);
+            await _AppUsersRepository.DeleteAppUsers(ids);
 
             return Ok(true);
 
