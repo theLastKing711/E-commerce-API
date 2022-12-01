@@ -111,5 +111,15 @@ namespace ECommerce.API.Controllers
             return Ok(true);
 
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAppUsers(int id)
+        {
+            await _AppUsersRepository.DeleteAppUser(id);
+
+            return Ok(true);
+
+        }
+
     }
 }
