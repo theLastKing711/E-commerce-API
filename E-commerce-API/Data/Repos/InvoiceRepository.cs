@@ -109,6 +109,20 @@ namespace ECommerce.API.Data.Repos
 
         }
 
+        public async Task<bool> DeleteInvoicesRange(IEnumerable<int> ids)
+        {
+
+            var invoicesModel = await this._context.Invoices.Where(x => ids.ToList().Contains(x.Id))
+                                                            .ToListAsync();
+
+            this._context.Invoices.RemoveRange(invoicesModel);
+
+            return true;
+
+        }
+
+
+
     }
 
 

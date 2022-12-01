@@ -117,5 +117,16 @@ namespace ECommerce.API.Controllers
             return Ok(true);
 
         }
+
+        [HttpPost("{id}")]
+        public async Task<IActionResult> DeleteInvoices(IEnumerable<int> ids)
+        {
+            await _InvoicesRepository.DeleteInvoicesRange(ids);
+
+            return Ok(true);
+
+        }
+
+
     }
 }

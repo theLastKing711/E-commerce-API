@@ -13,5 +13,7 @@ namespace ECommerce.API.Data.IRepos
 
         Task<Invoice> UpdateInvoice(Invoice Invoice);
 
+        Task<bool> DeleteInvoicesRange(IEnumerable<int> ids);
+
     }
 }
