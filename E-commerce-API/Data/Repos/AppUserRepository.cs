@@ -113,6 +113,22 @@ namespace ECommerce.API.Data.Repos
 
         }
 
+        public async Task<bool> DeleteAppUsers(List<int> ids)
+        {
+
+            var AppUsersModel = await this._userManager.Users.Where(x => ids.Contains(x.Id))
+                                          .ToListAsync();
+
+            this._context.Users.RemoveRange(AppUsersModel);
+
+            await _context.SaveChangesAsync();
+
+            return true;
+
+        }
+
+
+
     }
 
 

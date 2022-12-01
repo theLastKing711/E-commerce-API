@@ -20,5 +20,7 @@ namespace ECommerce.API.Data.IRepos
 
         Task<bool> DeleteAppUser(int id);
 
+        Task<bool> DeleteAppUsers(List<int> ids);
+
     }
 }
