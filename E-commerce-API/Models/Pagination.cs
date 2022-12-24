@@ -50,5 +50,10 @@ namespace ECommerce.API.Models
 
         }
 
+        public bool isPageSizeDataGreaterThanData(int totalCount, int pageSize, int pageNumber)
+        {
+            return totalCount > pageSize * pageNumber;
+        }
+
     }
 }

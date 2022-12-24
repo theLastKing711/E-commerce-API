@@ -79,13 +79,14 @@ namespace ECommerce.API.Data.Repos
             return OldAppUser;
         }
 
-        public async Task<Pagination<AppUser>> GetAllAppUsersPaginated(int pageNumber, int pageSize)
+        public async Task<Pagination<AppUser>> GetAllAppUsersPaginated(int pageNumber, int pageSize, string query)
         {
-            var usersModel = this._userManager.Users.OrderByDescending(x => x.CreatedAt);
 
+            var usersModel = this._userManager.Users
+                                              .Where(x => query == "-1" || (x.UserName.Contains(query) || x.Email.Contains(query) || x.Id.ToString().Contains(query)))
+                                              .OrderByDescending(x => x.CreatedAt);
 
             var paginatedCategoriesModel = await Pagination<AppUser>.GetPaginatedData(usersModel, pageNumber, pageSize);
-
 
             return paginatedCategoriesModel;
 

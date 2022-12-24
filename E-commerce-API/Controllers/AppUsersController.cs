@@ -30,10 +30,10 @@ namespace ECommerce.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAppUsers([FromQuery] int pageNumber, [FromQuery] int pageSize)
+        public async Task<IActionResult> GetAllAppUsers([FromQuery] int pageNumber, [FromQuery] int pageSize, [FromQuery] string query)
         {
 
-            var PaginatedAppUsersModel = await _AppUsersRepository.GetAllAppUsersPaginated(pageNumber, pageSize);
+            var PaginatedAppUsersModel = await _AppUsersRepository.GetAllAppUsersPaginated(pageNumber, pageSize, query);
 
             var paginatedAppUsersDto = this._mapper.Map<IEnumerable<AppUserDto>>(PaginatedAppUsersModel.Data);
 
@@ -61,7 +61,6 @@ namespace ECommerce.API.Controllers
         public async Task<IActionResult> AddAppUser([FromForm] AddAppUserDto AppUserDto)
         {
             var AppUserModel = _mapper.Map<AppUser>(AppUserDto);
-
 
             string AppUserImagePath = null;
 
@@ -112,7 +111,7 @@ namespace ECommerce.API.Controllers
 
         }
 
-        [HttpPost]
+        [HttpPost("removeRange")]
         public async Task<IActionResult> DeleteAppUsers(List<int> ids)
         {
             await _AppUsersRepository.DeleteAppUsers(ids);
