@@ -1,3 +1,4 @@
+using ECommerce.API.Dtos.Identity.AppUser;
 using ECommerce.API.Models;
 using ECommerce.API.Models.Identity;
 
@@ -14,13 +15,15 @@ namespace ECommerce.API.Data.IRepos
 
         Task<AppUser> GetAppUserById(int id);
 
-        Task<AppUser> AddAppUser(AppUser AppUser, string password);
+        Task<AppUser> AddAppUser(AppUser AppUser, string password, string role);
 
-        Task<AppUser> UpdateAppUser(AppUser user, string password);
+        Task<AppUser> UpdateAppUser(AppUser user, string roleName, string password);
 
         Task<bool> DeleteAppUser(int id);
 
         Task<bool> DeleteAppUsers(List<int> ids);
+
+        Task<List<RoleItemDto>> GetAllRoles();
 
     }
 }

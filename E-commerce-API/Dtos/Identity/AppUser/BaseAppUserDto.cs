@@ -10,5 +10,8 @@ namespace ECommerce.API.Dtos.Identity.AppUser
 
         public string Email { get; set; }
 
+        public string RoleName { get; set; }
+
+
     }
 }

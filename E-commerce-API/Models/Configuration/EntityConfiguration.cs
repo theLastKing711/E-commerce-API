@@ -20,6 +20,12 @@ public class RoleConfiguration : IEntityTypeConfiguration<AppRole>
                 Id = 2,
                 Name = UserRoles.Admin,
                 NormalizedName = "ADMIN"
+            },
+            new AppRole
+            {
+                Id = 3,
+                Name = UserRoles.SalesManager,
+                NormalizedName = "SALESMANAGER"
             }
         );
     }

@@ -1,5 +1,4 @@
 using AutoMapper;
-using ECommerce.API.Data.IRepos;
 using ECommerce.API.Dtos.Category;
 using ECommerce.API.Dtos.Product;
 using ECommerce.API.Helpers;
@@ -8,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, SalesManager")]
     [Route("api/[controller]")]
     [ApiController]
     public class StatsController : ControllerBase

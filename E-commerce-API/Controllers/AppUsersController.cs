@@ -1,18 +1,16 @@
 using AutoMapper;
 using ECommerce.API.Data.IRepos;
-using ECommerce.API.Dtos;
-using ECommerce.API.Dtos.Identity;
 using ECommerce.API.Dtos.Identity.AppUser;
 using ECommerce.API.Helpers;
 using ECommerce.API.Models;
 using ECommerce.API.Models.Identity;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers
 {
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class AppUsersController : ControllerBase
@@ -21,12 +19,19 @@ namespace ECommerce.API.Controllers
         private IMapper _mapper;
         private IAppUserRepository _AppUsersRepository;
         private readonly IImagesUploader imagesUploader;
+        private readonly UserManager<AppUser> _usermanager;
 
-        public AppUsersController(IAppUserRepository AppUserRepository, IImagesUploader imagesUploader, IMapper mapper)
+
+        public AppUsersController(IAppUserRepository AppUserRepository,
+                                   IImagesUploader imagesUploader,
+                                   IMapper mapper,
+                                   UserManager<AppUser> userManager
+                                   )
         {
             _AppUsersRepository = AppUserRepository;
             this.imagesUploader = imagesUploader;
             _mapper = mapper;
+            _usermanager = userManager;
         }
 
         [HttpGet]
@@ -50,9 +55,15 @@ namespace ECommerce.API.Controllers
 
             var AppUserModel = await _AppUsersRepository.GetAppUserById(id);
 
-            AppUserDto appUserDto = _mapper.Map<AppUserDto>(AppUserModel);
+            var userRoles = await this._usermanager.GetRolesAsync(AppUserModel);
 
-            return Ok(appUserDto);
+
+            AppUserDto AppUserDto = _mapper.Map<AppUserDto>(AppUserModel);
+
+            AppUserDto.RoleName = userRoles.FirstOrDefault();
+
+
+            return Ok(AppUserDto);
 
         }
 
@@ -71,7 +82,7 @@ namespace ECommerce.API.Controllers
 
             AppUserModel.ImagePath = AppUserImagePath;
 
-            var newAppUserModel = await _AppUsersRepository.AddAppUser(AppUserModel, AppUserDto.Password);
+            var newAppUserModel = await _AppUsersRepository.AddAppUser(AppUserModel, AppUserDto.Password, AppUserDto.RoleName);
 
             var result = _mapper.Map<AppUserDto>(newAppUserModel);
 
@@ -93,10 +104,9 @@ namespace ECommerce.API.Controllers
                 AppUserImagePath = imagesUploader.UploadImage(AppUserDto.Image);
             }
 
-
             AppUserModel.ImagePath = AppUserImagePath;
 
-            var updatedAppUser = await _AppUsersRepository.UpdateAppUser(AppUserModel, AppUserDto.Password);
+            var updatedAppUser = await _AppUsersRepository.UpdateAppUser(AppUserModel, AppUserDto.RoleName, AppUserDto.Password);
 
             return Ok(AppUserModel);
 
@@ -119,6 +129,17 @@ namespace ECommerce.API.Controllers
             return Ok(true);
 
         }
+
+
+        [HttpGet("Roles")]
+        public async Task<IActionResult> GetRoles()
+        {
+            var AllRoles = await _AppUsersRepository.GetAllRoles();
+
+            return Ok(AllRoles);
+
+        }
+
 
     }
 }

@@ -95,7 +95,6 @@ builder.Services.AddScoped<IPriceFilterStrategy, RangePriceFilter>();
 builder.Services.AddScoped<IPriceFilterStrategy, GreaterThanOrEqualPriceFilter>();
 
 
-
 //builder.Services.AddTransient<PriceFilterServiceResolver>(serviceProvider => key =>
 //{
 //    switch (key)
@@ -128,10 +127,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
-
 app.UseHttpsRedirection();
-
 
 app.UseCors("CorsPolicy");
 app.UseStaticFiles();
@@ -141,7 +137,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
 
 app.Run();
 

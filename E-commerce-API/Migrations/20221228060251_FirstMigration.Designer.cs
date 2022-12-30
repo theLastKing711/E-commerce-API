@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECommerce.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221001225332_initialMigration")]
-    partial class initialMigration
+    [Migration("20221228060251_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -92,7 +92,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9935),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7054),
                             EndDate = new DateTime(2021, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProductId = 1,
                             StartDate = new DateTime(2020, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -101,7 +101,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9948),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7059),
                             EndDate = new DateTime(2023, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProductId = 1,
                             StartDate = new DateTime(2022, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -110,7 +110,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9953),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7061),
                             EndDate = new DateTime(2024, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProductId = 2,
                             StartDate = new DateTime(2023, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -119,7 +119,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9958),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7064),
                             EndDate = new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProductId = 2,
                             StartDate = new DateTime(2020, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -152,28 +152,28 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8207),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6269),
                             Name = "Electronices",
                             Path = "category_Fuji_Dash_Electronics_1x._SY304_CB432774322_.jpg"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8250),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6297),
                             Name = "Computers",
                             Path = "category-Fuji_Dash_PC_1x._SY304_CB431800965_.jpg"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8254),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6300),
                             Name = "Games",
                             Path = "category-games_Fuji_Desktop_Dash_Kindle_1x._SY304_CB639752818_.jpg"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8257),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6302),
                             Name = "Pets",
                             Path = "category-pets_Fuji_Dash_Pets_1X._SY304_CB639746743_.jpg"
                         });
@@ -209,16 +209,23 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "2fa19806-9866-4c63-80a1-fc15bcf8242f",
+                            ConcurrencyStamp = "6f9aaf78-3f63-4cf6-95f1-d5d4d8304ced",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "9172202f-e5df-4ab3-9628-be9126f35b3f",
+                            ConcurrencyStamp = "28948eed-02ed-4ed8-b6be-27f2320ac12b",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ConcurrencyStamp = "4926dce6-ce2f-4019-9407-b529cbb61158",
+                            Name = "SalesManager",
+                            NormalizedName = "SALESMANAGER"
                         });
                 });
 
@@ -297,8 +304,8 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 100,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bd91d266-c2fe-496c-a075-074c40de8bad",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8814),
+                            ConcurrencyStamp = "41e503d5-22da-4ccc-9680-1bd5e06de781",
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6568),
                             Email = "appuser@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -311,8 +318,8 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 101,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e978ccd7-f1fb-4f6b-a0e2-9bfc580e9131",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8869),
+                            ConcurrencyStamp = "4870e629-dc8f-401e-8d7b-c83c921d64ed",
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6592),
                             Email = "appuser2@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -325,8 +332,8 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 102,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d64e3a59-f70c-424d-b3a8-9b07ce27bcbf",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8889),
+                            ConcurrencyStamp = "c3cdc14e-b35b-450a-b4bf-32eff4c7412c",
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6608),
                             Email = "appuser3@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -339,8 +346,8 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 103,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "70c017b6-2ed3-464a-b03f-32870282a794",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8915),
+                            ConcurrencyStamp = "76cd0669-98b4-435f-b8d9-b5b98beb75ee",
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6623),
                             Email = "appuser4@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -353,8 +360,8 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 104,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a48352c0-8f82-4b18-96b6-5a408f548975",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8939),
+                            ConcurrencyStamp = "665f7b34-8403-4aa0-90a9-21992a842a47",
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6639),
                             Email = "appuser5@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
@@ -393,7 +400,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 144, DateTimeKind.Local).AddTicks(91),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7135),
                             CurrentAmount = 5,
                             ProductId = 1,
                             Quantity = 40
@@ -401,7 +408,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 144, DateTimeKind.Local).AddTicks(97),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7139),
                             CurrentAmount = 0,
                             ProductId = 1,
                             Quantity = 40
@@ -409,7 +416,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 144, DateTimeKind.Local).AddTicks(101),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7141),
                             CurrentAmount = 0,
                             ProductId = 3,
                             Quantity = 10
@@ -417,7 +424,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 144, DateTimeKind.Local).AddTicks(105),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7142),
                             CurrentAmount = 10,
                             ProductId = 3,
                             Quantity = 10
@@ -425,7 +432,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 144, DateTimeKind.Local).AddTicks(113),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7144),
                             CurrentAmount = 0,
                             ProductId = 4,
                             Quantity = 25
@@ -433,7 +440,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 144, DateTimeKind.Local).AddTicks(117),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7145),
                             CurrentAmount = 0,
                             ProductId = 5,
                             Quantity = 40
@@ -441,7 +448,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 144, DateTimeKind.Local).AddTicks(121),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7147),
                             CurrentAmount = 5,
                             ProductId = 6,
                             Quantity = 15
@@ -449,7 +456,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 144, DateTimeKind.Local).AddTicks(125),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7149),
                             CurrentAmount = 15,
                             ProductId = 7,
                             Quantity = 30
@@ -457,7 +464,7 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 144, DateTimeKind.Local).AddTicks(129),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(7150),
                             CurrentAmount = 25,
                             ProductId = 8,
                             Quantity = 25
@@ -558,7 +565,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8466),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6388),
                             FullImagePath = "laptop-full_71rXSVqET9L._AC_SL1257_.jpg",
                             IsBestSeller = true,
                             Name = "Sceptre 24 Professional Thin 75Hz 1080p LED Monitor 2x HDMI VGA Build-in Speakers, Machine Black (E248W-19203R Series)",
@@ -570,7 +577,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 2,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8481),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6393),
                             FullImagePath = "mobile-full_81AeiqxHkwL._AC_SL1500_.jpg",
                             IsBestSeller = true,
                             Name = "Mobile",
@@ -582,7 +589,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 3,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8491),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6396),
                             FullImagePath = "printer-full_61UdeL7aO-L._AC_SL1500_.jpg",
                             IsBestSeller = true,
                             Name = "Printer",
@@ -594,7 +601,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 4,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8493),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6398),
                             FullImagePath = "earpod_full-7120GgUKj3L._AC_SL1500_.jpg",
                             IsBestSeller = true,
                             Name = "EarPods",
@@ -606,7 +613,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 5,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8496),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6400),
                             FullImagePath = "batteries-full_81ZnAYiX5sL._AC_SL1500_.jpg",
                             IsBestSeller = true,
                             Name = "Batteries",
@@ -618,7 +625,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 6,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8499),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6459),
                             FullImagePath = "pen-full_21l795GXZkL._AC_SL1024_.jpg",
                             IsBestSeller = true,
                             Name = "Pen",
@@ -630,7 +637,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 7,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8502),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6462),
                             FullImagePath = "usb-full_71wrIZujPIL._AC_SL1500_.jpg",
                             IsBestSeller = false,
                             Name = "Usb",
@@ -642,7 +649,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 8,
                             CategoryId = 2,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8505),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6465),
                             FullImagePath = "player-full_71E4InwfcPL._AC_SL1500_.jpg",
                             IsBestSeller = true,
                             Name = "Player",
@@ -654,7 +661,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 9,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8508),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6467),
                             FullImagePath = "controller-full_61X3uV04ztL._SL1500_.jpg",
                             IsBestSeller = true,
                             Name = "Controller",
@@ -666,7 +673,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 10,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8511),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6469),
                             FullImagePath = "vr-full_61tE7IcuLmL._SL1500_.jpg",
                             IsBestSeller = false,
                             Name = "Vr-Set",
@@ -678,7 +685,7 @@ namespace ECommerce.API.Migrations
                         {
                             Id = 11,
                             CategoryId = 3,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(8514),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6471),
                             FullImagePath = "xbox-full_61JGKhqxHxL._SL1500_.jpg",
                             IsBestSeller = true,
                             Name = "Xbox",
@@ -714,308 +721,308 @@ namespace ECommerce.API.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9567),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6840),
                             ProductId = 1,
                             Text = "24 Ultra slim profile "
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9572),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6843),
                             ProductId = 1,
                             Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9576),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6845),
                             ProductId = 1,
                             Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9580),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6846),
                             ProductId = 1,
                             Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9584),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6848),
                             ProductId = 2,
                             Text = "24 Ultra slim profile "
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9592),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6850),
                             ProductId = 2,
                             Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
                         },
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9596),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6851),
                             ProductId = 2,
                             Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
                         },
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9600),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6853),
                             ProductId = 2,
                             Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         },
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9604),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6854),
                             ProductId = 3,
                             Text = "24 Ultra slim profile "
                         },
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9608),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6856),
                             ProductId = 3,
                             Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
                         },
                         new
                         {
                             Id = 11,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9613),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6858),
                             ProductId = 3,
                             Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
                         },
                         new
                         {
                             Id = 12,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9620),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6859),
                             ProductId = 3,
                             Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         },
                         new
                         {
                             Id = 13,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9624),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6861),
                             ProductId = 4,
                             Text = "24 Ultra slim profile "
                         },
                         new
                         {
                             Id = 14,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9628),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6863),
                             ProductId = 4,
                             Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
                         },
                         new
                         {
                             Id = 15,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9632),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6864),
                             ProductId = 4,
                             Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
                         },
                         new
                         {
                             Id = 16,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9636),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6866),
                             ProductId = 4,
                             Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         },
                         new
                         {
                             Id = 17,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9643),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6867),
                             ProductId = 5,
                             Text = "24 Ultra slim profile "
                         },
                         new
                         {
                             Id = 18,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9647),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6869),
                             ProductId = 5,
                             Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
                         },
                         new
                         {
                             Id = 19,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9652),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6871),
                             ProductId = 5,
                             Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
                         },
                         new
                         {
                             Id = 20,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9656),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6872),
                             ProductId = 5,
                             Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         },
                         new
                         {
                             Id = 21,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9660),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6874),
                             ProductId = 6,
                             Text = "24 Ultra slim profile "
                         },
                         new
                         {
                             Id = 22,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9664),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6876),
                             ProductId = 6,
                             Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
                         },
                         new
                         {
                             Id = 23,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9672),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6877),
                             ProductId = 6,
                             Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
                         },
                         new
                         {
                             Id = 24,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9676),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6879),
                             ProductId = 6,
                             Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         },
                         new
                         {
                             Id = 25,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9680),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6881),
                             ProductId = 7,
                             Text = "24 Ultra slim profile "
                         },
                         new
                         {
                             Id = 26,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9684),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6883),
                             ProductId = 7,
                             Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
                         },
                         new
                         {
                             Id = 27,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9688),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6884),
                             ProductId = 7,
                             Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
                         },
                         new
                         {
                             Id = 28,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9693),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6886),
                             ProductId = 7,
                             Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         },
                         new
                         {
                             Id = 29,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9700),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6888),
                             ProductId = 8,
                             Text = "24 Ultra slim profile "
                         },
                         new
                         {
                             Id = 30,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9703),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6889),
                             ProductId = 8,
                             Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
                         },
                         new
                         {
                             Id = 31,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9708),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6891),
                             ProductId = 8,
                             Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
                         },
                         new
                         {
                             Id = 32,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9712),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6892),
                             ProductId = 8,
                             Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         },
                         new
                         {
                             Id = 33,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9715),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6894),
                             ProductId = 9,
                             Text = "24 Ultra slim profile "
                         },
                         new
                         {
                             Id = 34,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9724),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6896),
                             ProductId = 9,
                             Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
                         },
                         new
                         {
                             Id = 35,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9728),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6897),
                             ProductId = 9,
                             Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
                         },
                         new
                         {
                             Id = 36,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9732),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6899),
                             ProductId = 9,
                             Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         },
                         new
                         {
                             Id = 37,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9736),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6900),
                             ProductId = 10,
                             Text = "24 Ultra slim profile "
                         },
                         new
                         {
                             Id = 38,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9740),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6902),
                             ProductId = 10,
                             Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
                         },
                         new
                         {
                             Id = 39,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9745),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6904),
                             ProductId = 10,
                             Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
                         },
                         new
                         {
                             Id = 40,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9751),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6905),
                             ProductId = 10,
                             Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         },
                         new
                         {
                             Id = 41,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9755),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6907),
                             ProductId = 11,
                             Text = "24 Ultra slim profile "
                         },
                         new
                         {
                             Id = 42,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9759),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6908),
                             ProductId = 11,
                             Text = "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes "
                         },
                         new
                         {
                             Id = 43,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9764),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6910),
                             ProductId = 11,
                             Text = "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1"
                         },
                         new
                         {
                             Id = 44,
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9767),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6912),
                             ProductId = 11,
                             Text = "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm"
                         });
@@ -1062,7 +1069,7 @@ namespace ECommerce.API.Migrations
                             Id = 1,
                             AppUserId = 100,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9110),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6729),
                             ProductId = 1,
                             Rating = 4m
                         },
@@ -1071,7 +1078,7 @@ namespace ECommerce.API.Migrations
                             Id = 2,
                             AppUserId = 101,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9117),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6733),
                             ProductId = 1,
                             Rating = 5m
                         },
@@ -1080,7 +1087,7 @@ namespace ECommerce.API.Migrations
                             Id = 3,
                             AppUserId = 102,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9321),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6735),
                             ProductId = 1,
                             Rating = 1m
                         },
@@ -1089,7 +1096,7 @@ namespace ECommerce.API.Migrations
                             Id = 4,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9333),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6739),
                             ProductId = 1,
                             Rating = 5m
                         },
@@ -1098,7 +1105,7 @@ namespace ECommerce.API.Migrations
                             Id = 5,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9340),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6740),
                             ProductId = 2,
                             Rating = 2m
                         },
@@ -1107,7 +1114,7 @@ namespace ECommerce.API.Migrations
                             Id = 6,
                             AppUserId = 103,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9346),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6743),
                             ProductId = 2,
                             Rating = 3m
                         },
@@ -1116,7 +1123,7 @@ namespace ECommerce.API.Migrations
                             Id = 7,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9352),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6745),
                             ProductId = 2,
                             Rating = 5m
                         },
@@ -1125,7 +1132,7 @@ namespace ECommerce.API.Migrations
                             Id = 8,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9358),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6746),
                             ProductId = 3,
                             Rating = 1m
                         },
@@ -1134,7 +1141,7 @@ namespace ECommerce.API.Migrations
                             Id = 9,
                             AppUserId = 102,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9365),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6749),
                             ProductId = 4,
                             Rating = 4m
                         },
@@ -1143,7 +1150,7 @@ namespace ECommerce.API.Migrations
                             Id = 10,
                             AppUserId = 102,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9371),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6751),
                             ProductId = 4,
                             Rating = 3m
                         },
@@ -1152,7 +1159,7 @@ namespace ECommerce.API.Migrations
                             Id = 11,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9378),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6753),
                             ProductId = 5,
                             Rating = 5m
                         },
@@ -1161,7 +1168,7 @@ namespace ECommerce.API.Migrations
                             Id = 12,
                             AppUserId = 104,
                             Body = "Well Done!",
-                            CreatedAt = new DateTime(2022, 10, 2, 1, 53, 32, 143, DateTimeKind.Local).AddTicks(9384),
+                            CreatedAt = new DateTime(2022, 12, 28, 9, 2, 50, 664, DateTimeKind.Local).AddTicks(6756),
                             ProductId = 6,
                             Rating = 5m
                         });

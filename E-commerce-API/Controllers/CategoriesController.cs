@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, SalesManager")]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase
@@ -52,13 +52,17 @@ namespace ECommerce.API.Controllers
         public async Task<IActionResult> AddCategory([FromForm] AddCategoryDto categoryDto)
         {
 
-            var categoryImageUrl = this._imagesUploader.UploadImage(categoryDto.Image);
+
+            // if (categoryDto.Image != null)
+            // {
+            // var categoryImageUrl = this._imagesUploader.UploadImage(categoryDto.Image);
+            // }
 
             var categoryModel = new Category
             {
                 Id = 0,
                 Name = categoryDto.Name,
-                Path = categoryImageUrl
+                Path = ""
             };
 
             var newCategoryDto = await _categoryRepository.Add(categoryModel);

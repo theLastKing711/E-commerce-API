@@ -1,5 +1,6 @@
 using ECommerce.API.Data.IRepos;
 using ECommerce.API.Dtos.Identity;
+using ECommerce.API.Dtos.Identity.AppUser;
 using ECommerce.API.Models;
 using ECommerce.API.Models.Identity;
 using Microsoft.AspNetCore.Identity;
@@ -45,7 +46,7 @@ namespace ECommerce.API.Data.Repos
 
         }
 
-        public async Task<AppUser> AddAppUser(AppUser user, string password)
+        public async Task<AppUser> AddAppUser(AppUser user, string password, string role)
         {
 
             var result = await this._userManager.CreateAsync(user, password);
@@ -55,18 +56,27 @@ namespace ECommerce.API.Data.Repos
                                                      .FirstOrDefaultAsync();
 
             if (createdUser != null)
-                await this._userManager.AddToRoleAsync(createdUser, UserRoles.User);
+                await this._userManager.AddToRoleAsync(createdUser, role);
 
             return createdUser;
         }
 
-        public async Task<AppUser> UpdateAppUser(AppUser user, string? password)
+        public async Task<AppUser> UpdateAppUser(AppUser user, string roleName, string? password)
         {
             var OldAppUser = await this._userManager.FindByNameAsync(user.UserName);
 
             OldAppUser.ImagePath = user.ImagePath ?? OldAppUser.ImagePath;
 
             OldAppUser.Email = user.Email;
+
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            var UserRolesRemoved = await this._userManager.RemoveFromRolesAsync(OldAppUser, userRoles);
+
+            if (UserRolesRemoved.Succeeded)
+            {
+                await this._userManager.AddToRoleAsync(OldAppUser, roleName);
+            }
 
             if (password != null)
             {
@@ -94,6 +104,7 @@ namespace ECommerce.API.Data.Repos
 
         public async Task<AppUser> GetAppUserById(int id)
         {
+
             var AppUserModel = await this._userManager.Users
                                                       .Where(x => x.Id == id)
                                                       .FirstOrDefaultAsync();
@@ -128,6 +139,19 @@ namespace ECommerce.API.Data.Repos
 
         }
 
+        public async Task<List<RoleItemDto>> GetAllRoles()
+        {
+
+            var AllRoles = _roleManager.Roles.Select(x => new RoleItemDto()
+            {
+                Id = x.Id,
+                Name = x.Name
+            });
+
+
+            return AllRoles.ToList();
+
+        }
 
 
     }
