@@ -85,10 +85,12 @@ namespace ECommerce.API.Controllers
 
             var categoryModel = new Category()
             {
+                Id = categoryDto.Id,
                 Name = categoryDto.Name,
+                Path = ""
             };
 
-            var updatedCategory = await _categoryRepository.Update(id, categoryModel);
+            var updatedCategory = await _categoryRepository.UpdateCategory(categoryModel);
 
             return Ok(updatedCategory);
 
@@ -97,9 +99,15 @@ namespace ECommerce.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
-            await _categoryRepository.Remove(id);
+            var categoryRemoved = await _categoryRepository.Remove(id);
 
-            return Ok(true);
+            if (categoryRemoved)
+            {
+                return Ok(true);
+            }
+
+            return Ok(false);
+
 
         }
 

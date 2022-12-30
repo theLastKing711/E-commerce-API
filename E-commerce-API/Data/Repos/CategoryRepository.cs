@@ -22,12 +22,9 @@ namespace ECommerce.API.Data.Repos
             logger = logFactory.CreateLogger<CategoryRepository>();
         }
 
-
-
-
         public async Task<Category> UpdateCategory(Category category)
         {
-            var categoryModel = await this._context.Products
+            var categoryModel = await this._context.Categories
                                                     .Where(x => x.Id == category.Id)
                                                     // .Select(x => new Product()
                                                     // {
@@ -39,6 +36,7 @@ namespace ECommerce.API.Data.Repos
                                                     //     Path = product.Path ?? x.Path,
                                                     // })
                                                     .FirstOrDefaultAsync();
+
 
             categoryModel.Name = category.Name;
             categoryModel.Path = category.Path ?? categoryModel.Path;

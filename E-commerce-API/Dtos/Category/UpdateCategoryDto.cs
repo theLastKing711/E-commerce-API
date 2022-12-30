@@ -6,6 +6,6 @@ namespace ECommerce.API.Dtos.Category
     {
         public int Id { get; set; }
 
-        public IFormFile Image { get; set; }
+        public IFormFile? Image { get; set; }
     }
 }
