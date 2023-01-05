@@ -50,11 +50,47 @@ namespace ECommerce.API.Data.Repos
             return updatedCategory;
         }
 
-        public async Task<Pagination<Category>> getCategoriesPaginated(int pageNumber, int pageSize)
+        public async Task<Pagination<Category>> getCategoriesPaginated(int pageNumber, int pageSize, string query, string active, string direction)
         {
-            var categoriesModel = await this.GetAll();
 
-            Pagination<Category> paginatedCategoriesModel = await Pagination<Category>.GetPaginatedData(categoriesModel, pageNumber, pageSize);
+
+
+            var categoriesModel = this._context.Categories
+                                               .Where(x => query == "-1" || (x.Name.Contains(query) || x.Id.ToString().Contains(query)));
+
+            IOrderedQueryable<Category>? orderedCategoriesModel;
+
+            if (active != "-1" && direction != "-1")
+            {
+
+                switch (active)
+                {
+                    case "id":
+                        orderedCategoriesModel = direction == "asc" ? categoriesModel.OrderBy(x => x.Id) : categoriesModel.OrderByDescending(x => x.Id);
+
+                        break;
+
+                    case "name":
+                        orderedCategoriesModel = direction == "asc" ? categoriesModel.OrderBy(x => x.Name) : categoriesModel.OrderByDescending(x => x.Name);
+                        break;
+
+                    case "createdAt":
+                        orderedCategoriesModel = direction == "asc" ? categoriesModel.OrderBy(x => x.CreatedAt) : categoriesModel.OrderByDescending(x => x.CreatedAt);
+                        break;
+
+                    default:
+                        orderedCategoriesModel = categoriesModel.OrderByDescending(x => x.CreatedAt);
+                        break;
+                }
+            }
+            else
+            {
+                orderedCategoriesModel = categoriesModel.OrderByDescending(x => x.CreatedAt);
+            }
+
+
+
+            Pagination<Category> paginatedCategoriesModel = await Pagination<Category>.GetPaginatedData(orderedCategoriesModel, pageNumber, pageSize);
 
             return paginatedCategoriesModel;
 
@@ -95,21 +131,21 @@ namespace ECommerce.API.Data.Repos
         public async Task<CategoryWithProductsDto> CategoryProducts(int id)
         {
             var categoryWithProductsDto = await this._context.Categories.Include(x => x.Products)
-                                    .AsNoTracking()
-                                    .Where(x => x.Id == id)
-                                    .Select(x => new CategoryWithProductsDto
-                                    {
-                                        Id = x.Id,
-                                        Name = x.Name,
-                                        Products = x.Products.Select(product => new ProductDto
-                                        {
-                                            Id = product.Id,
-                                            Name = product.Name,
-                                            CategoryId = product.CategoryId,
-                                            Path = x.Path
-                                        })
-                                    })
-                                    .FirstOrDefaultAsync();
+                                                                        .AsNoTracking()
+                                                                        .Where(x => x.Id == id)
+                                                                        .Select(x => new CategoryWithProductsDto
+                                                                        {
+                                                                            Id = x.Id,
+                                                                            Name = x.Name,
+                                                                            Products = x.Products.Select(product => new ProductDto
+                                                                            {
+                                                                                Id = product.Id,
+                                                                                Name = product.Name,
+                                                                                CategoryId = product.CategoryId,
+                                                                                Path = x.Path
+                                                                            })
+                                                                        })
+                                                                        .FirstOrDefaultAsync();
 
             return categoryWithProductsDto;
         }
@@ -183,7 +219,7 @@ namespace ECommerce.API.Data.Repos
 
             logger.LogCritical(totalProductsCount.ToString());
 
-            // logger.LogCritical(users.Count().ToString());
+
 
             return paginatedCategoryProducts;
         }
@@ -237,6 +273,20 @@ namespace ECommerce.API.Data.Repos
                                              .ToListAsync();
 
             return productsModel;
+        }
+
+        public async Task<bool> DeleteCategories(List<int> ids)
+        {
+
+            var CategoriesModel = await this._context.Categories.Where(x => ids.Contains(x.Id))
+                                                                .ToListAsync();
+
+            this._context.Categories.RemoveRange(CategoriesModel);
+
+            await _context.SaveChangesAsync();
+
+            return true;
+
         }
 
 

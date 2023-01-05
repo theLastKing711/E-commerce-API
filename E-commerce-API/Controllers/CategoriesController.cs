@@ -25,9 +25,9 @@ namespace ECommerce.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllCategories([FromQuery] int pageNumber, [FromQuery] int pageSize)
+        public async Task<IActionResult> GetAllCategories([FromQuery] int pageNumber, [FromQuery] int pageSize, [FromQuery] string query, [FromQuery] string active, [FromQuery] string direction)
         {
-            var categories = await _categoryRepository.getCategoriesPaginated(pageNumber, pageSize);
+            var categories = await _categoryRepository.getCategoriesPaginated(pageNumber, pageSize, query, active, direction);
 
             return Ok(categories);
         }
@@ -108,6 +108,14 @@ namespace ECommerce.API.Controllers
 
             return Ok(false);
 
+        }
+
+        [HttpPost("removeRange")]
+        public async Task<IActionResult> DeleteAppUsers(List<int> ids)
+        {
+            await _categoryRepository.DeleteCategories(ids);
+
+            return Ok(true);
 
         }
 

@@ -29,9 +29,9 @@ namespace ECommerce.API.Controllers.AppUserControllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllCategories([FromQuery] int pageNumber, [FromQuery] int pageSize)
+        public async Task<IActionResult> GetAllCategories([FromQuery] int pageNumber, [FromQuery] int pageSize, [FromQuery] string query, [FromQuery] string active, [FromQuery] string direction)
         {
-            var categories = await _categoryRepository.getCategoriesPaginated(0, 0);
+            var categories = await _categoryRepository.getCategoriesPaginated(0, 0, query, active, direction);
 
             var categoriesDto = _mapper.Map<IEnumerable<CategoryDto>>(categories.Data);
 
