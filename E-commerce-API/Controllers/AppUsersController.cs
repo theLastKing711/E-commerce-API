@@ -35,10 +35,10 @@ namespace ECommerce.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAppUsers([FromQuery] int pageNumber, [FromQuery] int pageSize, [FromQuery] string query)
+        public async Task<IActionResult> GetAllAppUsers([FromQuery] int pageNumber, [FromQuery] int pageSize, [FromQuery] string query, [FromQuery] string active, [FromQuery] string direction)
         {
 
-            var PaginatedAppUsersModel = await _AppUsersRepository.GetAllAppUsersPaginated(pageNumber, pageSize, query);
+            var PaginatedAppUsersModel = await _AppUsersRepository.GetAllAppUsersPaginated(pageNumber, pageSize, query, active, direction);
 
             var paginatedAppUsersDto = this._mapper.Map<IEnumerable<AppUserDto>>(PaginatedAppUsersModel.Data);
 

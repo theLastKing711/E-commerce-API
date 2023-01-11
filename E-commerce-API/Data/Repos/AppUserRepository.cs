@@ -89,14 +89,50 @@ namespace ECommerce.API.Data.Repos
             return OldAppUser;
         }
 
-        public async Task<Pagination<AppUser>> GetAllAppUsersPaginated(int pageNumber, int pageSize, string query)
+        public async Task<Pagination<AppUser>> GetAllAppUsersPaginated(int pageNumber, int pageSize, string query, string active, string direction)
         {
 
             var usersModel = this._userManager.Users
-                                              .Where(x => query == "-1" || (x.UserName.Contains(query) || x.Email.Contains(query) || x.Id.ToString().Contains(query)))
-                                              .OrderByDescending(x => x.CreatedAt);
+                                 .Where(x => query == "-1" || (x.UserName.Contains(query) || x.Email.Contains(query) || x.Id.ToString().Contains(query)))
+                                 .OrderByDescending(x => x.CreatedAt);
 
-            var paginatedCategoriesModel = await Pagination<AppUser>.GetPaginatedData(usersModel, pageNumber, pageSize);
+            IOrderedQueryable<AppUser>? orderedUsersModel;
+
+            if (active != "-1" && direction != "-1")
+            {
+
+                switch (active)
+                {
+                    case "id":
+                        orderedUsersModel = direction == "asc" ? usersModel.OrderBy(x => x.Id) : usersModel.OrderByDescending(x => x.Id);
+
+                        break;
+
+                    case "email":
+                        orderedUsersModel = direction == "asc" ? usersModel.OrderBy(x => x.Email) : usersModel.OrderByDescending(x => x.Email);
+                        break;
+
+                    case "username":
+                        orderedUsersModel = direction == "asc" ? usersModel.OrderBy(x => x.UserName) : usersModel.OrderByDescending(x => x.UserName);
+                        break;
+
+                    case "createdAt":
+                        orderedUsersModel = direction == "asc" ? usersModel.OrderBy(x => x.CreatedAt) : usersModel.OrderByDescending(x => x.CreatedAt);
+                        break;
+
+                    default:
+                        orderedUsersModel = usersModel.OrderByDescending(x => x.CreatedAt);
+                        break;
+                }
+            }
+            else
+            {
+                orderedUsersModel = usersModel.OrderByDescending(x => x.CreatedAt);
+            }
+
+
+
+            var paginatedCategoriesModel = await Pagination<AppUser>.GetPaginatedData(orderedUsersModel, pageNumber, pageSize);
 
             return paginatedCategoriesModel;
 

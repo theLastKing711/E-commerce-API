@@ -11,7 +11,7 @@ namespace ECommerce.API.Data.IRepos
 
         public Task<bool> IsEmailDuplicated(string username);
 
-        Task<Pagination<AppUser>> GetAllAppUsersPaginated(int pageNumber, int pageSize, string query);
+        Task<Pagination<AppUser>> GetAllAppUsersPaginated(int pageNumber, int pageSize, string query, string active, string direction);
 
         Task<AppUser> GetAppUserById(int id);
 

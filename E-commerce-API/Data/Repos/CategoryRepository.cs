@@ -54,7 +54,6 @@ namespace ECommerce.API.Data.Repos
         {
 
 
-
             var categoriesModel = this._context.Categories
                                                .Where(x => query == "-1" || (x.Name.Contains(query) || x.Id.ToString().Contains(query)));
 
