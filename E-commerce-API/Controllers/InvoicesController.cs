@@ -1,13 +1,10 @@
 using System.Security.Claims;
 using AutoMapper;
 using ECommerce.API.Data.IRepos;
-using ECommerce.API.Dtos;
 using ECommerce.API.Dtos.Invoice;
-using ECommerce.API.Dtos.InvoiceDetails;
 using ECommerce.API.Helpers;
 using ECommerce.API.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerce.API.Controllers

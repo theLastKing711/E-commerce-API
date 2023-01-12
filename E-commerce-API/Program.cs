@@ -92,6 +92,7 @@ builder.Services.AddScoped<IImagesUploader, ImagesUploader>();
 builder.Services.AddScoped<IProductFilterContext, ProductFilterContext>();
 builder.Services.AddScoped<IPriceFilterStrategy, LessThanPriceFilter>();
 builder.Services.AddScoped<IPriceFilterStrategy, RangePriceFilter>();
+builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
 builder.Services.AddScoped<IPriceFilterStrategy, GreaterThanOrEqualPriceFilter>();
 
 

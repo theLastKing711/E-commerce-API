@@ -1,8 +1,6 @@
 ﻿using ECommerce.API.Data.IRepos;
 using ECommerce.API.Dtos.Identity;
 using ECommerce.API.Models.Identity;
-using ECommerce.API.Models.Roles;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
