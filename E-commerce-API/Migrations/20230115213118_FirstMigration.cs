@@ -377,462 +377,497 @@ namespace ECommerce.API.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { 1, "c4522e6a-2fa0-429b-b343-00afe2ce5786", "User", "USER" });
+                values: new object[] { 1, "ce9ef569-5eca-468c-8336-c144719b55d2", "User", "USER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { 2, "de0195d8-2cf7-4a57-949e-dfe8299c004d", "Admin", "ADMIN" });
+                values: new object[] { 2, "83ee8fdb-0267-4a70-8e57-22c6d3e1f829", "Admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { 3, "e3476dcc-5140-44ea-9a2c-9d203910724e", "SalesManager", "SALESMANAGER" });
+                values: new object[] { 3, "c731f958-af12-4c38-ad5a-89156d8fef8f", "SalesManager", "SALESMANAGER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedAt", "Email", "EmailConfirmed", "ImagePath", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 100, 0, "8fc4dc30-a755-40fa-98a8-fa79a0c48756", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1258), "appuser@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser@gmail.com" });
+                values: new object[] { 100, 0, "86232ae0-8820-4bd1-a755-f31dfb68fda6", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1055), "appuser@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedAt", "Email", "EmailConfirmed", "ImagePath", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 101, 0, "b178698b-a727-4647-896f-b94a8c732381", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1296), "appuser2@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser2@gmail.com" });
+                values: new object[] { 101, 0, "edaa26d8-c0b1-4fdf-8ebd-37de18ac32dc", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1099), "appuser2@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser2@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedAt", "Email", "EmailConfirmed", "ImagePath", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 102, 0, "4a1a20c7-fe28-4f01-bf45-0b7115b07a7f", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1316), "appuser3@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser3@gmail.com" });
+                values: new object[] { 102, 0, "0190a64a-cc4c-4faa-96cd-175a9b20bf10", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1124), "appuser3@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser3@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedAt", "Email", "EmailConfirmed", "ImagePath", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 103, 0, "abd2d667-58bd-4611-b1da-90883c9dfdd5", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1337), "appuser4@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser4@gmail.com" });
+                values: new object[] { 103, 0, "87f21d79-4ba7-4e5e-a6c3-2e3c04fb8286", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1153), "appuser4@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuser4@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedAt", "Email", "EmailConfirmed", "ImagePath", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 104, 0, "9bc56279-8191-4755-ac0a-40ffb24f9088", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1359), "appuser5@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuse54@gmail.com" });
+                values: new object[] { 104, 0, "41b000de-269e-4380-8e99-3a1d60e98d09", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1179), "appuser5@gmail.com", false, null, false, null, null, null, "laksjdflaksj", null, false, null, false, "appuse54@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "CreatedAt", "Name", "Path" },
-                values: new object[] { 1, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(863), "Electronices", "category_Fuji_Dash_Electronics_1x._SY304_CB432774322_.jpg" });
+                values: new object[] { 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(635), "Electronices", "category_Fuji_Dash_Electronics_1x._SY304_CB432774322_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "CreatedAt", "Name", "Path" },
-                values: new object[] { 2, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(900), "Computers", "category-Fuji_Dash_PC_1x._SY304_CB431800965_.jpg" });
+                values: new object[] { 2, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(673), "Computers", "category-Fuji_Dash_PC_1x._SY304_CB431800965_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "CreatedAt", "Name", "Path" },
-                values: new object[] { 3, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(907), "Games", "category-games_Fuji_Desktop_Dash_Kindle_1x._SY304_CB639752818_.jpg" });
+                values: new object[] { 3, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(678), "Games", "category-games_Fuji_Desktop_Dash_Kindle_1x._SY304_CB639752818_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "CreatedAt", "Name", "Path" },
-                values: new object[] { 4, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(910), "Pets", "category-pets_Fuji_Dash_Pets_1X._SY304_CB639746743_.jpg" });
+                values: new object[] { 4, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(683), "Pets", "category-pets_Fuji_Dash_Pets_1X._SY304_CB639746743_.jpg" });
+
+            migrationBuilder.InsertData(
+                table: "Invoices",
+                columns: new[] { "Id", "AppUserId", "CreatedAt" },
+                values: new object[] { 1, 100, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2362) });
+
+            migrationBuilder.InsertData(
+                table: "Invoices",
+                columns: new[] { "Id", "AppUserId", "CreatedAt" },
+                values: new object[] { 2, 101, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2367) });
+
+            migrationBuilder.InsertData(
+                table: "Invoices",
+                columns: new[] { "Id", "AppUserId", "CreatedAt" },
+                values: new object[] { 3, 101, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2371) });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "FullImagePath", "IsBestSeller", "Name", "Path", "Price", "ThumbImagePath" },
-                values: new object[] { 1, 1, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1057), "laptop-full_71rXSVqET9L._AC_SL1257_.jpg", true, "Sceptre 24 Professional Thin 75Hz 1080p LED Monitor 2x HDMI VGA Build-in Speakers, Machine Black (E248W-19203R Series)", "electronics-laptop_71rXSVqET9L._AC_UL320_.jpg", 200m, "laptop-thumb_71qid7QFWJL._SX3000_.jpg" });
+                values: new object[] { 1, 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(825), "laptop-full_71rXSVqET9L._AC_SL1257_.jpg", true, "Sceptre 24 Professional Thin 75Hz 1080p LED Monitor 2x HDMI VGA Build-in Speakers, Machine Black (E248W-19203R Series)", "electronics-laptop_71rXSVqET9L._AC_UL320_.jpg", 200m, "laptop-thumb_71qid7QFWJL._SX3000_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "FullImagePath", "IsBestSeller", "Name", "Path", "Price", "ThumbImagePath" },
-                values: new object[] { 2, 1, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1066), "mobile-full_81AeiqxHkwL._AC_SL1500_.jpg", true, "Mobile", "electronics-mobile_81AeiqxHkwL._AC_UL320_.jpg", 100m, "mobile-thumb_81AeiqxHkwL._AC_SY679_.jpg" });
+                values: new object[] { 2, 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(834), "mobile-full_81AeiqxHkwL._AC_SL1500_.jpg", true, "Mobile", "electronics-mobile_81AeiqxHkwL._AC_UL320_.jpg", 100m, "mobile-thumb_81AeiqxHkwL._AC_SY679_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "FullImagePath", "IsBestSeller", "Name", "Path", "Price", "ThumbImagePath" },
-                values: new object[] { 3, 1, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1070), "printer-full_61UdeL7aO-L._AC_SL1500_.jpg", true, "Printer", "electronics-printer_61UdeL7aO-L._AC_UL320_.jpg", 400m, "printer-thumb_61UdeL7aO-L._AC_SX466_.jpg" });
+                values: new object[] { 3, 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(840), "printer-full_61UdeL7aO-L._AC_SL1500_.jpg", true, "Printer", "electronics-printer_61UdeL7aO-L._AC_UL320_.jpg", 400m, "printer-thumb_61UdeL7aO-L._AC_SX466_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "FullImagePath", "IsBestSeller", "Name", "Path", "Price", "ThumbImagePath" },
-                values: new object[] { 4, 1, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1074), "earpod_full-7120GgUKj3L._AC_SL1500_.jpg", true, "EarPods", "electronices-headphones_7120GgUKj3L._AC_UL320_.jpg", 15m, "earpod-thumb_7120GgUKj3L._AC_SX522_.jpg" });
+                values: new object[] { 4, 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(848), "earpod_full-7120GgUKj3L._AC_SL1500_.jpg", true, "EarPods", "electronices-headphones_7120GgUKj3L._AC_UL320_.jpg", 15m, "earpod-thumb_7120GgUKj3L._AC_SX522_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "FullImagePath", "IsBestSeller", "Name", "Path", "Price", "ThumbImagePath" },
-                values: new object[] { 5, 1, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1078), "batteries-full_81ZnAYiX5sL._AC_SL1500_.jpg", true, "Batteries", "electronics-batteries_81ZnAYiX5sL._AC_UL320_.jpg", 5m, "batteries-thumb_81ZnAYiX5sL._AC_SX679_.jpg" });
+                values: new object[] { 5, 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(855), "batteries-full_81ZnAYiX5sL._AC_SL1500_.jpg", true, "Batteries", "electronics-batteries_81ZnAYiX5sL._AC_UL320_.jpg", 5m, "batteries-thumb_81ZnAYiX5sL._AC_SX679_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "FullImagePath", "IsBestSeller", "Name", "Path", "Price", "ThumbImagePath" },
-                values: new object[] { 6, 1, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1082), "pen-full_21l795GXZkL._AC_SL1024_.jpg", true, "Pen", "electronics-pen_21SPDoiRuGL._AC_UL320_.jpg", 250m, "pen-thumb_21l795GXZkL._AC_SY500_.jpg" });
+                values: new object[] { 6, 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(860), "pen-full_21l795GXZkL._AC_SL1024_.jpg", true, "Pen", "electronics-pen_21SPDoiRuGL._AC_UL320_.jpg", 250m, "pen-thumb_21l795GXZkL._AC_SY500_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "FullImagePath", "IsBestSeller", "Name", "Path", "Price", "ThumbImagePath" },
-                values: new object[] { 7, 1, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1085), "usb-full_71wrIZujPIL._AC_SL1500_.jpg", false, "Usb", "electronics-usb_71wrIZujPIL._AC_UL320_.jpg", 25m, "usb-thumb_71wrIZujPIL._AC_SX466_.jpg" });
+                values: new object[] { 7, 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(865), "usb-full_71wrIZujPIL._AC_SL1500_.jpg", false, "Usb", "electronics-usb_71wrIZujPIL._AC_UL320_.jpg", 25m, "usb-thumb_71wrIZujPIL._AC_SX466_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "FullImagePath", "IsBestSeller", "Name", "Path", "Price", "ThumbImagePath" },
-                values: new object[] { 8, 2, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1089), "player-full_71E4InwfcPL._AC_SL1500_.jpg", true, "Player", "computers-player_71E4InwfcPL._AC_UL320_.jpg", 350m, "player-thumb_71E4InwfcPL._AC_SX466_.jpg" });
+                values: new object[] { 8, 2, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(874), "player-full_71E4InwfcPL._AC_SL1500_.jpg", true, "Player", "computers-player_71E4InwfcPL._AC_UL320_.jpg", 350m, "player-thumb_71E4InwfcPL._AC_SX466_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "FullImagePath", "IsBestSeller", "Name", "Path", "Price", "ThumbImagePath" },
-                values: new object[] { 9, 3, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1092), "controller-full_61X3uV04ztL._SL1500_.jpg", true, "Controller", "games-controller_61X3uV04ztL._AC_UL320_.jpg", 25m, "controller-thumb_61X3uV04ztL._SX522_.jpg" });
+                values: new object[] { 9, 3, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(884), "controller-full_61X3uV04ztL._SL1500_.jpg", true, "Controller", "games-controller_61X3uV04ztL._AC_UL320_.jpg", 25m, "controller-thumb_61X3uV04ztL._SX522_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "FullImagePath", "IsBestSeller", "Name", "Path", "Price", "ThumbImagePath" },
-                values: new object[] { 10, 3, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1096), "vr-full_61tE7IcuLmL._SL1500_.jpg", false, "Vr-Set", "games-vr_61tE7IcuLmL._AC_UL320_.jpg", 90m, "vr-thumb_61tE7IcuLmL._SX522_.jpg" });
+                values: new object[] { 10, 3, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(889), "vr-full_61tE7IcuLmL._SL1500_.jpg", false, "Vr-Set", "games-vr_61tE7IcuLmL._AC_UL320_.jpg", 90m, "vr-thumb_61tE7IcuLmL._SX522_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "CategoryId", "CreatedAt", "FullImagePath", "IsBestSeller", "Name", "Path", "Price", "ThumbImagePath" },
-                values: new object[] { 11, 3, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1100), "xbox-full_61JGKhqxHxL._SL1500_.jpg", true, "Xbox", "games-xbox_61JGKhqxHxL._AC_UL320_.jpg", 150m, "xbox-thumb_61JGKhqxHxL._SX522_.jpg" });
+                values: new object[] { 11, 3, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(894), "xbox-full_61JGKhqxHxL._SL1500_.jpg", true, "Xbox", "games-xbox_61JGKhqxHxL._AC_UL320_.jpg", 150m, "xbox-thumb_61JGKhqxHxL._SX522_.jpg" });
 
             migrationBuilder.InsertData(
                 table: "Discounts",
                 columns: new[] { "Id", "CreatedAt", "EndDate", "ProductId", "StartDate", "Value" },
-                values: new object[] { 1, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2117), new DateTime(2021, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, new DateTime(2020, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 20 });
+                values: new object[] { 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2030), new DateTime(2021, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, new DateTime(2020, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 20 });
 
             migrationBuilder.InsertData(
                 table: "Discounts",
                 columns: new[] { "Id", "CreatedAt", "EndDate", "ProductId", "StartDate", "Value" },
-                values: new object[] { 2, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2125), new DateTime(2023, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, new DateTime(2022, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 30 });
+                values: new object[] { 2, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2039), new DateTime(2023, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, new DateTime(2022, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 30 });
 
             migrationBuilder.InsertData(
                 table: "Discounts",
                 columns: new[] { "Id", "CreatedAt", "EndDate", "ProductId", "StartDate", "Value" },
-                values: new object[] { 3, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2129), new DateTime(2024, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, new DateTime(2023, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 40 });
+                values: new object[] { 3, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2047), new DateTime(2024, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, new DateTime(2023, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 40 });
 
             migrationBuilder.InsertData(
                 table: "Discounts",
                 columns: new[] { "Id", "CreatedAt", "EndDate", "ProductId", "StartDate", "Value" },
-                values: new object[] { 4, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2132), new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, new DateTime(2020, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 50 });
+                values: new object[] { 4, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2055), new DateTime(2026, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, new DateTime(2020, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 50 });
 
             migrationBuilder.InsertData(
                 table: "Inventory",
                 columns: new[] { "Id", "CreatedAt", "CurrentAmount", "ProductId", "Quantity" },
-                values: new object[] { 1, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2241), 5, 1, 40 });
+                values: new object[] { 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2181), 5, 1, 40 });
 
             migrationBuilder.InsertData(
                 table: "Inventory",
                 columns: new[] { "Id", "CreatedAt", "CurrentAmount", "ProductId", "Quantity" },
-                values: new object[] { 2, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2246), 0, 1, 40 });
+                values: new object[] { 2, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2187), 0, 1, 40 });
 
             migrationBuilder.InsertData(
                 table: "Inventory",
                 columns: new[] { "Id", "CreatedAt", "CurrentAmount", "ProductId", "Quantity" },
-                values: new object[] { 3, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2249), 0, 3, 10 });
+                values: new object[] { 3, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2192), 0, 3, 10 });
 
             migrationBuilder.InsertData(
                 table: "Inventory",
                 columns: new[] { "Id", "CreatedAt", "CurrentAmount", "ProductId", "Quantity" },
-                values: new object[] { 4, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2252), 10, 3, 10 });
+                values: new object[] { 4, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2197), 10, 3, 10 });
 
             migrationBuilder.InsertData(
                 table: "Inventory",
                 columns: new[] { "Id", "CreatedAt", "CurrentAmount", "ProductId", "Quantity" },
-                values: new object[] { 5, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2255), 0, 4, 25 });
+                values: new object[] { 5, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2206), 0, 4, 25 });
 
             migrationBuilder.InsertData(
                 table: "Inventory",
                 columns: new[] { "Id", "CreatedAt", "CurrentAmount", "ProductId", "Quantity" },
-                values: new object[] { 6, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2258), 0, 5, 40 });
+                values: new object[] { 6, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2210), 0, 5, 40 });
 
             migrationBuilder.InsertData(
                 table: "Inventory",
                 columns: new[] { "Id", "CreatedAt", "CurrentAmount", "ProductId", "Quantity" },
-                values: new object[] { 7, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2260), 5, 6, 15 });
+                values: new object[] { 7, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2214), 5, 6, 15 });
 
             migrationBuilder.InsertData(
                 table: "Inventory",
                 columns: new[] { "Id", "CreatedAt", "CurrentAmount", "ProductId", "Quantity" },
-                values: new object[] { 8, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2263), 15, 7, 30 });
+                values: new object[] { 8, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2218), 15, 7, 30 });
 
             migrationBuilder.InsertData(
                 table: "Inventory",
                 columns: new[] { "Id", "CreatedAt", "CurrentAmount", "ProductId", "Quantity" },
-                values: new object[] { 9, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(2266), 25, 8, 25 });
+                values: new object[] { 9, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2223), 25, 8, 25 });
+
+            migrationBuilder.InsertData(
+                table: "InvoicesDetails",
+                columns: new[] { "Id", "CreatedAt", "CustomerId", "InvoiceId", "ProductId", "ProductQuantity" },
+                values: new object[] { 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2513), null, 1, 1, 25 });
+
+            migrationBuilder.InsertData(
+                table: "InvoicesDetails",
+                columns: new[] { "Id", "CreatedAt", "CustomerId", "InvoiceId", "ProductId", "ProductQuantity" },
+                values: new object[] { 2, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2519), null, 1, 2, 15 });
+
+            migrationBuilder.InsertData(
+                table: "InvoicesDetails",
+                columns: new[] { "Id", "CreatedAt", "CustomerId", "InvoiceId", "ProductId", "ProductQuantity" },
+                values: new object[] { 3, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2523), null, 2, 2, 100 });
+
+            migrationBuilder.InsertData(
+                table: "InvoicesDetails",
+                columns: new[] { "Id", "CreatedAt", "CustomerId", "InvoiceId", "ProductId", "ProductQuantity" },
+                values: new object[] { 4, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(2528), null, 3, 5, 40 });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 1, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1769), 1, "24 Ultra slim profile " });
+                values: new object[] { 1, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1638), 1, "24 Ultra slim profile " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 2, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1774), 1, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+                values: new object[] { 2, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1648), 1, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 3, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1778), 1, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+                values: new object[] { 3, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1652), 1, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 4, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1781), 1, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
+                values: new object[] { 4, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1657), 1, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 5, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1784), 2, "24 Ultra slim profile " });
+                values: new object[] { 5, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1661), 2, "24 Ultra slim profile " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 6, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1787), 2, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+                values: new object[] { 6, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1665), 2, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 7, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1790), 2, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+                values: new object[] { 7, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1670), 2, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 8, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1793), 2, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
+                values: new object[] { 8, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1679), 2, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 9, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1796), 3, "24 Ultra slim profile " });
+                values: new object[] { 9, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1683), 3, "24 Ultra slim profile " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 10, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1799), 3, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+                values: new object[] { 10, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1687), 3, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 11, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1803), 3, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+                values: new object[] { 11, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1691), 3, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 12, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1806), 3, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
+                values: new object[] { 12, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1695), 3, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 13, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1809), 4, "24 Ultra slim profile " });
+                values: new object[] { 13, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1700), 4, "24 Ultra slim profile " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 14, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1883), 4, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+                values: new object[] { 14, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1706), 4, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 15, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1887), 4, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+                values: new object[] { 15, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1713), 4, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 16, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1890), 4, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
+                values: new object[] { 16, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1718), 4, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 17, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1893), 5, "24 Ultra slim profile " });
+                values: new object[] { 17, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1722), 5, "24 Ultra slim profile " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 18, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1895), 5, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+                values: new object[] { 18, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1726), 5, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 19, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1898), 5, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+                values: new object[] { 19, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1731), 5, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 20, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1901), 5, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
+                values: new object[] { 20, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1738), 5, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 21, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1904), 6, "24 Ultra slim profile " });
+                values: new object[] { 21, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1745), 6, "24 Ultra slim profile " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 22, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1906), 6, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+                values: new object[] { 22, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1749), 6, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 23, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1910), 6, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+                values: new object[] { 23, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1753), 6, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 24, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1913), 6, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
+                values: new object[] { 24, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1758), 6, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 25, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1916), 7, "24 Ultra slim profile " });
+                values: new object[] { 25, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1761), 7, "24 Ultra slim profile " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 26, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1919), 7, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+                values: new object[] { 26, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1768), 7, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 27, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1922), 7, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+                values: new object[] { 27, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1776), 7, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 28, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1925), 7, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
+                values: new object[] { 28, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1780), 7, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 29, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1929), 8, "24 Ultra slim profile " });
+                values: new object[] { 29, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1784), 8, "24 Ultra slim profile " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 30, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1932), 8, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+                values: new object[] { 30, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1788), 8, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 31, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1935), 8, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+                values: new object[] { 31, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1792), 8, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 32, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1938), 8, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
+                values: new object[] { 32, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1798), 8, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 33, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1941), 9, "24 Ultra slim profile " });
+                values: new object[] { 33, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1807), 9, "24 Ultra slim profile " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 34, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1944), 9, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+                values: new object[] { 34, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1810), 9, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 35, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1947), 9, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+                values: new object[] { 35, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1814), 9, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 36, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1950), 9, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
+                values: new object[] { 36, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1818), 9, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 37, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1953), 10, "24 Ultra slim profile " });
+                values: new object[] { 37, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1823), 10, "24 Ultra slim profile " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 38, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1956), 10, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+                values: new object[] { 38, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1827), 10, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 39, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1959), 10, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+                values: new object[] { 39, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1834), 10, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 40, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1962), 10, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
+                values: new object[] { 40, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1840), 10, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 41, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1964), 11, "24 Ultra slim profile " });
+                values: new object[] { 41, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1845), 11, "24 Ultra slim profile " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 42, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1967), 11, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
+                values: new object[] { 42, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1849), 11, "Slim bezel with thin chassis. Power Range (V, A, Hz)- AC-DC Adapter Input 100 – 240 VAC, 50/60 Hz, 1.0A (Max.) Output - 12V DC, 2.5A. Power Consumption (Typical)- 25.4W. Neck/Stand Detachable: Yes " });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 43, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1970), 11, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
+                values: new object[] { 43, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1853), 11, "2 x HDMI Ports (convertible to DVI).Contrast Ratio:1000 : 1" });
 
             migrationBuilder.InsertData(
                 table: "ProductDetails",
                 columns: new[] { "Id", "CreatedAt", "ProductId", "Text" },
-                values: new object[] { 44, new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1972), 11, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
+                values: new object[] { 44, new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1857), 11, "VESA wall mount ready. HDMI Input Signal Support - 1920 x 1080 @ 75Hz, 1080/60p, 1080/60i, 720p, 480p, 480i, Built-in Speakers - 2 x 2W 8 Ohm.Mounting type: VESA Hole Pattern 100mm x 100mm" });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 1, 100, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1531), null, 1, 4m });
+                values: new object[] { 1, 100, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1333), null, 1, 4m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 2, 101, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1538), null, 1, 5m });
+                values: new object[] { 2, 101, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1340), null, 1, 5m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 3, 102, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1541), null, 1, 1m });
+                values: new object[] { 3, 102, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1345), null, 1, 1m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 4, 104, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1547), null, 1, 5m });
+                values: new object[] { 4, 104, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1352), null, 1, 5m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 5, 104, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1550), null, 2, 2m });
+                values: new object[] { 5, 104, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1359), null, 2, 2m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 6, 103, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1556), null, 2, 3m });
+                values: new object[] { 6, 103, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1366), null, 2, 3m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 7, 104, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1559), null, 2, 5m });
+                values: new object[] { 7, 104, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1371), null, 2, 5m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 8, 104, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1562), null, 3, 1m });
+                values: new object[] { 8, 104, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1375), null, 3, 1m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 9, 102, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1565), null, 4, 4m });
+                values: new object[] { 9, 102, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1380), null, 4, 4m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 10, 102, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1569), null, 4, 3m });
+                values: new object[] { 10, 102, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1385), null, 4, 3m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 11, 104, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1573), null, 5, 5m });
+                values: new object[] { 11, 104, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1470), null, 5, 5m });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AppUserId", "Body", "CreatedAt", "CustomerId", "ProductId", "Rating" },
-                values: new object[] { 12, 104, "Well Done!", new DateTime(2023, 1, 12, 19, 33, 46, 217, DateTimeKind.Local).AddTicks(1577), null, 6, 5m });
+                values: new object[] { 12, 104, "Well Done!", new DateTime(2023, 1, 16, 0, 31, 18, 38, DateTimeKind.Local).AddTicks(1475), null, 6, 5m });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
