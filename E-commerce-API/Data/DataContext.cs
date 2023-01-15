@@ -34,6 +34,9 @@ namespace ECommerce.API
 
             builder.ApplyConfiguration(new InventoryConfiguration());
 
+            builder.ApplyConfiguration(new InvoiceConfiguration());
+            builder.ApplyConfiguration(new InvoiceConfiguration());
+
 
         }
 
