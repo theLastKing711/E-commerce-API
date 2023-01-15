@@ -50,7 +50,13 @@ builder.Services.AddCors(options =>
                             "https://e-commerce-api1.herokuapp",
                             "https://e-commerce-api1.herokuapp.com",
                             "https://e-commerce-api1.herokuapp.com/api",
-                            "https://e-commerce-api1.herokuapp.com/api/AppUserCategories"
+                            "https://e-commerce-api1.herokuapp.com/api/AppUserCategories",
+                            "http://e-commerce-api1",
+                            "http://e-commerce-api1.herokuapp",
+                            "http://e-commerce-api1.herokuapp.com",
+                            "http://e-commerce-api1.herokuapp.com/api",
+                            "http://e-commerce-api1.herokuapp.com/api/AppUserCategories"
+
                         )
                         .SetIsOriginAllowed(origin => true)
                         .SetIsOriginAllowedToAllowWildcardSubdomains()
