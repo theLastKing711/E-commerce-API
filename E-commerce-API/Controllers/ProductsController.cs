@@ -236,6 +236,14 @@ namespace ECommerce.API.Controllers
 
         }
 
+        [HttpGet("list")]
+        public async Task<IActionResult> GetList()
+        {
+            var productsList = await this._productsRepository.GetAll();
+
+            return Ok(productsList);
+        }
+
 
         [HttpDelete("Reviews/{id}")]
         public async Task<IActionResult> DeleteReview(int id)

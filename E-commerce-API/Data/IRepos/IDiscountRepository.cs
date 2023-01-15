@@ -18,5 +18,8 @@ namespace ECommerce.API.Data.IRepos
 
         Task<string> CheckIfDiscountDuplicated(int productId, DateTime startDate, DateTime endDate);
 
+        Task<string> CheckIfDiscountDuplicatedOnUpdate(int productId, DateTime startDate, DateTime endDate);
+
+
     }
 }

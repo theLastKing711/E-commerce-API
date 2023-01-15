@@ -12,12 +12,13 @@ namespace ECommerce.API.Data.Repos
     {
 
         private readonly UserManager<AppUser> _userManager;
+
         private readonly RoleManager<AppRole> _roleManager;
 
         private DataContext _context;
 
-
-        public AppUserRepository(DataContext context,
+        public AppUserRepository(
+                                    DataContext context,
                                      UserManager<AppUser> userManaager,
                                      RoleManager<AppRole> roleManager
                                 )
@@ -129,8 +130,6 @@ namespace ECommerce.API.Data.Repos
             {
                 orderedUsersModel = usersModel.OrderByDescending(x => x.CreatedAt);
             }
-
-
 
             var paginatedCategoriesModel = await Pagination<AppUser>.GetPaginatedData(orderedUsersModel, pageNumber, pageSize);
 

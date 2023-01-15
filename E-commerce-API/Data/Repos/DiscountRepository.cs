@@ -55,8 +55,16 @@ namespace ECommerce.API.Data.Repos
 
                         break;
 
-                    case "Value":
+                    case "value":
                         orderedDiscountsModel = direction == "asc" ? DiscountsModel.OrderBy(x => x.Value) : DiscountsModel.OrderByDescending(x => x.Value);
+                        break;
+
+                    case "startDate":
+                        orderedDiscountsModel = direction == "asc" ? DiscountsModel.OrderBy(x => x.Value) : DiscountsModel.OrderByDescending(x => x.StartDate);
+                        break;
+
+                    case "endDate":
+                        orderedDiscountsModel = direction == "asc" ? DiscountsModel.OrderBy(x => x.Value) : DiscountsModel.OrderByDescending(x => x.EndDate);
                         break;
 
                     case "createdAt":
@@ -143,30 +151,85 @@ namespace ECommerce.API.Data.Repos
                                                     .Where(e => e.Id == ProductId)
                                                     .FirstOrDefaultAsync();
 
-            this.logger.LogCritical(productModel.Name.ToString());
+            if (productModel == null)
+            {
+                return "Product does not exist";
+            }
 
             var isDiscountDuplicated = "";
 
-            // foreach (Discount d in productModel?.Discounts)
-            // {
-            //     this.logger.LogCritical("first");
+            foreach (Discount d in productModel?.Discounts)
+            {
 
-            //     if (
-            //         d.StartDate <= startDate && d.EndDate >= startDate
-            //         ||
-            //         d.StartDate <= endDate && d.EndDate >= endDate
-            //         ||
-            //         (
-            //             startDate <= d.StartDate
-            //                 &&
-            //             endDate >= d.EndDate
-            //         )
-            //     )
-            //     {
-            //         isDiscountDuplicated = $"discount already exist within date range ${d.StartDate}-${d.EndDate}";
-            //         break;
-            //     }
-            // }
+                if (
+                    d.StartDate <= startDate && d.EndDate >= startDate
+                    ||
+                    d.StartDate <= endDate && d.EndDate >= endDate
+                    ||
+                    (
+                        startDate <= d.StartDate
+                            &&
+                        endDate >= d.EndDate
+                    )
+                )
+                {
+                    isDiscountDuplicated = $"discount already exist within date range {d.StartDate} - {d.EndDate}";
+                    break;
+                }
+            }
+
+            return isDiscountDuplicated;
+
+        }
+
+        public async Task<string> CheckIfDiscountDuplicatedOnUpdate(int ProductId, DateTime startDate, DateTime endDate)
+        {
+
+            var productModel = await this._context.Products
+                                                    .AsNoTracking()
+                                                    .Include(product => product.Discounts)
+                                                    .Where(e => e.Id == ProductId)
+                                                    .FirstOrDefaultAsync();
+
+            if (productModel == null)
+            {
+                return "Product does not exist";
+            }
+
+            var isDiscountDuplicated = "";
+
+            logger.LogCritical(startDate.ToShortDateString());
+            logger.LogCritical(endDate.ToShortDateString());
+
+
+            foreach (Discount d in productModel?.Discounts)
+            {
+                logger.LogCritical(d.StartDate.ToShortDateString());
+
+                logger.LogCritical(d.EndDate.ToShortDateString());
+
+
+                if (d.StartDate.ToShortDateString() == startDate.ToShortDateString() && d.EndDate.ToShortDateString() == endDate.ToShortDateString())
+                {
+                    break;
+                }
+
+                if (
+                    d.StartDate <= startDate && d.EndDate >= startDate
+                    ||
+                    d.StartDate <= endDate && d.EndDate >= endDate
+                    ||
+                    (
+                        startDate <= d.StartDate
+                            &&
+                        endDate >= d.EndDate
+                    )
+                )
+                {
+                    isDiscountDuplicated = $"discount already exist within date range {d.StartDate} - {d.EndDate}";
+                    break;
+                }
+            }
 
             return isDiscountDuplicated;
 

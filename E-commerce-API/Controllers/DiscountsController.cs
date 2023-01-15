@@ -36,6 +36,8 @@ namespace ECommerce.API.Controllers
                                                  {
                                                      Id = x.Id,
                                                      Value = x.Value,
+                                                     StartDate = x.StartDate,
+                                                     EndDate = x.EndDate,
                                                      CreatedAt = x.CreatedAt,
                                                  });
 
@@ -67,6 +69,8 @@ namespace ECommerce.API.Controllers
             {
                 Id = 0,
                 Value = DiscountDto.Value,
+                StartDate = DiscountDto.StartDate,
+                EndDate = DiscountDto.EndDate,
                 ProductId = DiscountDto.ProductId
             };
 
@@ -76,6 +80,8 @@ namespace ECommerce.API.Controllers
             {
                 Id = newDiscountModel.Id,
                 Value = newDiscountModel.Value,
+                StartDate = newDiscountModel.StartDate,
+                EndDate = newDiscountModel.EndDate,
                 ProductId = newDiscountModel.ProductId,
                 CreatedAt = newDiscountModel.CreatedAt
             };
@@ -121,13 +127,16 @@ namespace ECommerce.API.Controllers
         {
             var IsDiscountDuplicatedMessage = await this._DiscountsRepository.CheckIfDiscountDuplicated(productId, startDate, endDate);
 
-            if (IsDiscountDuplicatedMessage == "")
-            {
-                return Ok(false);
-            }
+            return Ok(new { message = IsDiscountDuplicatedMessage });
 
-            return Ok(IsDiscountDuplicatedMessage);
+        }
 
+        [HttpGet("check-if-duplicated-on-update")]
+        public async Task<IActionResult> CheckifDiscountDuplicatedOnUpdate([FromQuery] int productId, [FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
+        {
+            var IsDiscountDuplicatedMessage = await this._DiscountsRepository.CheckIfDiscountDuplicatedOnUpdate(productId, startDate, endDate);
+
+            return Ok(new { message = IsDiscountDuplicatedMessage });
 
         }
 
