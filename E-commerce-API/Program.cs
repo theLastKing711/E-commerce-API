@@ -47,8 +47,8 @@ builder.Services.AddCors(options =>
                             "http://localhost:4200", "https://localhost:4200", "http://localhost:8081", "http://localhost:8080",
                             "http://localhost:8082",
                             "https://e-commerce-api1.herokuapp.com",
-                            "https://e-commerce-api1.herokuapp.com/api/")
-                        .
+                            "https://e-commerce-api1.herokuapp.com/api/"
+                        )
                         .SetIsOriginAllowed(origin => true)
                         .SetIsOriginAllowedToAllowWildcardSubdomains()
                         .AllowAnyMethod()
