@@ -46,6 +46,8 @@ builder.Services.AddCors(options =>
                         .WithOrigins(
                             "http://localhost:4200", "https://localhost:4200", "http://localhost:8081", "http://localhost:8080",
                             "http://localhost:8082",
+                            "https://e-commerce-api1",
+                            "https://e-commerce-api1.herokuapp",
                             "https://e-commerce-api1.herokuapp.com",
                             "https://e-commerce-api1.herokuapp.com/api/"
                         )
