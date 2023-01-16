@@ -5,7 +5,6 @@ using ECommerce.API.Helpers;
 using ECommerce.API.Helpers.PriceFilterStrategy;
 using ECommerce.API.Models.Identity;
 using ECommerce.API.Server.Database;
-using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
@@ -97,6 +96,8 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
     };
 });
+
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddMvc().AddNewtonsoftJson();
