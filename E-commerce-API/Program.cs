@@ -155,6 +155,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("AllowHeaders");
+
 app.UseCors("CorsPolicy");
 app.UseStaticFiles();
 
