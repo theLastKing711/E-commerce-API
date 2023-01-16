@@ -43,21 +43,21 @@ builder.Services.AddIdentity<AppUser, AppRole>(options =>
 builder.Services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", policyBuilder => policyBuilder
-                        .WithOrigins(
-                            "http://localhost:4200", "https://localhost:4200", "http://localhost:8081", "http://localhost:8080",
-                            "http://localhost:8082",
-                            "https://e-commerce-api1",
-                            "https://e-commerce-api1.herokuapp",
-                            "https://e-commerce-api1.herokuapp.com",
-                            "https://e-commerce-api1.herokuapp.com/api",
-                            "https://e-commerce-api1.herokuapp.com/api/AppUserCategories",
-                            "http://e-commerce-api1",
-                            "http://e-commerce-api1.herokuapp",
-                            "http://e-commerce-api1.herokuapp.com",
-                            "http://e-commerce-api1.herokuapp.com/api",
-                            "http://e-commerce-api1.herokuapp.com/api/AppUserCategories"
+                        // .WithOrigins(
+                        //     "http://localhost:4200", "https://localhost:4200", "http://localhost:8081", "http://localhost:8080",
+                        //     "http://localhost:8082",
+                        //     "https://e-commerce-api1",
+                        //     "https://e-commerce-api1.herokuapp",
+                        //     "https://e-commerce-api1.herokuapp.com",
+                        //     "https://e-commerce-api1.herokuapp.com/api",
+                        //     "https://e-commerce-api1.herokuapp.com/api/AppUserCategories",
+                        //     "http://e-commerce-api1",
+                        //     "http://e-commerce-api1.herokuapp",
+                        //     "http://e-commerce-api1.herokuapp.com",
+                        //     "http://e-commerce-api1.herokuapp.com/api",
+                        //     "http://e-commerce-api1.herokuapp.com/api/AppUserCategories"
 
-                        )
+                        // )
                         .SetIsOriginAllowed(origin => true)
                         .SetIsOriginAllowedToAllowWildcardSubdomains()
                         .AllowAnyMethod()
