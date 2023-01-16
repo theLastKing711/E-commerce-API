@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Net.Http.Headers;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -44,7 +45,7 @@ builder.Services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", policyBuilder => policyBuilder
                      .WithOrigins(
-                         "*",
+                        "*",
                          "http://localhost:4200", "https://localhost:4200", "http://localhost:8081", "http://localhost:8080",
                          "http://localhost:8082",
                          "https://e-commerce-api1",
@@ -64,6 +65,12 @@ builder.Services.AddCors(options =>
                      .AllowAnyMethod()
                      .AllowAnyHeader()
                      .AllowCredentials());
+
+                options.AddPolicy("AllowHeaders", builder =>
+               {
+                   builder.WithOrigins("*")
+                           .WithHeaders(HeaderNames.ContentType, HeaderNames.AccessControlAllowOrigin, HeaderNames.Server, HeaderNames.AccessControlAllowHeaders, HeaderNames.AccessControlExposeHeaders, "x-custom-header", "x-path", "x-record-in-use", HeaderNames.ContentDisposition);
+               });
 
 
 
@@ -148,8 +155,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseStaticFiles();
 app.UseCors("CorsPolicy");
+app.UseStaticFiles();
 
 app.UseAuthentication();
 
