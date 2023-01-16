@@ -136,10 +136,10 @@ builder.Services.AddScoped<IPriceFilterStrategy, GreaterThanOrEqualPriceFilter>(
 var app = builder.Build();
 
 
-// app.UseForwardedHeaders(new ForwardedHeadersOptions
-// {
-//     ForwardedHeaders = ForwardedHeaders.XForwardedProto
-// });
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedProto
+});
 
 app.Migrate();
 
