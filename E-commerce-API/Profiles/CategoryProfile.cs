@@ -12,8 +12,8 @@ namespace ECommerce.API.Profiles
             CreateMap<Category, CategoryDto>()
             .ForMember(
                 dest => dest.Path,
-                opt => opt.MapFrom(x => $"https://e-commerce-api1.herokuapp.com/images/{x.Path}")
-                // opt => opt.MapFrom(x => $"https://localhost:7267/images/{x.Path}")
+                // opt => opt.MapFrom(x => $"https://e-commerce-api1.herokuapp.com/images/{x.Path}")
+                opt => opt.MapFrom(x => $"https://localhost:7267/images/{x.Path}")
             );
 
             CreateMap<Category, AddCategoryDto>();

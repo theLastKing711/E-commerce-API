@@ -5,6 +5,7 @@ using ECommerce.API.Helpers;
 using ECommerce.API.Helpers.PriceFilterStrategy;
 using ECommerce.API.Models.Identity;
 using ECommerce.API.Server.Database;
+using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
@@ -75,9 +76,12 @@ builder.Services.AddCors(options =>
 // Adding Authentication
 builder.Services.AddAuthentication(options =>
 {
+
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+
+
 })
 // Adding Jwt Bearer
 .AddJwtBearer(options =>
