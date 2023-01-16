@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.Net.Http.Headers;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -65,14 +64,6 @@ builder.Services.AddCors(options =>
                      .AllowAnyMethod()
                      .AllowAnyHeader()
                      .AllowCredentials());
-
-                options.AddPolicy("AllowHeaders", builder =>
-               {
-                   builder.WithOrigins("*")
-                           .WithHeaders(HeaderNames.ContentType, HeaderNames.AccessControlAllowOrigin, HeaderNames.Server, HeaderNames.AccessControlAllowHeaders, HeaderNames.AccessControlExposeHeaders, "x-custom-header", "x-path", "x-record-in-use", HeaderNames.ContentDisposition);
-               });
-
-
 
             });
 
@@ -154,8 +145,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseCors("AllowHeaders");
 
 app.UseCors("CorsPolicy");
 app.UseStaticFiles();
